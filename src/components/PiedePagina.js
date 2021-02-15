@@ -1,0 +1,78 @@
+import React from 'react'
+
+export default function PiedePagina() {
+    return (
+        <div>
+            
+            <section id="footer">
+        <div className="container">
+
+          <div className="row mt-5">
+            <div className="col-sm-12 col-md-4 text-center text-success">
+              <h3 className="mt-5">Nosotros
+
+                  </h3>
+              <p className="mt-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam aliquid voluptatem recusandae perspiciatis similique inventore odio amet quod? Nesciunt, libero.  
+              derechos reservados</p>
+
+            </div>
+
+            <div className="col-sm-12 col-md-4 text-center text-success">
+              <h3 className="mt-5">Contactanos
+
+                  </h3>
+             
+              <p className="mt-5 ">
+              <p>‎<i className="fas fa-envelope-open"></i> ganohealthymedellin@gmail.com </p>
+                <i className="fas fa-map-marker-alt" ></i> Colombia-Medellin
+                  </p>
+              <p><i className="fas fa-phone" ></i> 315 813 38 56</p>
+
+              <p> <a className="text-success" href="https://api.whatsapp.com/send?phone=+573158133856">
+                <i className="fab fa-whatsapp-square fa-3x" > </i></a></p>
+
+
+
+            </div>
+
+
+            <div className="col-sm-12 col-md-4 text-center text-success">
+
+
+             
+                <h3 className="mt-5">Siguenos</h3>
+                <div className="container ">
+                <div className="row">
+                <div className="col-4 mt-5">
+                  <i className="fab fa-facebook-square fa-3x"></i>
+                </div>
+                <div className="col-4 mt-5 ">
+                  <i className="fab fa-instagram-square fa-3x"></i>
+                </div>
+                <div className="col-4 mt-5">
+                  <i className="fab fa-twitter-square fa-3x"></i>
+                </div>
+
+
+              </div>
+                </div>
+                
+
+
+
+
+
+            </div>
+          </div>
+
+
+
+
+        </div>
+      </section>
+
+
+
+        </div>
+    )
+}
