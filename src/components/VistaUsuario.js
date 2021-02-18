@@ -197,7 +197,7 @@ export default function VistaUsuario() {
             timer: 1500
         })
 
-        const respuesta2 = await Axios.get('https://ganohealthy.herokuapp.com/favoritos/' + id)
+        const  respuesta2 = await Axios.get('https://ganohealthy.herokuapp.com/favoritos/' + id)
 
         sessionStorage.setItem('contadorFavoritos', ((respuesta2.data.user2).length))/* conocer el valos de cuantos datos tiene un arrays en la tabla en el mongo db */
 
