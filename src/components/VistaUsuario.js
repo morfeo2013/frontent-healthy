@@ -308,7 +308,7 @@ export default function VistaUsuario() {
                 {buscar.map(libros => (
                     <div className="col-md-4 pt-2" key={libros._id}>
 
-                        <div className="card text-center" id="card2">
+                        <div className="card text-center">
 
                             <div className="card-header">
                                 <strong>Producto: {libros.titulo}</strong>
@@ -317,7 +317,7 @@ export default function VistaUsuario() {
                                 <img className="  img-thumbnail img-fluid  text-center" src={libros.imagen} width="20" height="20" alt=""></img>
                                 {console.log(libros.imagen)}
                             </div>
-                            <div className="card-body ">
+                            <div className="card-body m-auto">
 
 
 
@@ -325,11 +325,12 @@ export default function VistaUsuario() {
                                 <p> </p>
                                 <strong>Descripcion: {libros.autor}</strong>
                                 <p></p>
-                                <strong>Valor: {'$'}{libros.ficha}</strong>
+                            <strong>Valor: {'$'}{libros.ficha}</strong>
 
 
 
                                 {admin ?
+                                
                                     <td >
 
 
