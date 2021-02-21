@@ -128,9 +128,9 @@ export default function Favoritos() {
                             <tr>
                                 <td >{i + 1}</td>
                                 <div className=" imagen5 ">
-              <img className="  img-thumbnail img-fluid  text-center" src={   favoritos[i].imagen     } width="20" height="20" alt=""></img>
+              <img className="  img-fluid  text-center" src={   favoritos[i].imagen     }  alt=""></img>
               
-            </div>
+                               </div>
                                 <td>{productos.titulo}</td>
                                 <td>{productos.genero}</td>
                                 <td>{productos.autor}</td>

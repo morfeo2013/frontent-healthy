@@ -20,7 +20,7 @@ export default function Nav() {
   const [fav, setFav] = useState()
   const [fav2, setFav2] = useState()
   /* creamos un ussefect para que cuando se ingrese el token se active le menu a true*/
- 
+  const [parar, setParar] = useState(false)
  
  
 
@@ -71,7 +71,7 @@ export default function Nav() {
     setMenu(false)
   }
 
- 
+
   
 
   return (
@@ -112,7 +112,7 @@ export default function Nav() {
   
   <li className="nav-item" >
     
-    <Link id="listar1" className="nav-link nav-success text-justify ml-2" to="/VistaProductos"><i className="fas fa-journal-whills m-1"></i>
+    <Link id="listar1" className="nav-link nav-success text-justify ml-2" to="/VistaProductos"><i className="fas fa-journal-whills m-1">  </i>
    
       Nuestros Productos</Link>
      {/*  <Link className="nav-link nav-success" to="/visual"><i className="fas fa-mug-hot"></i>
@@ -144,18 +144,19 @@ null
 <ul className="navbar-nav ml-auto">
 {admin ?
 null:
-<li className="nav-item text-success">
-    <Link id="listar1" className="nav-link" to="/VistaProductosUsuario">Listado de Productos
-    
+<li className="nav-item text-success" data-toggle="collapse" data-target=".navbar-collapse" >
+    <Link id="listar1" className="nav-link " to="/VistaProductosUsuario">Listado de Productos
+ 
     </Link>
     <div className="text-center">
-      <span className="badge badge-danger ">
+      <span className="badge text-primary ">
     {fav2}
         
         </span> 
     </div>
     
   </li>
+  
 }
 
 
@@ -175,12 +176,12 @@ null:
     :
     // eslint-disable-next-line no-undef
     <li className="nav-item">
-      <Link className="nav-link" to={"/favoritos/"+id}>lista Mis favoritos
+      <Link className="nav-link " to={"/favoritos/"+id}>lista Mis favoritos
      
-      
+   
       </Link>
       <div className="text-center">
-      <span className="badge badge-danger ">
+      <span className="badge badge text-primary  ">
     {fav}
         
         </span> {/* crear un numero de favoritos */}
