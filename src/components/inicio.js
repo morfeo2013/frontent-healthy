@@ -13,14 +13,14 @@ export default function inicio() {
 
         <div className="jumbotron fondo-imagen pb-5 d-block w-100">
 
-          <h1 className="display-4 text-warning ">
-            Salud y Bienestar al alcanze de tus manos
+          <h1 className="display-4  ">
+            Salud y Bienestar al alcance de tus manos
                   </h1>
           <p className="text-center ">La salud es sinónimo de vida y alegría por eso recuerda siempre que si tienes salud tendrás lo mas importante.</p>
           <Link className="btn btn-success mr-2" to='/autor'>
             <i className="fas fa-info-circle"></i>
             {/* implementar icono fontosso */}
-                                            Mas Informacion
+            Más Información
                                            </Link>
 
 
@@ -37,12 +37,17 @@ export default function inicio() {
 
           <div className="row">
             <div className="col-sm-12 col-md-6 ">
-              <h2 className="mt-5 text-center">HISTORIAGANODERMA LUCIDUM  </h2>
-              <p className="mt-5 text-justify">Hongo milenario de origen asiático, conocido a nivel mundial por sus componentes beneficios y alto impacto en la salud y el bienestar de quien lo consume.  Es considerado el superalimento con mayor carga nutricional. Contiene 200 fitonutrientes y 154 antioxidantes, que hacen del Ganoderma Lúdicum un producto muy especial, es adaptógeno e inmunomudulador en el sistema inmune se generan el 95% de las enfermedades.
-              Ganoderma lucidum es un ingrediente clave en la línea de productos de Organo Gold el cual complementa el estilo de vida saludable y la manera en que vivimos aquí en OG. En Organo Gold, utilizamos solamente el mejor Ganoderma lucidum, creando un polvo invisible, sin sabor que agrega propiedades sorprendentes nuestra línea de productos que se extiende de café y tés hasta productos para el cuidado personal.
+              <h2 className="mt-5 text-center">HISTORIA</h2>
+              <p className="mt-5 justify-content-between">
+                 Hongo milenario de origen asiático, conocido a nivel mundial por sus potentes beneficios y alto impacto en la salud y el bienestar de quien lo consumo.  Es considerado el superlimento con mayor cargo nutricional. Contiene 200 fitonutrientes y 154 antioxidantes, que hacen del Ganoderma Lúcidum un producto muy especial: es adaptógeno e inmunomuduldor (en el sistema inmune se generan el 95% de las enfermeades)
+             
 </p>
               <div className="text-center">
                 <button className="btn btn-outline-success btn-lg text-center">Más Información</button>
+               
+                                            
+                                   
+
               </div>
 
             </div>
@@ -60,7 +65,7 @@ export default function inicio() {
       <section id="llamado-accion">
         <div className="container">
           <div className="row mt-5 ">
-            <div className="col-sm-12 text-success">
+            <div className="col-sm-12 text-dark">
               <h1 className="text-center">Impulsa tu empresa o negocio </h1>
               <p className="text-justify ">Con respecto a cualquier otro negocio "convencional", el ingresar a una red de mercadeo te supone una baja inversión para iniciar tu negocio independiente.
 

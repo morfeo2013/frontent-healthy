@@ -293,7 +293,8 @@ export default function ListarUsuarios() {
             {
                
                 /* UTILIZO LOS DATOS DEL ESTADO QUE RECIVIO DEL SETDATOS */
-                buscar.map((clientes, i) => (  /* LIBROS RECIVIRA LOS LA INFORMACION DE DATOS RECIVIDO DE SETDATOS*/
+                buscar
+                ((clientes, i) => (  /* LIBROS RECIVIRA LOS LA INFORMACION DE DATOS RECIVIDO DE SETDATOS*/
                     <tbody key={clientes._id}>{/* NECESARIO CREAR UN KEY  le asigno el _id que viene por defecto del mongodb como entrada*/}
                         <tr>
                             <td >{i + 1}</td>
