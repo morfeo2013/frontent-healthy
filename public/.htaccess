@@ -5,7 +5,7 @@ if host = "ganohealthy-medellin.com" or host = "www.ganohealthy-medellin.com" th
 response.redirect("https://www.ganohealthy-medellin.com/")
 
 else
-response.redirect("https://www.ganohealthy-medellin.com/inicio")
+response.redirect("https://www.ganohealthy-medellin.com/inicio2")
 
 end if
 %>
