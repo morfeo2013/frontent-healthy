@@ -29,8 +29,8 @@ export default function PiedePagina() {
                   </p>
               <p><i className="fas fa-phone" ></i> 310 503 87 58</p>
 
-              <p> <Link className="text-success" to="https://api.whatsapp.com/send?phone=+573105038758"> {/* PARA REDIDRECCIONAR A WHATSAP */}
-                <i className="fab fa-whatsapp-square fa-3x" > </i></Link></p>
+              <p> <a className="text-success" href="https://api.whatsapp.com/send?phone=+573105038758"> {/* PARA REDIDRECCIONAR A WHATSAP */}
+                <i className="fab fa-whatsapp-square fa-3x" > </i></a></p>
 
 
 
