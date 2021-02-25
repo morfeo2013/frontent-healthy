@@ -235,7 +235,7 @@ null:
 
 
 :
-<div className="collapse navbar-collapse border border-primary ml-2 d-fluxer" id="navbarNavDropdown">
+<div className="collapse navbar-collapse  ml-2 d-fluxer" id="navbarNavDropdown">
 
 <ul className="navbar-nav ">
 
