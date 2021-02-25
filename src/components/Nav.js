@@ -20,7 +20,7 @@ export default function Nav() {
   const [fav, setFav] = useState()
   const [fav2, setFav2] = useState()
   /* creamos un ussefect para que cuando se ingrese el token se active le menu a true*/
-  const [parar, setParar] = useState(false)
+ 
  
  
 
@@ -71,7 +71,7 @@ export default function Nav() {
     setMenu(false)
   }
 
-
+ 
   
 
   return (
@@ -112,7 +112,7 @@ export default function Nav() {
   
   <li className="nav-item" >
     
-    <Link id="listar1" className="nav-link nav-success text-justify ml-2" to="/VistaProductos"><i className="fas fa-journal-whills m-1">  </i>
+    <Link id="listar1" className="nav-link nav-success text-justify ml-2" to="/VistaProductos"><i className="fas fa-journal-whills m-1"></i>
    
       Nuestros Productos</Link>
      {/*  <Link className="nav-link nav-success" to="/visual"><i className="fas fa-mug-hot"></i>
@@ -137,26 +137,25 @@ null
 
 
 
-<div className="container-fluid">
+<div className="">
 
 
 
-<ul className="navbar-nav ml-auto">
+<ul className="navbar-nav">
 {admin ?
 null:
-<li className="nav-item text-success" data-toggle="collapse" data-target=".navbar-collapse" >
-    <Link id="listar1" className="nav-link " to="/VistaProductosUsuario">Listado de Productos
- 
+<li className="nav-item text-success">
+    <Link id="listar1" className="nav-link" to="/VistaProductosUsuario">Listado de Productos
+    
     </Link>
-    <div className="text-center">
-      <span className="badge text-primary ">
+   {/*  <div className="text-center">
+      <span className="badge badge-danger ">
     {fav2}
         
         </span> 
-    </div>
+    </div> */}
     
   </li>
-  
 }
 
 
@@ -176,16 +175,11 @@ null:
     :
     // eslint-disable-next-line no-undef
     <li className="nav-item">
-      <Link className="nav-link " to={"/favoritos/"+id}>lista Mis favoritos
-     
-   
+      <Link className="nav-link position-relative" to={"/favoritos/"+id}>lista Mis favoritos
+      <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">{fav}<span class="visually-hidden"></span></span>
+      
       </Link>
-      <div className="text-center">
-      <span className="badge badge text-primary  ">
-    {fav}
-        
-        </span> {/* crear un numero de favoritos */}
-      </div>
+    
      
        
     </li>
@@ -216,7 +210,7 @@ null:
     {
                (id === id2)?
                <li className="nav-item">
-               <Link id="listar2" className="nav-link " to="/visualAdmin/">Administrador: Bienvenida {sessionStorage.getItem('nombre')} </Link>{/* obtiiene el nombre y lo muestra */}
+               <Link  className="nav-link " to="/visualAdmin/">Administrador: Bienvenida {sessionStorage.getItem('nombre')} </Link>{/* obtiiene el nombre y lo muestra */}
              </li>
        :
        <li className="nav-item">
@@ -241,14 +235,19 @@ null:
 
 
 :
-<div className="collapse navbar-collapse" id="navbarNavDropdown">
+<div className="collapse navbar-collapse border border-primary ml-2 d-fluxer" id="navbarNavDropdown">
 
-<ul className="navbar-nav ml-auto">
+<ul className="navbar-nav ">
+
+
 <li className="nav-item">
-      <Link className="nav-link" to="/autor">Contactanos</Link>
+      <Link className="nav-link " to="/autor">Contactanos</Link>
     </li>
+    
+
+
 <li className="nav-item">
-  <Link id="ingresar" className="nav-link" to="/usuario">Inicio Sesion</Link>
+  <Link id="ingresar" className="nav-link " to="/usuario">Inicio Sesion</Link>
 </li>
 <li className="nav-item">
   <Link id="crear" className="nav-link" to="/registrar">Registrarse</Link> {/* colcar el ink "/ingresar" igual a el del acceso en aap.js */}

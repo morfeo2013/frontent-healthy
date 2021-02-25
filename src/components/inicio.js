@@ -6,6 +6,9 @@ import { Link } from 'react-router-dom'
 
 
 export default function inicio() {
+
+
+
   return (
     <div>
 
@@ -16,7 +19,7 @@ export default function inicio() {
           <h1 className="display-4  ">
             Salud y Bienestar al alcance de tus manos
                   </h1>
-          <p className="text-center ">La salud es sinónimo de vida y alegría por eso recuerda siempre que si tienes salud tendrás lo mas importante.</p>
+          <h5 className="text-center fw-bold">La salud es sinónimo de vida y alegría por eso recuerda siempre que si tienes salud tendrás lo mas importante.</h5>
           <Link className="btn btn-success mr-2" to='/autor'>
             <i className="fas fa-info-circle"></i>
             {/* implementar icono fontosso */}
@@ -38,12 +41,21 @@ export default function inicio() {
           <div className="row">
             <div className="col-sm-12 col-md-6 ">
               <h2 className="mt-5 text-center">HISTORIA</h2>
-              <p className="mt-5 justify-content-between">
-                 Hongo milenario de origen asiático, conocido a nivel mundial por sus potentes beneficios y alto impacto en la salud y el bienestar de quien lo consumo.  Es considerado el superlimento con mayor cargo nutricional. Contiene 200 fitonutrientes y 154 antioxidantes, que hacen del Ganoderma Lúcidum un producto muy especial: es adaptógeno e inmunomuduldor (en el sistema inmune se generan el 95% de las enfermeades)
+              <div className="d-flex p-2 bd-highlight">
+              <p >
+                 Hongo milenario de origen asiático, conocido a nivel mundial por sus potentes beneficios y alto impacto en la salud y el bienestar de quien lo consumo. Es considerado el superlimento con mayor cargo nutricional. Contiene 200 fitonutrientes y 154 antioxidantes, que hacen del Ganoderma Lúcidum un producto muy especial: es adaptógeno e inmunomuduldor (en el sistema inmune se generan el 95% de las enfermeades)
              
 </p>
+
+              </div>
+              
               <div className="text-center">
-                <button className="btn btn-outline-success btn-lg text-center">Más Información</button>
+                <a className="btn btn-outline-success btn-lg" href='https://www.youtube.com/watch?v=DWcJFNfaw9c'>
+            <i className="fas fa-info-circle"></i>
+            {/* implementar icono fontosso */}
+            Más Información
+                                           </a>
+
                
                                             
                                    
@@ -67,7 +79,7 @@ export default function inicio() {
           <div className="row mt-5 ">
             <div className="col-sm-12 text-dark">
               <h1 className="text-center">Impulsa tu empresa o negocio </h1>
-              <p className="text-justify ">Con respecto a cualquier otro negocio "convencional", el ingresar a una red de mercadeo te supone una baja inversión para iniciar tu negocio independiente.
+              <p className="text-break ">Con respecto a cualquier otro negocio "convencional", el ingresar a una red de mercadeo te supone una baja inversión para iniciar tu negocio independiente.
 
 
               Al afiliarte, adquieres el conocimiento, el entrenamiento, las herramientas necesarias y el acompañamiento de líderes para crear y expandir tu red. ¡Te entregamos el “know how” del negocio!
@@ -81,7 +93,7 @@ export default function inicio() {
 
 Como networker debes ocupar toda tu energía en hacer crecer tu red y enfocarte en el punto neurálgico de todo negocio: las ventas. Esto es un alivio, si tienes en cuenta que el empresario promedio ocupa el 80% de su tiempo en solucionar problemas.</p>
               <div className="text-center">
-                <button className="btn btn-outline-danger btn-lg text-center">Más Información</button>
+                <button className="btn btn-outline-danger btn-lg text-center"> Más Información</button>
               </div>
             </div>
           </div>
