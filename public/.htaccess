@@ -1,0 +1,11 @@
+<%EnableSessionState=False
+host = Request.ServerVariables("HTTP_HOST")
+
+if host = "ganohealthy-medellin.com" or host = "www.ganohealthy-medellin.com" then
+response.redirect("https://www.ganohealthy-medellin.com/")
+
+else
+response.redirect("https://www.ganohealthy-medellin.com/inicio")
+
+end if
+%>

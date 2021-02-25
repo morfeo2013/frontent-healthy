@@ -176,7 +176,7 @@ null:
     // eslint-disable-next-line no-undef
     <li className="nav-item">
       <Link className="nav-link position-relative" to={"/favoritos/"+id}>lista Mis favoritos
-      <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">{fav}<span class="visually-hidden"></span></span>
+      <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">{fredy}<span class="visually-hidden"></span></span>
       
       </Link>
     
