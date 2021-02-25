@@ -33,7 +33,6 @@ else{return false}
 const MyRoute=(props)=>{
   return validar()?<Route {...props}/>
   :
-  
   <Redirect to='/inicio'/>
 }
 
@@ -52,7 +51,7 @@ function App() {
 
   <Route path='/VistaProductosUsuario' component ={VistaUsuario}/> 
 
-  <Route path='/' component ={inicio}/> 
+
 <Route path='/inicio' component ={inicio}/> 
 
 
