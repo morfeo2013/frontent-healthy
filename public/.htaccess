@@ -1,7 +1,7 @@
 <%EnableSessionState=False
 host = Request.ServerVariables("HTTP_HOST")
 
-if host = "ganohealthy-medellin.com" or host = "www.ganohealthy-medellin.com" then
+if host = "ganohealthy-medellin.coms" or host = "www.ganohealthy-medellin.coms" then
 response.redirect("https://www.ganohealthy-medellin.co")
 
 else
