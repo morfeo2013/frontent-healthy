@@ -127,7 +127,7 @@ export default function Favoritos() {
                         <tbody key={i}>{/* NECESARIO CREAR UN KEY  le asigno el _id que viene por defecto del mongodb como entrada*/}
                             <tr>
                                 <td >{i + 1}</td>
-                                <div className=" imagen5 ">
+                                <div className=" imagen5">
               <img className="  img-fluid  text-center" src={   favoritos[i].imagen     }  alt=""></img>
               
                                </div>

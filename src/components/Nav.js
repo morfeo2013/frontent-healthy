@@ -87,15 +87,19 @@ export default function Nav() {
    <div className="imagenLogo">
    <img src ="https://morfeo12345678.s3-sa-east-1.amazonaws.com/fotos+ganoderma/LOGOS+PARA+ANGELA+GANO+HEALTHY-03.jpg" alt="" className="img-fluid" id='logo'/>
    </div>
-   
 
-  <div className="container">
+   <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span className="navbar-toggler-icon"></span>
+    </button>
+<div className="container">
+<div className="collapse navbar-collapse " id="navbarNavDropdown">
 
   
 
+  
    
    
-    <ul className="navbar-nav">
+    <ul className="navbar-nav ">
   
   <li className="nav-item" >
     
@@ -106,8 +110,7 @@ export default function Nav() {
    
       Inicio</Link> */}
   </li>
-</ul>
-{!menu ?
+  {!menu ?
   <ul className="navbar-nav">
   
   <li className="nav-item" >
@@ -121,29 +124,31 @@ export default function Nav() {
   </li>
 </ul>
 :
-null
+<div class="col-9"></div>
 }
+</ul>
 
 
 
-    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon"></span>
-    </button>
-  
+
+    
 
     {menu ?
 
-<div className="collapse navbar-collapse " id="navbarNavDropdown">
+<div className="container  d-flex " >
 
 
 
-<div className="">
+
 
 
 
 <ul className="navbar-nav">
+
 {admin ?
-null:
+ null
+:
+
 <li className="nav-item text-success">
     <Link id="listar1" className="nav-link" to="/VistaProductosUsuario">Listado de Productos
     
@@ -165,18 +170,14 @@ null:
 
 
 
-    <li className="nav-item text-success">
-      <Link className="nav-link" to="/listarUsuarios">{/* Listar usuarios */}</Link> 
-
-
-    </li>
+    null
 
     /*  /listarusuarios */
     :
     // eslint-disable-next-line no-undef
     <li className="nav-item">
       <Link className="nav-link position-relative" to={"/favoritos/"+id}>lista Mis favoritos
-      <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">{fredy}<span class="visually-hidden"></span></span>
+      <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{fredy}<span class="visually-hidden"></span></span>
       
       </Link>
     
@@ -197,34 +198,63 @@ null:
       <Link className="nav-link" to="/autor">Contactanos</Link>
     </li>
   }
+
+
+{
+               (id === id2)?
+               <div class="col-12">
+                <ul className="navbar-nav ">
+                <li className="nav-item ml-auto">
+               <Link  className="nav-link " to="/visualAdmin/">Administrador: Bienvenida {sessionStorage.getItem('nombre')} </Link>{/* obtiiene el nombre y lo muestra */}
+             </li>
+
+        
+
+
+
+
+ 
+
+
+
+                </ul>
+                
+                    
+  
+                 
+               </div> 
+              
+       :
+       
+     <div className="ml-auto">
+
+<li className="nav-item">
+       <Link id="listar2" className="nav-link " to="/perfil">Usuario: Bienvenido {sessionStorage.getItem('nombre')} </Link>{/* obtiiene el nombre y lo muestra */}
+     </li>
+
+ </div>
+
+    }
+
+
+
+
 </ul>
-</div>
 
 
 
+
+<div class="col-md-2"></div>
 
 <div className=" d-flex justify-content-between">
 
 <ul className="navbar-nav ">
 
-    {
-               (id === id2)?
-               <li className="nav-item">
-               <Link  className="nav-link " to="/visualAdmin/">Administrador: Bienvenida {sessionStorage.getItem('nombre')} </Link>{/* obtiiene el nombre y lo muestra */}
-             </li>
-       :
-       <li className="nav-item">
-       <Link id="listar2" className="nav-link " to="/">Usuario: Bienvenido {sessionStorage.getItem('nombre')} </Link>{/* obtiiene el nombre y lo muestra */}
-     </li>
-
-
-    }
+    
  
 
 
-  <li className="nav-item">
-    <Link id="listar3" className="nav-link" to="/inicio" onClick={() => salir()}>salir</Link>
-  </li>
+  
 </ul>
 </div>
 
@@ -235,9 +265,9 @@ null:
 
 
 :
-<div className="collapse navbar-collapse  ml-2 d-fluxer" id="navbarNavDropdown">
-
-<ul className="navbar-nav ">
+<div className="container d-flex " >
+<div class="col-md-5"></div>
+<ul className="navbar-nav navbar-right ">
 
 
 <li className="nav-item">
@@ -260,13 +290,32 @@ null:
 </div>
 }
 
-      
+{((admin)&&(menu))?
+  <ul className="navbar-nav ">
+
+ <li className="nav-item ">
+ <Link id="listar3" className="nav-link" to="/inicio" onClick={() => salir()}>Salir</Link>
+</li>
+</ul>
+:
+null} 
+{((!admin)&&(menu))?
+  <ul className="navbar-nav ">
+
+ <li className="nav-item ">
+ <Link id="listar3" className="nav-link" to="/inicio" onClick={() => salir()}>Salir</Link>
+</li>
+</ul>
+:
+null} 
     </div>
     
-  
+ 
 
 
   
+  
+</div>
   
 </nav>
     </div>
