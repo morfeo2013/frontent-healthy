@@ -131,18 +131,19 @@ export default function IngresarLibro(props) {/* aca el props es para identifica
     /* INGRESO DE CLIENTES NUEVOS*/
     const guardarLibro = async () => {  /* SE CREA LA FUNCION QUE SERA LLAMADA PRO EL BOTON GUARDAR */
 
+       
+        
+        const formdata = new FormData()
+        formdata.append('titulo',titulo)
+        formdata.append(' autor', autor)
+        formdata.append('genero',genero)
+        formdata.append('ficha',ficha)
+        formdata.append('image',imagen) /* deve decir 'image' el archivo */
+       
+       
 
 
-
-        const LibroNuevo = {  /* SE RELACIONA LO QUE SE INGRESA EN LOS ESTADOS PREVIAMENTE REALCIONADOS EN EL RENDER WEB */
-            titulo,
-            autor,
-            genero,
-            ficha,
-            imagen
-        }
-
-        const respuesta = await Axios.post('https://ganohealthy.herokuapp.com/crear', LibroNuevo) /* CON AXIONS 
+        const respuesta = await Axios.post('https://ganohealthy.herokuapp.com/crear',formdata) /* CON AXIONS 
     LLAMA AL BACKEN EN SU PUERTO Y UNA UN ENVIO POS, ENVIANDO LOS DATOS DE LIBRONUEVO */
 
         const mensaje = respuesta.data.mensaje /* llama desde la constante respuesta el mensage guardado en baken */
@@ -329,6 +330,38 @@ text" className="form-control" value={ficha} onChange={e => setFicha(e.target.va
 
 
 }
+
+{/* opcion subir foto */}
+
+<div className="d-grid gap-2 m-3"> {/* para alargar el boton */}
+
+{
+
+
+    (editar === 'modificar' || editar==='') ?
+         
+
+        <div className="form-group">
+       
+            <input  className="form-control" type="file" placeholder="Seleccionar Imagen"
+            autoFocus onChange={e => setImagen(e.target.files[0])}  required/>
+
+        </div>
+
+       
+       
+       : null
+        
+
+}
+
+
+</div> 
+
+
+
+
+
 <div className="d-grid gap-2 m-3"> {/* para alargar el boton */}
 
 {
