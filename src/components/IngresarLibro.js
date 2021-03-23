@@ -306,10 +306,10 @@ text" className="form-control" value={ficha} onChange={e => setFicha(e.target.va
         <input type="
  text" className="form-control" value={ficha} onChange={e => setFicha(e.target.value.toLowerCase())} placeholder="Valor" required />
     </div>
-    <div className="form-group  mt-3">
+  {/*   <div className="form-group  mt-3">
          <input type="
   text" className="form-control" value={imagen} onChange={e => setImagen(e.target.value)} placeholder="Link de la imagen" required />
-     </div>
+     </div> */}
 
 
 
