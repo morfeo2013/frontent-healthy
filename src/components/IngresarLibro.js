@@ -89,14 +89,14 @@ export default function IngresarLibro(props) {/* aca el props es para identifica
     const modificarLibro = async () => {
 
         const id = props.match.params.id
-        const libroModificado = {
-            titulo,
-            autor,
-            genero,
-            ficha,
-            imagen
-        }
-        const respuesta = await Axios.put('https://ganohealthy.herokuapp.com/modificar/' + id, libroModificado)
+        const formdata = new FormData()
+        formdata.append('titulo',titulo)
+        formdata.append(' autor', autor)
+        formdata.append('genero',genero)
+        formdata.append('ficha',ficha)
+        formdata.append('image',imagen) /* deve decir 'image' el archivo */
+       
+        const respuesta = await Axios.put('https://ganohealthy.herokuapp.com/modificar/' + id, formdata)
         console.log(respuesta)
         const mensaje = respuesta.data.mensaje /* llama desde la constante respuesta el mensage guardado en baken */
         Swal.fire({
