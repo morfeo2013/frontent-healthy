@@ -80,7 +80,7 @@ export default function IngresarLibro(props) {/* aca el props es para identifica
         setFicha(respuesta.data.ficha)
       setImagen(respuesta.data.imagen)
 
-    console.log(imagen)
+    console.log(respuesta.data.imagen)
     }
     /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
@@ -91,7 +91,7 @@ export default function IngresarLibro(props) {/* aca el props es para identifica
         const id = props.match.params.id
         const formdata = new FormData()
         formdata.append('titulo',titulo)
-        formdata.append(' autor', autor)
+        formdata.append('autor', autor)
         formdata.append('genero',genero)
         formdata.append('ficha',ficha)
         formdata.append('image',imagen) /* deve decir 'image' el archivo */
@@ -135,7 +135,7 @@ export default function IngresarLibro(props) {/* aca el props es para identifica
         
         const formdata = new FormData()
         formdata.append('titulo',titulo)
-        formdata.append(' autor', autor)
+        formdata.append('autor', autor)
         formdata.append('genero',genero)
         formdata.append('ficha',ficha)
         formdata.append('image',imagen) /* deve decir 'image' el archivo */
