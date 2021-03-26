@@ -12,7 +12,7 @@ export default function IngresarLibro(props) {/* aca el props es para identifica
     const [ficha, setFicha] = useState('')
     const [imagen, setImagen] = useState('')
    const [unidades,setUnidades]=useState('')
-
+   const [foto,setFoto]=useState('')
     /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
     /* COMANDOS PARA GENERAR LA VALIDACION DE PA PAGINA CREAR O MODIFICAR */
@@ -131,35 +131,63 @@ export default function IngresarLibro(props) {/* aca el props es para identifica
     /* INGRESO DE CLIENTES NUEVOS*/
     const guardarLibro = async () => {  /* SE CREA LA FUNCION QUE SERA LLAMADA PRO EL BOTON GUARDAR */
 
-       
         
-        const formdata = new FormData()
-        formdata.append('titulo',titulo)
-        formdata.append('autor', autor)
-        formdata.append('genero',genero)
-        formdata.append('ficha',ficha)
-        formdata.append('image',imagen) /* deve decir 'image' el archivo */
+        if (imagen != null){
+            const formdata = new FormData()
+            formdata.append('titulo',titulo)
+            formdata.append('autor', autor)
+            formdata.append('genero',genero)
+            formdata.append('ficha',ficha)
+            formdata.append('image',imagen) /* deve decir 'image' el archivo */
+            const respuesta = await Axios.post('https://ganohealthy.herokuapp.com/crear',formdata) /* CON AXIONS 
+            LLAMA AL BACKEN EN SU PUERTO Y UNA UN ENVIO POS, ENVIANDO LOS DATOS DE LIBRONUEVO */
+        
+                const mensaje = respuesta.data.mensaje /* llama desde la constante respuesta el mensage guardado en baken */
+        
+        
+                Swal.fire({
+        
+                    icon: 'success',
+                    title: mensaje,
+                    showConfirmButton: false,
+        
+                })
+                setTimeout(() => {
+                    window.location.href =  '/administrador1'/* para redirigir ala pagina listar */
+        
+                }, 1300)
+        }else{
+            const formdata = new FormData()
+            formdata.append('titulo',titulo)
+            formdata.append('autor', autor)
+            formdata.append('genero',genero)
+            formdata.append('ficha',ficha)
+            formdata.append('image',imagen) /* deve decir 'image' el archivo */
+            const respuesta = await Axios.post('https://ganohealthy.herokuapp.com/crear',formdata) /* CON AXIONS 
+            LLAMA AL BACKEN EN SU PUERTO Y UNA UN ENVIO POS, ENVIANDO LOS DATOS DE LIBRONUEVO */
+        
+                const mensaje = respuesta.data.mensaje /* llama desde la constante respuesta el mensage guardado en baken */
+        
+        
+                Swal.fire({
+        
+                    icon: 'success',
+                    title: mensaje,
+                    showConfirmButton: false,
+        
+                })
+                setTimeout(() => {
+                    window.location.href =  '/administrador1'/* para redirigir ala pagina listar */
+        
+                }, 1300)
+        }
+        
+        
        
        
 
 
-        const respuesta = await Axios.post('https://ganohealthy.herokuapp.com/crear',formdata) /* CON AXIONS 
-    LLAMA AL BACKEN EN SU PUERTO Y UNA UN ENVIO POS, ENVIANDO LOS DATOS DE LIBRONUEVO */
-
-        const mensaje = respuesta.data.mensaje /* llama desde la constante respuesta el mensage guardado en baken */
-
-
-        Swal.fire({
-
-            icon: 'success',
-            title: mensaje,
-            showConfirmButton: false,
-
-        })
-        setTimeout(() => {
-            window.location.href =  '/administrador1'/* para redirigir ala pagina listar */
-
-        }, 1300)
+      
     }
 
     
@@ -338,13 +366,18 @@ text" className="form-control" value={ficha} onChange={e => setFicha(e.target.va
 {
 
 
-    (editar === 'modificar' || editar==='') ?
+    // eslint-disable-next-line no-mixed-operators
+    ( editar==='') ?
          
 
         <div className="form-group">
        
             <input  className="form-control" type="file" placeholder="Seleccionar Imagen"
-            autoFocus onChange={e => setImagen(e.target.files[0])}  required/>
+            autoFocus onChange={e => setImagen(e.target.files[0])
+            
+            
+            
+            }  required  disabled/>
 
         </div>
 
@@ -354,7 +387,30 @@ text" className="form-control" value={ficha} onChange={e => setFicha(e.target.va
         
 
 }
+{
 
+
+// eslint-disable-next-line no-mixed-operators
+(foto === 'subir foto') ?
+     
+    
+
+
+
+
+    <div className="form-group">
+        <input  className="form-control" type="file" placeholder="Seleccionar Imagen"
+        autoFocus onChange={e => setImagen(e.target.files[0])       
+        }  required  disabled/>
+
+    </div>
+
+   
+   
+   : null
+    
+
+}
 
 </div> 
 
@@ -363,17 +419,32 @@ text" className="form-control" value={ficha} onChange={e => setFicha(e.target.va
 
 
 <div className="d-grid gap-2 m-3"> {/* para alargar el boton */}
+{
 
+
+(editar === 'modificar') ?
+    <button  className="btn btn-success mt-3 " onChange={e => setFoto('subir foto')}>Subir Foto</button>
+    
+
+    :
+    null
+    /* 
+     */
+
+
+}
+console.log(foto)
 {
 
 
     (editar === 'modificar') ?
-
+  
         <button type="submit" className="btn btn-success mt-3 ">Modificar</button>
        : (editar==='comprar') ?
 
         <button type="submit" className="btn btn-warning mt-3 ">Comprar</button>
         :
+       
         <button type="submit" className=" btn btn-success" >Guardar</button>
 
 
