@@ -154,7 +154,7 @@ export default function VistaUsuario() {
 
     }
     /* para generar doble verificacion de eliminar */
-
+/* ELIMINAR PRODUCTOS CON LA VISTA MINIATURA */
     const eliminarSub = async (id) => {
 
         const respuesta = await Axios.delete('https://ganohealthy.herokuapp.com/eliminar/' + id) /* cuando reciba l informacion entra tambien el id de el elemento a eliminar */
