@@ -14,7 +14,7 @@ export default function Registrar() {
     const [ciudad, setCiudad] = useState('')
     const [correo, setCorreo] = useState('')
     const [contrasena, setContrasena] = useState('')
-
+    
     const registrar = async (e) => {
     const contadorFavoritos=0
         e.preventDefault()
@@ -87,10 +87,10 @@ export default function Registrar() {
                                 </div>
 
 
-                                <div className="form-group mt-2">
+                                {/* <div className="form-group mt-2">
                                     <input className="form-control" type="text" placeholder="Cedula" required onChange={e => setCedula(e.target.value)}/>
 
-                                </div>
+                                </div> */}
 
                                 
                                 <div className="form-group mt-2">
@@ -119,7 +119,7 @@ export default function Registrar() {
                                 </div>
 
                                 <div className="form-group mt-2">
-                                    <input type="password" name="contrasena" className="form-control" placeholder="contrasena" required onChange={e => setContrasena(e.target.value)}
+                                    <input type="password" name="contrasena" className="form-control" placeholder="contraseña" required onChange={e => setContrasena(e.target.value)}
                                         value={contrasena} />
 
                                 </div>

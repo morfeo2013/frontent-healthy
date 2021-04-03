@@ -6,24 +6,23 @@ export default function PiedePagina() {
         <div>
             
             <section id="footer">
-        <div className="container">
+        <div  className="container mt-5">
 
-          <div className="row mt-5">
+          <div className="row">
             <div className="col-sm-12 col-md-4 text-center text-dark">
-              <h3 className="mt-5">Nosotros
+              <h3 className="mt-2">Nosotros
 
                   </h3>
-              <p className="mt-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam aliquid voluptatem recusandae perspiciatis similique inventore odio amet quod? Nesciunt, libero.  
-              derechos reservados</p>
+              <p className="mt-2"> Por medio de nuestras redes y servicion, buacamos llegar a nuestros clientes de todo el pais, para llevar nuestros productos naturales de alta calidad a todas partes de Colombia</p>
 
             </div>
 
             <div className="col-sm-12 col-md-4 text-center text-dark">
-              <h3 className="mt-5">Contactanos
+              <h3 className="mt-2">Contactanos
 
                   </h3>
              
-              <p className="mt-5 ">
+              <p className="mt-2 ">
               <p>‎<i className="fas fa-envelope-open"></i> ganohealthymedellin@gmail.com </p>
                 <i className="fas fa-map-marker-alt" ></i> Colombia-Medellin
                   </p>
@@ -41,16 +40,16 @@ export default function PiedePagina() {
 
 
              
-                <h3 className="mt-5">Siguenos</h3>
+                <h3 className="mt-2">Siguenos</h3>
                 <div className="container ">
                 <div className="row">
-                <div className="col-4 mt-5 text-primary">
+                <div className="col-4 mt-2 text-primary">
                   <i className="fab fa-facebook-square fa-3x"></i>
                 </div>
-                <div className="col-4 mt-5 text-warning">
+                <div className="col-4 mt-2 text-warning">
                   <i className="fab fa-instagram-square fa-3x"></i>
                 </div>
-                <div className="col-4 mt-5">
+                <div className="col-4 mt-2">
                   <i className="fab fa-twitter-square fa-3x"></i>
                 </div>
 

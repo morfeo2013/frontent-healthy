@@ -194,9 +194,7 @@ export default function Nav() {
     </li>
 
     :
-    <li className="nav-item">
-      <Link className="nav-link" to="/autor">Contactanos</Link>
-    </li>
+    null
   }
 
 
@@ -271,7 +269,7 @@ export default function Nav() {
 
 
 <li className="nav-item">
-      <Link className="nav-link " to="/autor">Contactanos</Link>
+     
     </li>
     
 

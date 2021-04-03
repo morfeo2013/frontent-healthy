@@ -47,7 +47,7 @@ function App() {
 
   <Nav/> 
    
-   
+
   
 
   <Route path='/VistaProductosUsuario' component ={VistaUsuario}/> 

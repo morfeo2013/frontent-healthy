@@ -339,7 +339,8 @@ text" className="form-control" value={ficha} onChange={e => setFicha(e.target.va
  text" className="form-control" value={autor} onChange={e => setAutor(e.target.value.toLowerCase())} placeholder="detalle" required />
                                     </div>
 
-                                    <div className="form-group  mt-3">
+                                    <div className="input-group  mt-3">
+                                    <span class="input-group-text">$</span>
                                         <input type="
  text" className="form-control" value={ficha} onChange={e => setFicha(e.target.value.toLowerCase())} placeholder="Valor" required />
                                     </div>
