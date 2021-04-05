@@ -60,36 +60,42 @@ export default function inicio() {
 
 
                 </div >
-             
 
-                    <div className="col-3 mt-4 " >
-                        <div className='content-all'>
-                            <div className='content-carrusel'>
-                                <figure><img src="https://morfeo12345678.s3-sa-east-1.amazonaws.com/imgLogo.png" /></figure>
 
-                                <figure><img src="https://res.cloudinary.com/dhiasghho/image/upload/v1617489816/img1_lpscvh.png" /></figure>
+                <div className="col-3 mt-4 " >
 
-                                <figure><img src="https://res.cloudinary.com/dhiasghho/image/upload/v1617489816/img2_b553ro.png" /></figure>
+                    <div className='content-all2'>
+                        <div className='content-carrusel2'>
+                            <figure><img src="https://res.cloudinary.com/dhiasghho/image/upload/v1617489817/imgLogo_hsjuzl.png" /></figure>
+                        </div >
+                    </div >
+                    <div className='content-all'>
+                        <div className='content-carrusel'>
+                            
 
-                                <figure><img src="https://res.cloudinary.com/dhiasghho/image/upload/v1617489816/img3_a7djje.png" /></figure>
+                            <figure><img src="https://res.cloudinary.com/dhiasghho/image/upload/v1617489816/img1_lpscvh.png" /></figure>
 
-                                <figure><img src="https://res.cloudinary.com/dhiasghho/image/upload/v1617489816/img4_ffr0gi.png" /></figure>
+                            <figure><img src="https://res.cloudinary.com/dhiasghho/image/upload/v1617489816/img2_b553ro.png" /></figure>
 
-                                <figure><img src="https://res.cloudinary.com/dhiasghho/image/upload/v1617489816/img5_tsw14o.png" /></figure>
+                            <figure><img src="https://res.cloudinary.com/dhiasghho/image/upload/v1617489816/img3_a7djje.png" /></figure>
 
-                                <figure><img src="https://res.cloudinary.com/dhiasghho/image/upload/v1617489816/img6_nvhsyr.png" /></figure>
+                            <figure><img src="https://res.cloudinary.com/dhiasghho/image/upload/v1617489816/img4_ffr0gi.png" /></figure>
 
-                                <figure><img src="https://res.cloudinary.com/dhiasghho/image/upload/v1617489817/img7_egtwkm.png" /></figure>
+                            <figure><img src="https://res.cloudinary.com/dhiasghho/image/upload/v1617489816/img5_tsw14o.png" /></figure>
 
-                                <figure><img src="https://res.cloudinary.com/dhiasghho/image/upload/v1617489817/img8_ximxmh.png" /></figure>
+                            <figure><img src="https://res.cloudinary.com/dhiasghho/image/upload/v1617489816/img6_nvhsyr.png" /></figure>
 
-                            </div>
+                            <figure><img src="https://res.cloudinary.com/dhiasghho/image/upload/v1617489817/img7_egtwkm.png" /></figure>
+
+                            <figure><img src="https://res.cloudinary.com/dhiasghho/image/upload/v1617489817/img8_ximxmh.png" /></figure>
+
                         </div>
-
-
                     </div>
 
-                   
+
+                </div>
+
+
 
             </div>
 

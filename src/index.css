@@ -162,11 +162,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebe9f9', end
 
 .content-all{
 
-    width: 80%;
-    margin: auto;
+    width: 70%;
+   
     perspective: 1000px;
     position: relative;
     margin-top: 250px;
+    margin-left: 90px;
     }
 
     .content-carrusel{
@@ -181,7 +182,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebe9f9', end
     width: 100%;
 
     position: absolute;
-    overflow: hidden;
+   
 }
 
 .content-carrusel img {
@@ -192,7 +193,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebe9f9', end
 }
 
 .content-carrusel figure:nth-child(1) {
-    transform: rotateY(0deg) translateX(0px) translateY(-120px) translateZ(0px);
+    transform: rotateY(0deg) translateZ(220px);
 }
 .content-carrusel figure:nth-child(2) {
     transform: rotateY(50deg) translateZ(220px);
@@ -252,4 +253,46 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebe9f9', end
 }
 
 
-/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ *
+/       ffff/*  */
+.content-all2{
+
+    width: 80%;
+    margin: auto;
+    perspective: 1000px;
+    position: relative;
+    margin-top: 250px;
+    }
+
+    .content-carrusel2{
+        width: 50%;
+        position: absolute;
+        animation: rotar1 10s infinite linear;
+        transform-Style: preserve-3d;
+       
+    }
+
+.content-carrusel2 figure {
+    width: 100%;
+
+    position: absolute;
+    overflow: hidden;
+}
+
+.content-carrusel2 img {
+    width: 100%;
+    transition: all 300ms;
+    border-radius: 100%;
+    top: 43%;
+    left: 44%;
+}
+
+.content-carrusel2 figure:nth-child(1) {
+    transform: rotateY(0deg) translateX(30px) translateY(-137px) translateZ(0px); width: 170%;
+}
+.content-carrusel2 figure:hover .move-up {
+    transform: translate(0,-350px);
+    -webkit-transform: translate(0,-350px);
+    -o-transform: translate(0,-350px); 
+    -moz-transform: translate(0,-350px);
+}
