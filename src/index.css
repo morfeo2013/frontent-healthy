@@ -159,7 +159,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebe9f9', end
   } */
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 /* para las imagenes animadas*/
-@media screen and (min-width: 850px) {
+@media screen and (min-width: 771px) {
 .content-all{
 
     width: 70%;
@@ -299,14 +299,17 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebe9f9', end
 }
 
 }
-@media screen and (max-width: 850px) { /* Hacemos la búsqueda y si coincide modificamos las propiedades de la imagen */
+@media screen and (max-width: 770px) { /* Hacemos la búsqueda y si coincide modificamos las propiedades de la imagen */
     .content-all2{
 
-        width: 80%;
+        width: 170%;
         margin: auto;
         perspective: 1000px;
         position: relative;
         margin-top: 150px;
+        right: 50px;
+     
+     
         }
     
         .content-carrusel2{
@@ -343,12 +346,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebe9f9', end
     }
    
     .content-all{
-
+        top: 120px;
+        left: 40px;
         width: 110%;
         margin: auto;
-        perspective: 0px;
+
         position: relative;
-        margin-top: 50px;
+      
         }
         
         .content-carrusel{
@@ -431,13 +435,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebe9f9', end
                     transform:rotateY(360deg) ;
             
                 }
-                from{
-                    transform:rotateZ(0deg) ;
                 
-                    }to{
-                        transform:rotateZ(360deg) ;
-                
-                    }
                
         }
 }
