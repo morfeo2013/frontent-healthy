@@ -23,6 +23,10 @@ import VistaProductos from './components/VistaProductos';
 const { default: Nav } = require("./components/Nav");
 const { default: PiedePagina } = require("./components/PiedePagina");
 
+
+
+/* PARA PEDIR SI SI EN sessionStorage.getItem ESTA GENERADO CORRECTAMENTE EL TOQUE Y CREA LA CONDICION
+PARA ACCEDER O DEVOVER AL INICIO */
 const validar=()=>{
 if(sessionStorage.getItem('token')){  return true}
 else{return false}
@@ -30,6 +34,7 @@ else{return false}
 
 }
 
+/* ESTO PARA DARLE MAS SEGURIDAD ALA ENTRADA DEL USUARIO Y NO PERMITIR EL ACCESO A LOS COMPONENTES */
 const MyRoute=(props)=>{
   return validar()?<Route {...props}/>
   :
@@ -48,18 +53,18 @@ function App() {
   <Nav/> 
    
 
-  
+    {/* AL INGRESAR  A DETERMINADA DIRECCION SE ACTIVA UN ARCHIVO JSX QUE REDERIZARA LA PAGINA CON EL CONTENIDO DESIGNADO */}
 
-  <Route path='/VistaProductosUsuario' component ={VistaUsuario}/> 
+ 
 
 
 <Route path='/inicio' component ={inicio}/> 
 
-
+ <Route path='/VistaProductosUsuario' component ={VistaUsuario}/> 
  <Route path='/usuario' component ={Login}/>
  
   
-  {/* AL INGRESAR  A DETERMINADA DIRECCION SE ACTIVA UN ARCHIVO JS QUE REDERIZARA LA PAGINA CON EL CONTENIDO DESIGNADO */}
+
   <Route path='/autor' component ={Autor}/>
   {/* PARA CREAR O EDITAR USUARIOS */}
   {/* <Route path='/ingresar' component ={IngresarLibro}/> */}
