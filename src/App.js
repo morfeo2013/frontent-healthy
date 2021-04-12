@@ -20,6 +20,11 @@ import inicio from './components/inicio';
 import VistaUsuario from './components/VistaUsuario';
 import VistaProductos from './components/VistaProductos';
 /* const { default: Autor } = require("./components/Autor");  otra opcion*/
+
+
+import RecuperarContrasena from './components/RecuperarContrasena'
+
+
 const { default: Nav } = require("./components/Nav");
 const { default: PiedePagina } = require("./components/PiedePagina");
 
@@ -62,7 +67,7 @@ function App() {
 
  <Route path='/VistaProductosUsuario' component ={VistaUsuario}/> 
  <Route path='/usuario' component ={Login}/>
- 
+ <Route path='/Recuperar_Contrasena' component ={RecuperarContrasena}/>
   
 
   <Route path='/autor' component ={Autor}/>

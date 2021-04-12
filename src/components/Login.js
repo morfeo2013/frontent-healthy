@@ -2,7 +2,8 @@
 import Axios from 'axios'
 import React, { useState } from 'react'
 import Swal from 'sweetalert2'
-
+import { Link } from 'react-router-dom'  /* IMPORTAR PARA PODER ACCEDER AL PA PROPIEDAD LINK Y ACCEDER
+A LA PAGINA DONDE ESTA CREADO LA OPCION DE  CREAR USUARIOS EN EL RETUR DE CREACION DE PAGINAS */
 
 
 export default function Login() {
@@ -96,10 +97,14 @@ export default function Login() {
                         </form>
 
                     </div>
-
+                    
+                   
 
                 </div>
-
+                <div className="text-primary text-center">
+                <Link to="/Recuperar_Contrasena/"> <h5>Olvide mi contraseña?</h5></Link>
+                   
+                    </div>
 
             </div>
 
