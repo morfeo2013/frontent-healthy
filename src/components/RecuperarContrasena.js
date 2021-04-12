@@ -16,7 +16,7 @@ export default function RecuperarContrasena() {
         const RecuperarContrasena = {
             correo
         }
-        const respuesta = await Axios.post('http://localhost:4000/Recuperar', RecuperarContrasena)/* 
+        const respuesta = await Axios.post('https://ganohealthy.herokuapp.com/Recuperar', RecuperarContrasena)/* 
         enviara los datos json de la onstante usuario al backend */
 
         const mensaje = respuesta.data.mensage /* extraemos el mensaje desde el backen creado para mostrarlo en el sweetalert2 */
