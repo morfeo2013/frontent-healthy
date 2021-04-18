@@ -175,7 +175,7 @@ export default function ListarUsuarios() {
     }
 
     const eliminarSub = async (id) => {
-        const respuesta = await Axios.delete('https://ganohealthy.herokuapp.com/eliminarUsuario/' + id) /* cuando reciba l informacion entra tambien el id de el elemento a eliminar */
+        const respuesta = await Axios.delete('http://localhost:4000/eliminarUsuario/' + id) /* cuando reciba l informacion entra tambien el id de el elemento a eliminar */
 
         obtenerUsuarios()  /* se llama para vuela inmediatamente a la lista inicial */
         const mensaje = respuesta.data.mensaje
