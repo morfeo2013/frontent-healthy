@@ -456,7 +456,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
     }
     
     }
-@media screen and (max-width:990px) { /* Hacemos la búsqueda y si coincide modificamos las propiedades de la imagen */
+@media screen and (max-width:991px) { /* Hacemos la búsqueda y si coincide modificamos las propiedades de la imagen */
     .content-all2{
         top: 50px;
         left: -10px;
