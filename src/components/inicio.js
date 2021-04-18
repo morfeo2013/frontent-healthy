@@ -32,10 +32,10 @@ export default function inicio() {
 
             <div className="row">
 
-                <div className="col-5 " id="marco1" >
-                    <h3> "Salud y Bienestar al alcance de tus manos"</h3>
-                    <h4 className="mt-5">Enlaces</h4>
-                    <ul className="mt-5"
+                <div className="col-6 " id="marco1" >
+                    <h3 className="mt-5"> "Salud y Bienestar al alcance de tus manos"</h3>
+                    <h4 className="mt-2">Enlaces</h4>
+                    <ul className="mt-2"
                     >
                         <li>
                             Que es nuestra marca personal

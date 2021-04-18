@@ -3,7 +3,7 @@
 
     border: silver 75px solid;
   border-image-source: url("https://res.cloudinary.com/dhiasghho/image/upload/v1618703539/ganohealthy/marco_principal_1_jecnwd.jpg");
-  border-image-slice: 75;
+  border-image-slice: 75 fill /* fill vuelve el marcotrasparente */;
   border-image-width: auto;
   text-align: justify;
 }
