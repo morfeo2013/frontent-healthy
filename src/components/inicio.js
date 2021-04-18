@@ -32,7 +32,7 @@ export default function inicio() {
 
             <div className="row">
 
-                <div className="col-6 " id="marco1" >
+                <div className="col-12 col-sm-6  col-md-6 col-lg-6 col-xl-6" id="marco1" >
                     <h3 className="mt-5"> "Salud y Bienestar al alcance de tus manos"</h3>
                     <h4 className="mt-2">Enlaces</h4>
                     <ul className="mt-2"
@@ -62,18 +62,18 @@ export default function inicio() {
                 </div>
 
 
-                <div className="col-2 col-sm-3  col-md-2 col-lg-2 col-xl-2 mt-5">
+                <div className=" col-sm-3  col-md-2 col-lg-2 col-xl-2 mt-5">
                 </div >
 
 
-                <div className="col-3 col-sm-3 col-md-2  col-lg-3 col-xl-4 mt-4 " >
+                <div className="col-4 col-sm-3 col-md-2  col-lg-3 col-xl-4 mt-4 " >
 
                     <div className='content-all2'>
                         <div className='content-carrusel2'>
                             <figure><img src="https://res.cloudinary.com/dhiasghho/image/upload/v1617489817/imgLogo_hsjuzl.png" /></figure>
                         </div >
                     </div >
-                    <div className='content-all'>
+                    <div className='content-all col-4 '>
                         <div className='content-carrusel'>
                             
 
