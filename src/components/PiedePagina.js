@@ -26,9 +26,9 @@ export default function PiedePagina() {
               <p>‎<i className="fas fa-envelope-open"></i> ganohealthymedellin@gmail.com </p>
                 <i className="fas fa-map-marker-alt" ></i> Colombia-Medellin
                   </p>
-              <p><i className="fas fa-phone" ></i> 310 503 87 58</p>
+              <p><i className="fas fa-phone" ></i> 315 610 16 84</p>
 
-              <p> <a className="text-success" href="https://api.whatsapp.com/send?phone=+573105038758"> {/* PARA REDIDRECCIONAR A WHATSAP */}
+              <p> <a className="text-success" href="https://api.whatsapp.com/send?phone=+573156101684"> {/* PARA REDIDRECCIONAR A WHATSAP */}
                 <i className="fab fa-whatsapp-square fa-3x" > </i></a></p>
 
 
