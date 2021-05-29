@@ -9,11 +9,9 @@
 }
 
 
-.navbarGeneral {
+#navbarGeneral {
 
-    font-size: 21px;
-    /* TAMAÑO LETRA */
-    font-family: estiloTitulo;
+ 
 
 
     background: rgba(196,255,133,1);
@@ -38,16 +36,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c4ff85', end
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ebe9f9', endColorstr='#c1bfea', GradientType=0);
 }
 
-@font-face {
-
-    font-family: estiloTitulo;
-    src: url(Million\ Dreams.otf);
-
-}
 
 .imagenLogo {
     margin: auto;
-    text-align: center;
+   
 }
 
 

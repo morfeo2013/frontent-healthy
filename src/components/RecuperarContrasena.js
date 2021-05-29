@@ -26,17 +26,17 @@ export default function RecuperarContrasena() {
         .mensage; /* extraemos el mensaje desde el backen creado para mostrarlo en el sweetalert2 */
 
     if (
-      mensaje === "Tu Contraseña a sido enviada a tu Correo desde el backend"
+      mensaje === "Correo incorecto o No existe"
     ) {
       Swal.fire({
-        icon: "success",
+        icon: "error",
         title: mensaje,
         showConfirmButton: false,
         timer: 1500,
       });
     } else {
       Swal.fire({
-        icon: "error",
+        icon: "success",
         title: mensaje,
         showConfirmButton: false,
         timer: 1500,
