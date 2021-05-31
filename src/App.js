@@ -1,4 +1,4 @@
-
+import React from 'react'
 /* ESTE ARCHIVO ES EL ENCARGADO DE ACTIVAR LOS DIFERENTES ARCHIVOS.JS SEGUN EL LINK INGRESADO */
 
 
@@ -23,6 +23,10 @@ import VistaProductos from './components/VistaProductos';
 
 
 import RecuperarContrasena from './components/RecuperarContrasena'
+import PublicRoutes from './routers/public.routes';
+
+/* importal los publicos */
+
 
 
 const { default: Nav } = require("./components/Nav");
@@ -32,31 +36,42 @@ const { default: PiedePagina } = require("./components/PiedePagina");
 
 /* PARA PEDIR SI SI EN sessionStorage.getItem ESTA GENERADO CORRECTAMENTE EL TOQUE Y CREA LA CONDICION
 PARA ACCEDER O DEVOVER AL INICIO */
-const validar=()=>{
-if(sessionStorage.getItem('token')){  return true}
+/* const validar=()=>{
+  if(sessionStorage.getItem('token')){  return true}
+  
+
+
+
 else{return false}
 
 
-}
+} */
 
 /* ESTO PARA DARLE MAS SEGURIDAD ALA ENTRADA DEL USUARIO Y NO PERMITIR EL ACCESO A LOS COMPONENTES */
-const MyRoute=(props)=>{
+/* const MyRoute=(props)=>{
+ 
   return validar()?<Route {...props}/>
+
   :
+  
   <Redirect to='/inicio'/>
-}
+  
+} */
 
 
 
-function App() {
+
+/* las props son para recivir todo lo que venga desde las rutas */
+function App(props) {
   return (
+
     <div className="fluid">
 
    
     <Router>
-
+    
   <Nav/> 
-   
+  <PublicRoutes/> 
 
     {/* AL INGRESAR  A DETERMINADA DIRECCION SE ACTIVA UN ARCHIVO JSX QUE REDERIZARA LA PAGINA CON EL CONTENIDO DESIGNADO */}
 
@@ -77,7 +92,7 @@ function App() {
  {/*  <Route path='/editar/:id' component ={IngresarLibro}/> */}
   <Route path='/listar' component ={ListarLibro} />
   <Route path='/favoritos/:id' component ={Favoritos}/>
-  <MyRoute path='/listarUsuarios' component ={ListarUsuarios} />
+  <Route path='/listarUsuarios' component ={ListarUsuarios} />
   <Route path='/comprar/:id' component ={IngresarLibro}/>
   <Route path='/administrador' component ={Administrador}/>
 
@@ -162,9 +177,13 @@ function App() {
 
 }
      <PiedePagina/>
+    {/*  <Redirect to='/inicio'/> */}
     </Router>
-  
+    
     </div>
+
+  
+  
   );
 }
 

@@ -14,14 +14,15 @@
  
 
 
-    background: rgba(196,255,133,1);
-background: -moz-linear-gradient(top, rgba(196,255,133,1) 0%, rgba(255,255,255,1) 100%);
-background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(196,255,133,1)), color-stop(100%, rgba(255,255,255,1)));
-background: -webkit-linear-gradient(top, rgba(196,255,133,1) 0%, rgba(255,255,255,1) 100%);
-background: -o-linear-gradient(top, rgba(196,255,133,1) 0%, rgba(255,255,255,1) 100%);
-background: -ms-linear-gradient(top, rgba(196,255,133,1) 0%, rgba(255,255,255,1) 100%);
-background: linear-gradient(to bottom, rgba(196,255,133,1) 0%, rgba(255,255,255,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c4ff85', endColorstr='#ffffff', GradientType=0 );
+    background: rgba(255,255,255,1);
+background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 0%, rgba(196,255,133,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(0%, rgba(255,255,255,1)), color-stop(100%, rgba(196,255,133,1)));
+background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 0%, rgba(196,255,133,1) 100%);
+background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 0%, rgba(196,255,133,1) 100%);
+background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 0%, rgba(196,255,133,1) 100%);
+background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 0%, rgba(196,255,133,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#c4ff85', GradientType=0 );
+
 }
 
 #llamado-accion {
@@ -39,7 +40,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c4ff85', end
 
 .imagenLogo {
     margin: auto;
-   
+    text-align: center;
 }
 
 
