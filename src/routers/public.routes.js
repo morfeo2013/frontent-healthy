@@ -1,7 +1,7 @@
 /* creamos las rutas publicas*/
 import React from 'react';
 import { Redirect, Switch } from 'react-router';
-import inicio from '../views/inicio';
+
 
 import cambiarpassword from '../views/cambiarpassword';
 import { PublicRoute } from './helperRoutes';

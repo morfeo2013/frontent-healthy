@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function iniciooriginal() {
+export default function inicio() {
   return (
     <div>
       <section id="inicio" className="text-center">

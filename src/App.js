@@ -3,7 +3,7 @@ import React from 'react'
 
 
 /* IMPORTAR LOS ELEMENTOS NECESARIOS  Y LAS RUTAS */
-import { BrowserRouter as Router, Redirect, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 /* IMPORTA LOS CUATRO ELEMENTOS CREADOS EN JS */
 import IngresarLibro from './components/IngresarLibro';

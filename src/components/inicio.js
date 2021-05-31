@@ -22,6 +22,7 @@ export default function inicio() {
             <li>Políticas de privacidad</li>
           </ul>
         </div>
+        
 
         <div className=" col-sm-3  col-md-2 col-lg-2 col-xl-2 mt-5"></div>
 
