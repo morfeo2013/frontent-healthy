@@ -40,7 +40,7 @@ export default function IngresarLibro(props) {
       console.log(props.match.path);
       console.log(editar);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
@@ -145,9 +145,8 @@ export default function IngresarLibro(props) {
   /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
   /* ACTIVAR BOTON  O DESACTIVAR */
   /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-  const [botonActivo, setbotonActivo] = useState(
-    false
-  ); /* para activar botones o desactivar */
+  const [botonActivo, setbotonActivo] =
+    useState(false); /* para activar botones o desactivar */
   /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
   const [activarcheckbox, setActivarcheckbox] = useState([]);
   /* esta ala escucha de que oprima el check box para recivir la infomacion del value */
@@ -179,9 +178,8 @@ export default function IngresarLibro(props) {
 
   return (
     /* el entorno para el ingreso o modificacion de nuevos usuarios o datos pos-put */
-     
+
     <div className="container m-auto">
-      
       <di className="row">
         {editar === "" ? null : (
           <div className="container col-3 imagen6 text-center">
@@ -193,9 +191,8 @@ export default function IngresarLibro(props) {
               alt=""
             ></img>
           </div>
-          
         )}
-         
+
         <div className="col-9 pt-4-mx-auto">
           <div className="card card-body text-center">
             {/* PARA MODIFICAR EL TITULO SEGUN LA OPCION */}
@@ -308,8 +305,7 @@ text"
                   </div>
                   <div className="form-group  mt-3">
                     <input
-                      type="
- text"
+                      type="text"
                       className="form-control"
                       value={genero}
                       onChange={(e) => setGenero(e.target.value.toLowerCase())}
@@ -319,8 +315,7 @@ text"
                   </div>
                   <div className="form-group  mt-3">
                     <input
-                      type="
- text"
+                      type="text"
                       className="form-control"
                       value={autor}
                       onChange={(e) => setAutor(e.target.value.toLowerCase())}

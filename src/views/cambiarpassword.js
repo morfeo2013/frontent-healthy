@@ -29,17 +29,18 @@ export default function cambiarpassword(props) {
 
   const envioNuevoPasswors = async () => {
     const respuesta = await Axios.get(
-      /*  "https://ganohealthy.herokuapp.com/cambio_password/",
-      tokenTiempo,infoPassword */
+     
 
-      'http://localhost:4000/cambio_password/' + idUsuario + '/' + newPassword , { headers: { autorizacion: "bearer " + tokenTiempo } }
+      'https://ganohealthy.herokuapp.com/cambio_password/' + idUsuario + '/' + newPassword , { headers: { autorizacion: "bearer " + tokenTiempo } }
+
+     /*  'http://localhost:4000/cambio_password/' + idUsuario + '/' + newPassword , { headers: { autorizacion: "bearer " + tokenTiempo } } */
      
     );
 
     const mensaje =
       respuesta.data
         .mensage;
-        
+
     console.log(respuesta.data
         .mensage);
   };

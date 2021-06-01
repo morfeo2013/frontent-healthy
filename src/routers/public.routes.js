@@ -8,19 +8,19 @@ import { PublicRoute } from './helperRoutes';
 
 const PublicRoutes =()=>{
     return(
-         
+    
         // eslint-disable-next-line react/jsx-no-undef
         <Switch>
              <PublicRoute exact path = "/cambiopassword/:id1/:id2" component={cambiarpassword} /> {/* inyecta la pagina creada  */}
             {/*  <PublicRoute exact path = "/inicio" component={inicio} /> */}
-             
-             <Redirect to='/inicio'/>
-       
-        </Switch>
-       
-       
+            
+            <Redirect to='/inicio'/>
     
-   
+        </Switch>
+    
+    
+    
+
     )
     
 

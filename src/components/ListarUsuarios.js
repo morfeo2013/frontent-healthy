@@ -58,7 +58,8 @@ export default function ListarUsuarios() {
             const token = sessionStorage.getItem('token')
 
 
-            const respuesta = await Axios.get('https://ganohealthy.herokuapp.com/listarUsuarios/', { headers: { 'autorizacion': 'bearer ' + token } }) /* usando axios se descarga con una peticion get la lista de  usuarios del backend */
+            const respuesta = await Axios.get('https://ganohealthy.herokuapp.com/listarUsuarios/'
+            , { headers: { 'autorizacion': 'bearer ' + token } }) /* usando axios se descarga con una peticion get la lista de  usuarios del backend */
             /* SE PASA LA INFORMACION AL ESTADO SETDATOS Y DATOS */
             setDatos(respuesta.data)  /* se envia la informacion al estado setdatos para ser almacenado en datos finalmente E NLA HUBICACION .DATA DEL OBJETO JSON RECIBIDO DE LBACKEND*/
             console.log(respuesta.data)
