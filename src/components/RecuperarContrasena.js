@@ -15,9 +15,9 @@ export default function RecuperarContrasena() {
       correo,
     };
     const respuesta = await Axios.post(
-      /* "https://ganohealthy.herokuapp.com/Recuperar",RecuperarContrasena */
-      "http://localhost:4000/Recuperar",
-      RecuperarContrasena
+      "https://ganohealthy.herokuapp.com/Recuperar",RecuperarContrasena
+      /* "http://localhost:4000/Recuperar",
+      RecuperarContrasena */
     ); /* 
         enviara los datos json de la onstante usuario al backend */
 
