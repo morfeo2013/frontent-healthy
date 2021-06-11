@@ -48,191 +48,80 @@ export default function Nav() {
   };
 
   return (
-    <div className="navbarGeneral  sticky-top ">
-      {" "}
-      {/* PARA QUEQUEDE SIEMPRE VSIBLE EL PIE DE PAGINA'sticky-top' */}
-      {/*  /* NAVRGADOR USANDO BOOSTRAP 5.0 */
-      /* ULILIZACION DE UN NAV RESPONSIVE */}
-      <nav
-        className="navbar navbar-expand-lg  navbar-light  fondo-nav  "
-        id="Menu-navegacion"
-      >
-        <div className="imagenLogo">
-          <img
-            src="https://morfeo12345678.s3-sa-east-1.amazonaws.com/fotos+ganoderma/LOGOS+PARA+ANGELA+GANO+HEALTHY-03.jpg"
+
+    
+    <div className="sticky-top ">
+        
+         <div className="imagenLogo position-relative">
+            <img
+            src="https://res.cloudinary.com/dhiasghho/image/upload/c_scale,h_163/v1623350102/logos%20base/logo2_dja3q6.png"
             alt=""
             className="img-fluid"
-            id="logo"
-          />
-        </div>
-
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNavDropdown"
-          aria-controls="navbarNavDropdown"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+            
+            />
+          </div>
+      <div className="navprincipal navbarGeneral rounded ml-auto">
+        {" "}
+        {/* "VOLVER FIJO LA PARTE SUPERIOR" sticky-top  */}{" "}
+        {/* PARA QUEQUEDE SIEMPRE VSIBLE EL PIE DE PAGINA'sticky-top' */}
+        {/*  /* NAVRGADOR USANDO BOOSTRAP 5.0 */
+        /* ULILIZACION DE UN NAV RESPONSIVE */}
+        <nav
+          className="navbar navbar-expand-lg  navbar-light  fondo-nav  "
+          id="Menu-navegacion"
         >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="container">
-          <div className="collapse navbar-collapse " id="navbarNavDropdown">
-            <ul className="navbar-nav ">
-              <li className="nav-item">
-                <Link
-                  id="listar1"
-                  className="nav-link nav-success"
-                  to="/inicio"
-                >
-                  <i className="fas fa-mug-hot"></i>
-                  Inicio
-                </Link>
-                {/*  <Link className="nav-link nav-success" to="/visual"><i className="fas fa-mug-hot"></i>
+         
+
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="container">
+            <div className="collapse navbar-collapse " id="navbarNavDropdown">
+              <ul className="navbar-nav ">
+                <li className="nav-item ">
+                  <Link
+                    id="listar1"
+                    className="nav-link nav-success text-light text-justify ml-auto"
+                    to="/inicio"
+                  >
+                   <h4>INICIO</h4>
+                    
+                  </Link>
+                  {/*  <Link className="nav-link nav-success" to="/visual"><i className="fas fa-mug-hot"></i>
       Inicio</Link> */}
-              </li>
-              {!menu ? (
-                <ul className="navbar-nav">
-                  <li className="nav-item">
-                    <Link
-                      id="listar1"
-                      className="nav-link nav-success text-justify ml-2"
-                      to="/VistaProductos"
-                    >
-                      <i className="fas fa-journal-whills m-1"></i>
-                      Nuestros Productos
-                    </Link>
-                    {/*  <Link className="nav-link nav-success" to="/visual"><i className="fas fa-mug-hot"></i>
-      Inicio</Link> */}
-                  </li>
-                </ul>
-              ) : (
-                <div class="col-9"></div>
-              )}
-            </ul>
-            {menu ? (
-              <div className="container  d-flex ">
-                <ul className="navbar-nav">
-                  {admin ? null : (
-                    <li className="nav-item text-success">
-                      <Link
-                        id="listar1"
-                        className="nav-link"
-                        to="/VistaProductosUsuario"
-                      >
-                        Listado de Productos
-                      </Link>
-                      {/*  <div className="text-center">
-      <span className="badge badge-danger ">
-    {fav2}
-        
-        </span> 
-    </div> */}
-                    </li>
-                  )}
-                  {admin ? null : (
-                    /*  /listarusuarios */
-                    // eslint-disable-next-line no-undef
+                </li>
+                {!menu ? (
+                  <ul className="navbar-nav  text-justify">
                     <li className="nav-item">
                       <Link
-                        className="nav-link position-relative"
-                        to={"/favoritos/" + id}
+                        id="listar1"
+                        className="nav-link nav-success text-light ml-2"
+                        to="/VistaProductos"
                       >
-                        lista Mis favoritos
-                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                          {fredy}
-                          <span class="visually-hidden"></span>
-                        </span>
+                        <h4> PRODUCTOS</h4>
+                       
                       </Link>
+                      {/*  <Link className="nav-link nav-success" to="/visual"><i className="fas fa-mug-hot"></i>
+      Inicio</Link> */}
                     </li>
-                  )}
-                  {admin ? (
-                    <li className="nav-item ">
-                      <Link className="nav-link" to="/ingresar">
-                        {/* Ingrasar nuevo producto */}
-                      </Link>{" "}
-                      {/* colcar el ink "/ingresar" igual a el del acceso en aap.js */}
-                    </li>
-                  ) : null}
-                  {id === id2 ? (
-                    <div class="col-12">
-                      <ul className="navbar-nav ">
-                        <li className="nav-item ml-auto">
-                          <Link className="nav-link " to="/visualAdmin/">
-                            Administrador: Bienvenida{" "}
-                            {sessionStorage.getItem("nombre")}{" "}
-                          </Link>
-                          {/* obtiiene el nombre y lo muestra */}
-                        </li>
-                      </ul>
-                    </div>
-                  ) : (
-                    <div className="ml-auto">
-                      <li className="nav-item">
-                        <Link id="listar2" className="nav-link " to="/perfil">
-                          Usuario: Bienvenido {sessionStorage.getItem("nombre")}{" "}
-                        </Link>
-                        {/* obtiiene el nombre y lo muestra */}
-                      </li>
-                    </div>
-                  )}
-                </ul>
-                <div class="col-md-2"></div>
-                <div className=" d-flex justify-content-between">
-                  <ul className="navbar-nav "></ul>
-                </div>
-              </div>
-            ) : (
-              <div className="container d-flex ">
-                <div class="col-md-5"></div>
-                <ul className="navbar-nav navbar-right ">
-                  <li className="nav-item"></li>
-                  <li className="nav-item">
-                    <Link id="ingresar" className="nav-link " to="/usuario">
-                      Inicio Sesion
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link id="crear" className="nav-link" to="/registrar">
-                      Registrarse
-                    </Link>{" "}
-                    {/* colcar el ink "/ingresar" igual a el del acceso en aap.js */}
-                  </li>
-                </ul>
-              </div>
-            )}
-            {admin && menu ? (
-              <ul className="navbar-nav ">
-                <li className="nav-item ">
-                  <Link
-                    id="listar3"
-                    className="nav-link"
-                    to="/inicio"
-                    onClick={() => salir()}
-                  >
-                    Salir
-                  </Link>
-                </li>
+                  </ul>
+                ) : (
+                  <div class=""></div>
+                )}
               </ul>
-            ) : null}
-            {!admin && menu ? (
-              <ul className="navbar-nav ">
-                <li className="nav-item ">
-                  <Link
-                    id="listar3"
-                    className="nav-link"
-                    to="/inicio"
-                    onClick={() => salir()}
-                  >
-                    Salir
-                  </Link>
-                </li>
-              </ul>
-            ) : null}
+              
+            </div>
           </div>
-        </div>
-      </nav>
+        </nav>
+      </div>
     </div>
   );
 }

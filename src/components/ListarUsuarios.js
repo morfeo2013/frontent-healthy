@@ -198,10 +198,20 @@ export default function ListarUsuarios() {
 
 
     return (
+
+
+
+
+        <div>
+        <div className="mt-5">
+
+
+        </div>
+
         <div className="container border border-secondary">
             {/* CREO LA BARRA DE BUSQUEDA */}
 
-
+             
 
             <nav className="navbar "  >
 
@@ -362,6 +372,9 @@ export default function ListarUsuarios() {
 
             </table>
         </div>
+
+        </div>
+       
 
     )
 }

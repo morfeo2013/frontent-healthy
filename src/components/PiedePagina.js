@@ -1,86 +1,72 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react'
-
+import React from "react";
 
 export default function PiedePagina() {
-    return (
-        <div>
-            
-            <section id="footer">
-        <div  className="container mt-5">
-
+  return (
+    <div>
+      <section id="footer">
+        <div className="container mt-5">
           <div className="row">
             <div className="col-sm-12 col-md-4 text-center text-dark">
-              <h3 className="mt-2">Nosotros
-
-                  </h3>
-              <p className="mt-2"> Por medio de nuestras redes y servicion, buacamos llegar a nuestros clientes de todo el pais, para llevar nuestros productos naturales de alta calidad a todas partes de Colombia</p>
-
+              <h3 className="mt-2">ENLASES</h3>
+              <p className="mt-2">
+                {" "}
+                Por medio de nuestras redes y servicion, buacamos llegar a
+                nuestros clientes de todo el pais, para llevar nuestros
+                productos naturales de alta calidad a todas partes de Colombia
+              </p>
             </div>
 
             <div className="col-sm-12 col-md-4 text-center text-dark">
-              <h3 className="mt-2">Contactanos
+              <h3 className="mt-2">SUSCRIBETE</h3>
 
-                  </h3>
-              
               <p className="mt-2 ">
-              <p>‎<i className="fas fa-envelope-open"></i> ganohealthymedellin@gmail.com </p>
-                <i className="fas fa-map-marker-alt" ></i> Colombia-Medellin
-                  </p>
-              <p><i className="fas fa-phone" ></i> 315 610 16 84</p>
-              <a className="text-success" href="https://api.whatsapp.com/send?phone=+573156101684"> {/* PARA REDIDRECCIONAR A WHATSAP */}
-                <i className="fab fa-whatsapp-square fa-3x" > </i></a>
+                <p>
+                  ‎<i className="fas fa-envelope-open"></i>{" "}
+                  ganohealthymedellin@gmail.com{" "}
+                </p>
+                <i className="fas fa-map-marker-alt"></i> Colombia-Medellin
+              </p>
+              <p>
+                <i className="fas fa-phone"></i> 315 610 16 84
+              </p>
+              <a
+                className="text-success"
+                href="https://api.whatsapp.com/send?phone=+573156101684"
+              >
+                {" "}
+                {/* PARA REDIDRECCIONAR A WHATSAP */}
+                <i className="fab fa-whatsapp-square fa-3x"> </i>
+              </a>
 
               <p> </p>
-
-
-
             </div>
-
 
             <div className="col-sm-12 col-md-4 text-center text-dark">
-
-
-            
-                <h3 className="mt-2">Siguenos</h3>
-                <div className="container ">
+              <h3 className="mt-2">NUESTRAS REDES</h3>
+              <div className="container ">
                 <div className="row">
-                  <div className ="col-2">
-
+                  <div className="col-2"></div>
+                  <div className="col-4 mt-2 text-primary">
+                    <i className="fab fa-facebook-square fa-3x"></i>
                   </div>
-                <div className="col-4 mt-2 text-primary">
-                  <i className="fab fa-facebook-square fa-3x"></i>
+                  <div className="col-4 mt-1 text-warning">
+                    <p>
+                      <a
+                        className="text-warning"
+                        href="https://www.instagram.com/ganohealthy_medellin/?utm_source=qr"
+                      >
+                        <i className="fab fa-instagram-square fa-3x"></i>
+                      </a>
+                    </p>
+                  </div>
                 </div>
-                <div className="col-4 mt-1 text-warning">
-                  <p>
-                    <a className="text-warning" href="https://www.instagram.com/ganohealthy_medellin/?utm_source=qr">
-
-                    <i className="fab fa-instagram-square fa-3x"></i></a>
-                  </p>
-                  
-                </div>
-            
-
-
               </div>
-                </div>
-                
-
-
-
-
-
             </div>
           </div>
-
-
-
-
         </div>
       </section>
-
-
-
-        </div>
-    )
+      <div><h4 className="text-center">Todos los Derechos Reservados 2021 © GANO HEALTHY MEDELLÍN</h4></div>
+    </div>
+  );
 }

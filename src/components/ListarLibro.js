@@ -196,10 +196,11 @@ export default function ListarLibro() {
   /* CRACION DE LA TABLA BASICA PARA IMPORTAR LOS LISTADOS DESDE EL BACKEND */
 
   return (
-    <div className="container border border-secondary">
+    <div className=" container border border-secondary">
+      <div className="mt-5"></div>
       {/* AGREGAR PARA ADMINISTRADOR OPCION AGREGAR NUEVO PRODUCTO*/}
       {admin ? (
-        <div className="row">
+        <div className="row ">
           <div className="card-body ">
             <div className="col-sm-12 text-center">
               <Link className="btn btn-info mr-2" to={"/ingresar/"}>

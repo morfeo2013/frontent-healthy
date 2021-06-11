@@ -1,40 +1,58 @@
+#inicio{
+background: url("https://res.cloudinary.com/dhiasghho/image/upload/v1623369446/logos%20base/FotoJet_b1nvah.png")
+no-repeat fixed center rgb(228, 223, 223);
+background-size:cover;
 
+}
 #marco1{
 
-    border: silver 75px solid;
+    border: silver 10px solid;
   border-image-source: url("https://res.cloudinary.com/dhiasghho/image/upload/v1618703539/ganohealthy/marco_principal_1_jecnwd.jpg");
-  border-image-slice: 75 fill /* fill vuelve el marcotrasparente */;
+  border-image-slice: 30 fill ;/* fill vuelve el marcotrasparente */;
   border-image-width: auto;
   text-align: justify;
 }
 
 
-#navbarGeneral {
 
- 
+.navprincipal{ 
+    position:relative;
+   
+    top:50px;
+    
+   
+   }
 
 
-    background: rgba(255,255,255,1);
-background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 0%, rgba(196,255,133,1) 100%);
-background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(0%, rgba(255,255,255,1)), color-stop(100%, rgba(196,255,133,1)));
-background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 0%, rgba(196,255,133,1) 100%);
-background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 0%, rgba(196,255,133,1) 100%);
-background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 0%, rgba(196,255,133,1) 100%);
-background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 0%, rgba(196,255,133,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#c4ff85', GradientType=0 );
-
+   /* para reducir la barrar navar */
+   .navbar-nav > li > a, .navbar-brand {
+    padding-top:10px !important; padding-bottom:0 !important;
+    height: 50px; /* aqui escoges el alto que necesites */
 }
+.navbar {
+    min-height:30px !important; /* aqui escoges el alto que necesites */
+}
+
+
+
+.imagenLogo{ position:relative;
+    z-index:1;
+    top: 7px;
+    left:-590px;
+    
+    height:12px;
+   }
+
+.navbarGeneral {
+
+    background: rgb(166, 185, 103);
+    opacity: 0.9;
+} 
 
 #llamado-accion {
 
-    background: rgba(235, 233, 249, 1);
-    background: -moz-linear-gradient(top, rgba(235, 233, 249, 1) 0%, rgba(216, 208, 239, 1) 42%, rgba(206, 199, 236, 1) 56%, rgba(196, 193, 235, 1) 89%, rgba(193, 191, 234, 1) 100%);
-    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(235, 233, 249, 1)), color-stop(42%, rgba(216, 208, 239, 1)), color-stop(56%, rgba(206, 199, 236, 1)), color-stop(89%, rgba(196, 193, 235, 1)), color-stop(100%, rgba(193, 191, 234, 1)));
-    background: -webkit-linear-gradient(top, rgba(235, 233, 249, 1) 0%, rgba(216, 208, 239, 1) 42%, rgba(206, 199, 236, 1) 56%, rgba(196, 193, 235, 1) 89%, rgba(193, 191, 234, 1) 100%);
-    background: -o-linear-gradient(top, rgba(235, 233, 249, 1) 0%, rgba(216, 208, 239, 1) 42%, rgba(206, 199, 236, 1) 56%, rgba(196, 193, 235, 1) 89%, rgba(193, 191, 234, 1) 100%);
-    background: -ms-linear-gradient(top, rgba(235, 233, 249, 1) 0%, rgba(216, 208, 239, 1) 42%, rgba(206, 199, 236, 1) 56%, rgba(196, 193, 235, 1) 89%, rgba(193, 191, 234, 1) 100%);
-    background: linear-gradient(to bottom, rgba(235, 233, 249, 1) 0%, rgba(216, 208, 239, 1) 42%, rgba(206, 199, 236, 1) 56%, rgba(196, 193, 235, 1) 89%, rgba(193, 191, 234, 1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ebe9f9', endColorstr='#c1bfea', GradientType=0);
+    background: rgba(244, 248, 225);
+
 }
 
 
@@ -76,8 +94,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 }
 
 .imagen5 img {
-    height: 70px;
-    width: 70px;
+    height: 80px;
+    width: 80px;
 
 
 
@@ -122,26 +140,26 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebe9f9', end
 
 .imagenLogo img {
     
-    flex-wrap: wrap;
-    justify-content: justify;
-    height: 120px;
-    width: 200px;
-    border-radius: 100%;
-    border: 1px solid beige;
+  /*   flex-wrap: wrap;
+    justify-content: justify; */
+   /*  height: 120px;
+    width: 200px; */
+   /*  border-radius: 100%; */
+  /*   border: 1px solid beige; */
 
 }
-
+/* 
 #inicio {
     background: url("https://morfeo12345678.s3-sa-east-1.amazonaws.com/fotos+ganoderma/bg-breadcrumbl+largo.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 
-}
+} */
 
 .jumbotron {
 
 
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.35);
     color: rgba(241, 254, 231, 1);
 }
 

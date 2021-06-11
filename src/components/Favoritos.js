@@ -64,7 +64,7 @@ export default function Favoritos() {
   };
 
   return (
-    <div className="container-fluid">
+    <div className="container-fluid display:inline-block">
       {/* CREO LA BARRA DE BUSQUEDA */}
 
       <nav className="navbar ">
@@ -104,7 +104,7 @@ export default function Favoritos() {
               {/* NECESARIO CREAR UN KEY  le asigno el _id que viene por defecto del mongodb como entrada*/}
               <tr>
                 <td>{i + 1}</td>
-                <div className=" imagen5">
+                <div className=" imagen5 m-2">
                   <img
                     className="  img-fluid  text-center"
                     src={favoritos[i].imagen}
