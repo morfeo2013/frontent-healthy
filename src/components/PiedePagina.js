@@ -3,47 +3,40 @@ import React from "react";
 
 export default function PiedePagina() {
   return (
-    <div>
+    <div className="piedepagina pb-4">
       <section id="footer">
-        <div className="container mt-5">
+        <div className="container ">
           <div className="row">
-            <div className="col-sm-12 col-md-4 text-center text-dark">
-              <h3 className="mt-2">ENLASES</h3>
-              <p className="mt-2">
-                {" "}
-                Por medio de nuestras redes y servicion, buacamos llegar a
-                nuestros clientes de todo el pais, para llevar nuestros
-                productos naturales de alta calidad a todas partes de Colombia
-              </p>
+            <div className="col-sm-12 col-md-4 text-dark ">
+              <h3 className="text-center">ENLASES</h3>
+              <h4>Nuestra Empresa</h4>
+              <h4>Productos</h4>
+              <h4>Block</h4>
+              <h4>PQR</h4>
+              <h4>Preguntas frecuentes</h4>
+              <h4>Politicas de h4rivacidad</h4>
+              <h4>Terminos y condiciones</h4>
+            </div>
+
+            <div className="col-sm-12 col-md-4  text-dark m">
+              <h3 className="mt-2 text-center">SUSCRIBETE</h3>
+
+              <h4>
+                Mantente al tanto de nuestros productos, promociones y
+                concursos!
+              </h4>
+              <h4 className="mt-5">Direccion de correo electronico</h4>
+
+              <input
+                type="email"
+                class="form-control"
+                id="exampleFormControlInput1"
+                placeholder="Tu dirección de correo elecrónico"
+              ></input>
             </div>
 
             <div className="col-sm-12 col-md-4 text-center text-dark">
-              <h3 className="mt-2">SUSCRIBETE</h3>
-
-              <p className="mt-2 ">
-                <p>
-                  ‎<i className="fas fa-envelope-open"></i>{" "}
-                  ganohealthymedellin@gmail.com{" "}
-                </p>
-                <i className="fas fa-map-marker-alt"></i> Colombia-Medellin
-              </p>
-              <p>
-                <i className="fas fa-phone"></i> 315 610 16 84
-              </p>
-              <a
-                className="text-success"
-                href="https://api.whatsapp.com/send?phone=+573156101684"
-              >
-                {" "}
-                {/* PARA REDIDRECCIONAR A WHATSAP */}
-                <i className="fab fa-whatsapp-square fa-3x"> </i>
-              </a>
-
-              <p> </p>
-            </div>
-
-            <div className="col-sm-12 col-md-4 text-center text-dark">
-              <h3 className="mt-2">NUESTRAS REDES</h3>
+              <h3 className="mt-2 text-center">NUESTRAS REDES</h3>
               <div className="container ">
                 <div className="row">
                   <div className="col-2"></div>
@@ -66,7 +59,14 @@ export default function PiedePagina() {
           </div>
         </div>
       </section>
-      <div><h4 className="text-center">Todos los Derechos Reservados 2021 © GANO HEALTHY MEDELLÍN</h4></div>
-    </div>
+      <selection className="">
+      <div >
+        <h5 className="text-center  mt-4 text-light">
+          Todos los Derechos Reservados 2021 © GANO HEALTHY MEDELLÍN
+        </h5>
+      </div>
+    
+      </selection>
+      </div>
   );
 }

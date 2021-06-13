@@ -5,10 +5,11 @@ export default function inicio() {
   return (
     <div className=" " id="inicio">
       <div className="container">
-        <div className="row mt-5 "></div>
+        <div className="row "></div>
       </div>
+      <div className="container ">
 
-      <div className="container mt-5"></div>
+      </div>
       <section id="llamado-accion">
         <div className="">
           <div className="row  ">
@@ -24,7 +25,7 @@ export default function inicio() {
           </div>
         </div>
       </section>
-
+     
       <section>
         <div className="container">
           <div className="row mt-5 ">
@@ -75,143 +76,63 @@ export default function inicio() {
                 Ver Mas <i className="fas fa-arrow-circle-right"></i>
               </button>
             </div>
-            
           </div>
         </div>
       </section>
 
       <section id="testimonios">
         <div className="container">
-          <h1 className="text-center mt-5"> NUESTROS VALORES</h1>
+          <h1 className="text-center m-5"> NUESTROS VALORES</h1>
           <div className="row mt-5">
             <div className="col-sm-12 col-md-3 text-center">
               <div className="card">
                 <div className="card-boddy">
-                <h4>
-                PASION
-              </h4>
-              <p className="mt-5">
-                Por medio de nustros canales de difucion, pretendemos llegar a
-                todos los lugares de colombia yde LatinoAmerica.
-              </p>
-                  
-                </div>
-              </div>
-            </div>
-            <div className="col-sm-12 col-md-3 text-center">
-              <div className="card">
-                <div className="card-boddy">
-                <h4>
-                TRANSPARENCIA
-              </h4>
-              <p className="mt-5">
-                Por medio de nustros canales de difucion, pretendemos llegar a
-                todos los lugares de colombia yde LatinoAmerica.
-              </p>
-                 
-                </div>
-              </div>
-            </div>
-            <div className="col-sm-12 col-md-3 text-center">
-              <div className="card">
-                <div className="card-boddy">
-                <h4>
-               EMPATIA
-              </h4>
-              <p className="mt-5">
-                Por medio de nustros canales de difucion, pretendemos llegar a
-                todos los lugares de colombia yde LatinoAmerica.
-              </p>
-                  
-                </div>
-              </div>
-            </div>
-            <div className="col-sm-12 col-md-3 text-center">
-              <div className="card">
-                <div className="card-boddy">
-                <h4>
-                CALIDAD
-              </h4>
-              <p className="mt-5">
-                Por medio de nustros canales de difucion, pretendemos llegar a
-                todos los lugares de colombia yde LatinoAmerica.
-              </p>
-                  
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/*  <section id="footer">
-        <div className="container">
-
-          <div className="row mt-5">
-            <div className="col-sm-12 col-md-4 text-center text-success">
-              <h3 className="mt-5">Nosotros
-
-                  </h3>
-              <p className="mt-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam aliquid voluptatem recusandae perspiciatis similique inventore odio amet quod? Nesciunt, libero.  
-              derechos reservados</p>
-
-            </div>
-
-            <div className="col-sm-12 col-md-4 text-center text-success">
-              <h3 className="mt-5">Contactanos
-
-                  </h3>
-             
-              <p className="mt-5 ">
-              <p>‎<i className="fas fa-envelope-open"></i> ganohealthymedellin@gmail.com </p>
-                <i className="fas fa-map-marker-alt" ></i> Colombia-Medellin
+                  <h4>PASION</h4>
+                  <p className="mt-5">
+                    Por medio de nustros canales de difucion, pretendemos llegar
+                    a todos los lugares de colombia yde LatinoAmerica.
                   </p>
-              <p><i className="fas fa-phone" ></i> 315 813 38 56</p>
-
-              <p> <a className="text-success" href="https://api.whatsapp.com/send?phone=+573158133856">
-                <i className="fab fa-whatsapp-square fa-3x" > </i></a></p>
-
-
-
-            </div>
-
-
-            <div className="col-sm-12 col-md-4 text-center text-success">
-
-
-             
-                <h3 className="mt-5">Siguenos</h3>
-                <div className="container ">
-                <div className="row">
-                <div className="col-4 mt-5">
-                  <i className="fab fa-facebook-square fa-3x"></i>
                 </div>
-                <div className="col-4 mt-5 ">
-                  <i className="fab fa-instagram-square fa-3x"></i>
-                </div>
-                <div className="col-4 mt-5">
-                  <i className="fab fa-twitter-square fa-3x"></i>
-                </div>
-
-
               </div>
+            </div>
+            <div className="col-sm-12 col-md-3 text-center">
+              <div className="card">
+                <div className="card-boddy">
+                  <h4>TRANSPARENCIA</h4>
+                  <p className="mt-5">
+                    Por medio de nustros canales de difucion, pretendemos llegar
+                    a todos los lugares de colombia yde LatinoAmerica.
+                  </p>
                 </div>
-                
-
-
-
-
-
+              </div>
+            </div>
+            <div className="col-sm-12 col-md-3 text-center">
+              <div className="card">
+                <div className="card-boddy">
+                  <h4>EMPATIA</h4>
+                  <p className="mt-5">
+                    Por medio de nustros canales de difucion, pretendemos llegar
+                    a todos los lugares de colombia yde LatinoAmerica.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="col-sm-12 col-md-3 text-center">
+              <div className="card">
+                <div className="card-boddy">
+                  <h4>CALIDAD</h4>
+                  <p className="mt-5">
+                    Por medio de nustros canales de difucion, pretendemos llegar
+                    a todos los lugares de colombia yde LatinoAmerica.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
-
-
-
-
         </div>
       </section>
+      <div className="m-5">.</div>
 
- */}
     </div>
   );
 }

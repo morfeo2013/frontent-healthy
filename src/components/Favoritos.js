@@ -64,7 +64,7 @@ export default function Favoritos() {
   };
 
   return (
-    <div className="container-fluid display:inline-block">
+    <div className="container-fluid ">
       {/* CREO LA BARRA DE BUSQUEDA */}
 
       <nav className="navbar ">
@@ -96,49 +96,51 @@ export default function Favoritos() {
 
         {
           /* UTILIZO LOS DATOS DEL ESTADO QUE RECIVIO DEL SETDATOS */
-          favoritos.map((
-            productos,
-            i /* productos RECIVIRA LOS LA INFORMACION DE DATOS RECIVIDO DE SETDATOS*/
-          ) => (
-            <tbody key={i}>
-              {/* NECESARIO CREAR UN KEY  le asigno el _id que viene por defecto del mongodb como entrada*/}
-              <tr>
-                <td>{i + 1}</td>
-                <div className=" imagen5 m-2">
-                  <img
-                    className="  img-fluid  text-center"
-                    src={favoritos[i].imagen}
-                    alt=""
-                  ></img>
-                </div>
-                <td>{productos.titulo}</td>
-                <td>{productos.genero}</td>
-                <td>{productos.autor}</td>
-                <td>{productos.ficha}</td>
+          favoritos.map(
+            (
+              productos,
+              i /* productos RECIVIRA LOS LA INFORMACION DE DATOS RECIVIDO DE SETDATOS*/
+            ) => (
+              <tbody key={i}>
+                {/* NECESARIO CREAR UN KEY  le asigno el _id que viene por defecto del mongodb como entrada*/}
+                <tr>
+                  <td>{i + 1}</td>
+                  <div className=" imagen5 ">
+                    <img
+                      className="  img-fluid  text-center"
+                      src={favoritos[i].imagen}
+                      alt=""
+                    ></img>
+                  </div>
+                  <td>{productos.titulo}</td>
+                  <td>{productos.genero}</td>
+                  <td>{productos.autor}</td>
+                  <td>{productos.ficha}</td>
 
-                <td>
-                  <Link
-                    className="btn btn-warning mr-2"
-                    to={"/comprar/" + productos._id}
-                  >
-                    <i className="fas fa-shopping-cart"></i>
-                    {/* implementar icono fontosso */}
-                    Comprar
-                  </Link>
+                  <td>
+                    <Link
+                      className="btn btn-warning mr-2"
+                      to={"/comprar/" + productos._id}
+                    >
+                      <i className="fas fa-shopping-cart"></i>
+                      {/* implementar icono fontosso */}
+                      Comprar
+                    </Link>
 
-                  <button
-                    className="btn btn-danger mr-2"
-                    id="desactivar"
-                    onClick={() => eliminar(productos._id)}
-                  >
-                    <i className="far fa-trash-alt"> </i>{" "}
-                    {/* agregar el onClick para ejecutaar la funcion eliminar APROVECHA Y SACA EL ._ID Y LO ENVIA A LA FUNCION ELIMINAR(_ID)*/}
-                    Eliminar
-                  </button>
-                </td>
-              </tr>
-            </tbody>
-          ))
+                    <button
+                      className="btn btn-danger mr-2"
+                      id="desactivar"
+                      onClick={() => eliminar(productos._id)}
+                    >
+                      <i className="far fa-trash-alt"> </i>{" "}
+                      {/* agregar el onClick para ejecutaar la funcion eliminar APROVECHA Y SACA EL ._ID Y LO ENVIA A LA FUNCION ELIMINAR(_ID)*/}
+                      Eliminar
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            )
+          )
         }
       </table>
     </div>

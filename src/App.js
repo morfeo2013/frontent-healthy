@@ -1,38 +1,32 @@
-import React from 'react'
+import React from "react";
 /* ESTE ARCHIVO ES EL ENCARGADO DE ACTIVAR LOS DIFERENTES ARCHIVOS.JS SEGUN EL LINK INGRESADO */
 
-
 /* IMPORTAR LOS ELEMENTOS NECESARIOS  Y LAS RUTAS */
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 /* IMPORTA LOS CUATRO ELEMENTOS CREADOS EN JS */
-import IngresarLibro from './components/IngresarLibro';
+import IngresarLibro from "./components/IngresarLibro";
 
-import ListarLibro from './components/ListarLibro';
-import Autor from './components/Autor';
-import Login from './components/Login';
-import Registrar from './components/Registrar';
-import ListarUsuarios from './components/ListarUsuarios';
-import Favoritos from './components/Favoritos';
-import Administrador from './components/Administrador';
-import inicio from './components/inicio';
+import ListarLibro from "./components/ListarLibro";
+import Autor from "./components/Autor";
+import Login from "./components/Login";
+import Registrar from "./components/Registrar";
+import ListarUsuarios from "./components/ListarUsuarios";
+import Favoritos from "./components/Favoritos";
+import Administrador from "./components/Administrador";
+import inicio from "./components/inicio";
 
-import VistaUsuario from './components/VistaUsuario';
-import VistaProductos from './components/VistaProductos';
+import VistaUsuario from "./components/VistaUsuario";
+import VistaProductos from "./components/VistaProductos";
 /* const { default: Autor } = require("./components/Autor");  otra opcion*/
 
-
-import RecuperarContrasena from './components/RecuperarContrasena'
-import PublicRoutes from './routers/public.routes';
+import RecuperarContrasena from "./components/RecuperarContrasena";
+import PublicRoutes from "./routers/public.routes";
 
 /* importal los publicos */
 
-
-
 const { default: Nav } = require("./components/Nav");
 const { default: PiedePagina } = require("./components/PiedePagina");
-
-
 
 /* PARA PEDIR SI SI EN sessionStorage.getItem ESTA GENERADO CORRECTAMENTE EL TOQUE Y CREA LA CONDICION
 PARA ACCEDER O DEVOVER AL INICIO */
@@ -58,132 +52,97 @@ else{return false}
   
 } */
 
-
-
-
 /* las props son para recivir todo lo que venga desde las rutas */
 function App(props) {
   return (
-
     <div className="fluid">
+      <Router>
+        <Nav />
+        <PublicRoutes />
 
-   
-    <Router>
-    
-  <Nav/> 
-  <PublicRoutes/> 
+        {/* AL INGRESAR  A DETERMINADA DIRECCION SE ACTIVA UN ARCHIVO JSX QUE REDERIZARA LA PAGINA CON EL CONTENIDO DESIGNADO */}
 
-    {/* AL INGRESAR  A DETERMINADA DIRECCION SE ACTIVA UN ARCHIVO JSX QUE REDERIZARA LA PAGINA CON EL CONTENIDO DESIGNADO */}
+        <Route path="/inicio" component={inicio} />
 
- 
+        <Route path="/VistaProductosUsuario" component={VistaUsuario} />
+        <Route path="/usuario" component={Login} />
+        <Route path="/Recuperar_Contrasena" component={RecuperarContrasena} />
 
+        <Route path="/autor" component={Autor} />
+        {/* PARA CREAR O EDITAR USUARIOS */}
+        {/* <Route path='/ingresar' component ={IngresarLibro}/> */}
+        <Route path="/registrar" component={Registrar} />
+        {/*  <Route path='/editar/:id' component ={IngresarLibro}/> */}
+        <Route path="/listar" component={ListarLibro} />
+        <Route path="/favoritos/:id" component={Favoritos} />
+        <Route path="/listarUsuarios" component={ListarUsuarios} />
+        <Route path="/comprar/:id" component={IngresarLibro} />
+        <Route path="/administrador" component={Administrador} />
 
-<Route path='/inicio' component ={inicio}/> 
+        <Route path="/VistaProductos" component={VistaProductos} />
 
- <Route path='/VistaProductosUsuario' component ={VistaUsuario}/> 
- <Route path='/usuario' component ={Login}/>
- <Route path='/Recuperar_Contrasena' component ={RecuperarContrasena}/>
-  
+        {/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */}
+        {/*PARA LA CONSOLA DEL ADMINSTRADOR */}
 
-  <Route path='/autor' component ={Autor}/>
-  {/* PARA CREAR O EDITAR USUARIOS */}
-  {/* <Route path='/ingresar' component ={IngresarLibro}/> */}
-  <Route path='/registrar' component ={Registrar} />
- {/*  <Route path='/editar/:id' component ={IngresarLibro}/> */}
-  <Route path='/listar' component ={ListarLibro} />
-  <Route path='/favoritos/:id' component ={Favoritos}/>
-  <Route path='/listarUsuarios' component ={ListarUsuarios} />
-  <Route path='/comprar/:id' component ={IngresarLibro}/>
-  <Route path='/administrador' component ={Administrador}/>
+        {
+          <div className="fluid">
+            <div className="row pt-4">
+              <div className="col-sm-12 col-md-3 mx-auto">
+                <Route path="/administrador1" component={Administrador} />
+              </div>
 
-  <Route path='/VistaProductos' component ={VistaProductos}/>
+              <div className=" col-sm-12 col-md-9">
+                <Route path="/administrador1" component={ListarLibro} />
+              </div>
+            </div>
+          </div>
+        }
+        {
+          <div className="row ">
+            <div className="col-sm-12 col-md-3">
+              <Route path="/administrador2" component={Administrador} />
+            </div>
 
+            <div className=" col-sm-12 col-md-9">
+              <Route path="/administrador2" component={ListarUsuarios} />
+            </div>
+          </div>
+        }
 
- 
-  
-
-{/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */}
-{/*PARA LA CONSOLA DEL ADMINSTRADOR */}
-
-{<div className="fluid">
-
-<div className="row pt-4">
-<div className="col-sm-12 col-md-3 mx-auto">
-<Route path='/administrador1' component ={Administrador}/>
-</div>
-
-<div className=" col-sm-12 col-md-9">
-<Route path='/administrador1' component ={ListarLibro} />
-</div>
-</div>
-</div>
- 
-}
-{
-  <div className="row ">
-  <div className="col-sm-12 col-md-3">
-  <Route path='/administrador2' component ={Administrador}/>
-  </div>
-
-  <div className=" col-sm-12 col-md-9">
-  <Route path='/administrador2' component ={ListarUsuarios} />
-  </div>
-  </div>
-
-
-}
-
-
-{
-  <div className="row ">
-  <div className="col-sm-12 col-md-3">
-  <Route path='/editar/:id' component ={Administrador}/>
-  </div>
-
-  <div className=" col-sm-12 col-md-9">
-  <Route path='/editar/:id' component ={IngresarLibro} />
-  </div>
-  </div>
-
-
-}
-
-{
-  <div className="row ">
-  <div className="col-sm-12 col-md-3">
-  <Route path='/ingresar' component ={Administrador}/>
-  </div>
-
-  <div className=" col-sm-12 col-md-9">
-  <Route path='/ingresar' component ={IngresarLibro} />
-  </div>
-  </div>
-
-
-}
-
-
-{
-  <div className="row ">
-  <div className="col-sm-12 col-md-3">
-  <Route path='/visualAdmin' component ={Administrador}/>
-  </div>
-
-  <div className=" col-sm-12 col-md-9">
-  <Route path='/visualAdmin' component ={VistaUsuario} />
-  </div>
-  </div>
-
-
-}
-     <PiedePagina/>
-    {/*  <Redirect to='/inicio'/> */}
-    </Router>
-    
+        {
+          <div className="row ">
+            <div className="col-sm-12 col-md-3">
+              <Route path="/editar/:id" component={Administrador} />
+            </div>
+            <div className=" col-sm-12 col-md-9">
+              <Route path="/editar/:id" component={IngresarLibro} />
+            </div>
+          </div>
+        }
+        {
+          <div className="row ">
+            <div className="col-sm-12 col-md-3">
+              <Route path="/ingresar" component={Administrador} />
+            </div>
+            <div className=" col-sm-12 col-md-9">
+              <Route path="/ingresar" component={IngresarLibro} />
+            </div>
+          </div>
+        }
+        {
+          <div className="row ">
+            <div className="col-sm-12 col-md-3">
+              <Route path="/visualAdmin" component={Administrador} />
+            </div>
+            <div className=" col-sm-12 col-md-9">
+              <Route path="/visualAdmin" component={VistaUsuario} />
+            </div>
+          </div>
+        }
+        <PiedePagina />
+        {/*  <Redirect to='/inicio'/> */}
+      </Router>
     </div>
-
-  
-  
   );
 }
 
