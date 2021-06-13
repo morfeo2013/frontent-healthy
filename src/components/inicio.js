@@ -1,15 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import App from "../App";
 export default function inicio() {
   return (
-    <div className=" " id="inicio">
-      <div className="container">
-        <div className="row "></div>
+    <div className=" " id="inicio" autofocus>
+      
+      <div className="container p-5 ">
+        <div className="container p-5 mt-3"></div>
       </div>
-      <div className="container ">
 
-      </div>
       <section id="llamado-accion">
         <div className="">
           <div className="row  ">
@@ -25,12 +24,14 @@ export default function inicio() {
           </div>
         </div>
       </section>
-     
+
       <section>
         <div className="container">
-          <div className="row mt-5 ">
+          <div className="row mt- ">
             <div className="col-sm-12 text-dark">
-              <h1 className="text-center">QUIENES SOMOS</h1>
+              <h1 className="text-center">
+                <strong>  QUIENES SOMOS</strong>
+              </h1>
 
               <div className="text-center"></div>
             </div>
@@ -40,37 +41,41 @@ export default function inicio() {
 
       <section id="servicios">
         <div className="container">
-          <div className="row ">
+          <div className="row mt-3">
             <div className="col-sm-12 col-md-12 text-center">
-              <h1 className="mt-2">
-                <i className="fas fa-paint-brush"></i>
-                VISION
+              <h1 className="mt-3">
+                <strong> VISION</strong>
               </h1>
-              <h3 className="mt-5">
-                Ser reconocidos como empresalíderen Colombia distinguiéndonos
-                por la calidad y eficacia de nuestros productos dirigidos a la
-                salud y el bienestar, reconocidos mundialmente por la capacidad
-                de generar bienestar, brindando conocimiento y herramientas para
-                mejorar la calidad de vida.
+              <h3 className="mt-4">
+                <strong>
+                  {" "}
+                  Ser reconocidos como empresalíderen Colombia distinguiéndonos
+                  por la calidad y eficacia de nuestros productos dirigidos a la
+                  salud y el bienestar, reconocidos mundialmente por la
+                  capacidad de generar bienestar, brindando conocimiento y
+                  herramientas para mejorar la calidad de vida.
+                </strong>
               </h3>
               <button className="btn btn-info text-center mb-5">
                 Ver Mas <i className="fas fa-arrow-circle-right"></i>
               </button>
             </div>
             <div className="col-sm-12 col-md-12 text-center">
-              <h1 className="mt-5">
-                <i className="fas fa-search-dollar"></i>
-                MISION
+              <h1 className="mt-4">
+                <strong>MISION</strong>
               </h1>
               <h3 className="mt-5">
-                Somos una comunidad que quiere evolucionar y potenciar el mundo
-                de la salud y el bienestar; aprovechando todos los avances
-                científicos y los beneficios que ofrece la propia naturaleza.
-                Simultáneamente, motivando y brindando herramientas a todas las
-                personas para que mantengan un estilo de vida a través de la
-                toma de decisiones conscientes respecto a su alimentación,
-                salud, bienestar, actividad física y espiritual. Llevando salud
-                y bienestar a todas las familias.
+                <strong>
+                  {" "}
+                  Somos una comunidad que quiere evolucionar y potenciar el
+                  mundo de la salud y el bienestar; aprovechando todos los
+                  avances científicos y los beneficios que ofrece la propia
+                  naturaleza. Simultáneamente, motivando y brindando
+                  herramientas a todas las personas para que mantengan un estilo
+                  de vida a través de la toma de decisiones conscientes respecto
+                  a su alimentación, salud, bienestar, actividad física y
+                  espiritual. Llevando salud y bienestar a todas las familias.
+                </strong>
               </h3>
               <button className="btn btn-info text-center mb-5">
                 Ver Mas <i className="fas fa-arrow-circle-right"></i>
@@ -82,13 +87,13 @@ export default function inicio() {
 
       <section id="testimonios">
         <div className="container">
-          <h1 className="text-center m-5"> NUESTROS VALORES</h1>
+          <h1 className="text-center mt-4 "> NUESTROS VALORES</h1>
           <div className="row mt-5">
             <div className="col-sm-12 col-md-3 text-center">
               <div className="card">
                 <div className="card-boddy">
                   <h4>PASION</h4>
-                  <p className="mt-5">
+                  <p className="mt-2">
                     Por medio de nustros canales de difucion, pretendemos llegar
                     a todos los lugares de colombia yde LatinoAmerica.
                   </p>
@@ -99,7 +104,7 @@ export default function inicio() {
               <div className="card">
                 <div className="card-boddy">
                   <h4>TRANSPARENCIA</h4>
-                  <p className="mt-5">
+                  <p className="mt-2">
                     Por medio de nustros canales de difucion, pretendemos llegar
                     a todos los lugares de colombia yde LatinoAmerica.
                   </p>
@@ -110,7 +115,7 @@ export default function inicio() {
               <div className="card">
                 <div className="card-boddy">
                   <h4>EMPATIA</h4>
-                  <p className="mt-5">
+                  <p className="mt-2">
                     Por medio de nustros canales de difucion, pretendemos llegar
                     a todos los lugares de colombia yde LatinoAmerica.
                   </p>
@@ -121,7 +126,7 @@ export default function inicio() {
               <div className="card">
                 <div className="card-boddy">
                   <h4>CALIDAD</h4>
-                  <p className="mt-5">
+                  <p className="mt-2">
                     Por medio de nustros canales de difucion, pretendemos llegar
                     a todos los lugares de colombia yde LatinoAmerica.
                   </p>
@@ -131,8 +136,8 @@ export default function inicio() {
           </div>
         </div>
       </section>
-      <div className="m-5">.</div>
 
+      <div className="container p-4"></div>
     </div>
   );
 }

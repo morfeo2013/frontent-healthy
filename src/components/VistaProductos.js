@@ -162,10 +162,13 @@ export default function VistaProductos() {
 
 
     return (
+
+        <div className="container p-5 ">
+        <div className="container p-5 mt-3"></div>
         <div className="container border border-success ">
             {/* AGREGAR PARA ADMINISTRADOR OPCION AGREGAR NUEVO PRODUCTO*/}
 
-
+           
 
 
             <nav className="navbar "  >
@@ -272,6 +275,9 @@ export default function VistaProductos() {
 
 
         </div>
+      </div>
+
+       
 
     )
 }

@@ -21,17 +21,19 @@ export default function ListarLibro() {
   /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
   /* ESTADOS PARA BUSCAR USARIOS */
 
-  const [search, setSearch] = useState(
-    ""
-  ); /* aca ira el estado de la palabra EN TEXTO en la busqueda le la pagina bajo la palabra search */
+  const [search, setSearch] =
+    useState(
+      ""
+    ); /* aca ira el estado de la palabra EN TEXTO en la busqueda le la pagina bajo la palabra search */
 
   const [buscar, setBuscar] = useState(
     []
   ); /* aca el arrays recojera el OBJETO json del estado datos */
 
-  const [opcion, setOpcion] = useState(
-    ""
-  ); /* este estado realiza el contro del tipo de busqueda que se realizara */
+  const [opcion, setOpcion] =
+    useState(
+      ""
+    ); /* este estado realiza el contro del tipo de busqueda que se realizara */
 
   /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
   /* ESTADO PARA ACCEDER A MODIFICAR-ELIMINAR O A COMPRAR */
@@ -197,6 +199,8 @@ export default function ListarLibro() {
 
   return (
     <div className=" container border border-secondary">
+     
+
       <div className="mt-5"></div>
       {/* AGREGAR PARA ADMINISTRADOR OPCION AGREGAR NUEVO PRODUCTO*/}
       {admin ? (
@@ -215,6 +219,7 @@ export default function ListarLibro() {
 
       <nav className="navbar ">
         <div className="container">
+          
           <div className="col-md-6 ml-auto">
             {/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */}
 
@@ -298,78 +303,80 @@ export default function ListarLibro() {
 
         {
           /* UTILIZO LOS DATOS DEL ESTADO QUE RECIVIO DEL SETDATOS */
-          buscar.map((
-            libros,
-            i /* LIBROS RECIVIRA LOS LA INFORMACION DE DATOS RECIVIDO DE SETDATOS*/
-          ) => (
-            <tbody key={libros._id}>
-              {/* NECESARIO CREAR UN KEY  le asigno el _id que viene por defecto del mongodb como entrada*/}
-              <tr>
-                <td>{i + 1}</td>
-                {/* agregar la imagen desde el link */}
-                <div className=" imagen4 ">
-                  <img
-                    className="  img-thumbnail img-fluid  text-center"
-                    src={libros.imagen}
-                    width="20"
-                    height="20"
-                    alt=""
-                  ></img>
-                  {console.log(libros.imagen)}
-                </div>
-                <td>{libros.titulo}</td>
-                <td>{libros.genero}</td>
-                <td>{libros.autor}</td>
-                <td>
-                  {"$"}
-                  {libros.ficha}
-                </td>
-
-                {admin ? (
+          buscar.map(
+            (
+              libros,
+              i /* LIBROS RECIVIRA LOS LA INFORMACION DE DATOS RECIVIDO DE SETDATOS*/
+            ) => (
+              <tbody key={libros._id}>
+                {/* NECESARIO CREAR UN KEY  le asigno el _id que viene por defecto del mongodb como entrada*/}
+                <tr>
+                  <td>{i + 1}</td>
+                  {/* agregar la imagen desde el link */}
+                  <div className=" imagen4 ">
+                    <img
+                      className="  img-thumbnail img-fluid  text-center"
+                      src={libros.imagen}
+                      width="20"
+                      height="20"
+                      alt=""
+                    ></img>
+                    {console.log(libros.imagen)}
+                  </div>
+                  <td>{libros.titulo}</td>
+                  <td>{libros.genero}</td>
+                  <td>{libros.autor}</td>
                   <td>
-                    <Link
-                      className="btn btn-info mr-2"
-                      to={"/editar/" + libros._id}
-                    >
-                      <i class="fas fa-sync-alt"></i>
-                      Actualizar
-                    </Link>
-
-                    <button
-                      className="btn btn-danger mr-2"
-                      onClick={() => eliminar(libros._id)}
-                    >
-                      {" "}
-                      <i className="far fa-trash-alt"></i>
-                      {/* agregar el onClick para ejecutaar la funcion eliminar APROVECHA Y SACA EL ._ID Y LO ENVIA A LA FUNCION ELIMINAR(_ID)*/}
-                      Eliminar
-                    </button>
+                    {"$"}
+                    {libros.ficha}
                   </td>
-                ) : (
-                  <td>
-                    <Link
-                      className="btn btn-warning mr-2"
-                      to={"/comprar/" + libros._id}
-                    >
-                      <i className="fas fa-shopping-cart"></i>
-                      {/* implementar icono fontosso */}
-                      Comprar
-                    </Link>
 
-                    <button
-                      className=" btn btn-danger mr-3  "
-                      onClick={() => Favoritos(libros._id)}
-                    >
-                      {" "}
-                      <i className="fas fa-heart "></i>{" "}
-                      {/* agregar el onClick para ejecutaar la funcion eliminar APROVECHA Y SACA EL ._ID Y LO ENVIA A LA FUNCION ELIMINAR(_ID)*/}
-                      Favoritos
-                    </button>
-                  </td>
-                )}
-              </tr>
-            </tbody>
-          ))
+                  {admin ? (
+                    <td>
+                      <Link
+                        className="btn btn-info mr-2"
+                        to={"/editar/" + libros._id}
+                      >
+                        <i class="fas fa-sync-alt"></i>
+                        Actualizar
+                      </Link>
+
+                      <button
+                        className="btn btn-danger mr-2"
+                        onClick={() => eliminar(libros._id)}
+                      >
+                        {" "}
+                        <i className="far fa-trash-alt"></i>
+                        {/* agregar el onClick para ejecutaar la funcion eliminar APROVECHA Y SACA EL ._ID Y LO ENVIA A LA FUNCION ELIMINAR(_ID)*/}
+                        Eliminar
+                      </button>
+                    </td>
+                  ) : (
+                    <td>
+                      <Link
+                        className="btn btn-warning mr-2"
+                        to={"/comprar/" + libros._id}
+                      >
+                        <i className="fas fa-shopping-cart"></i>
+                        {/* implementar icono fontosso */}
+                        Comprar
+                      </Link>
+
+                      <button
+                        className=" btn btn-danger mr-3  "
+                        onClick={() => Favoritos(libros._id)}
+                      >
+                        {" "}
+                        <i className="fas fa-heart "></i>{" "}
+                        {/* agregar el onClick para ejecutaar la funcion eliminar APROVECHA Y SACA EL ._ID Y LO ENVIA A LA FUNCION ELIMINAR(_ID)*/}
+                        Favoritos
+                      </button>
+                    </td>
+                  )}
+                </tr>
+              </tbody>
+            )
+          )
         }
       </table>
     </div>

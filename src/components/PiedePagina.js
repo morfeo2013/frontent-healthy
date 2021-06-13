@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable react/style-prop-object */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 
@@ -7,8 +9,11 @@ export default function PiedePagina() {
       <section id="footer">
         <div className="container ">
           <div className="row">
-            <div className="col-sm-12 col-md-4 text-dark ">
-              <h3 className="text-center">ENLASES</h3>
+            <div className="col-sm-12 col-md-4 text-light ">
+              <h3 className="mt-2 text-center">ENLASES</h3>
+              <hr style={{
+            backgroundColor: "light",
+            height: 6}} />
               <h4>Nuestra Empresa</h4>
               <h4>Productos</h4>
               <h4>Block</h4>
@@ -18,9 +23,12 @@ export default function PiedePagina() {
               <h4>Terminos y condiciones</h4>
             </div>
 
-            <div className="col-sm-12 col-md-4  text-dark m">
+            <div className="col-sm-12 col-md-4  text-light">
               <h3 className="mt-2 text-center">SUSCRIBETE</h3>
-
+             
+              <hr style={{
+            backgroundColor: "light",
+            height: 6}} />
               <h4>
                 Mantente al tanto de nuestros productos, promociones y
                 concursos!
@@ -35,8 +43,11 @@ export default function PiedePagina() {
               ></input>
             </div>
 
-            <div className="col-sm-12 col-md-4 text-center text-dark">
+            <div className="col-sm-12 col-md-4 text-center text-light">
               <h3 className="mt-2 text-center">NUESTRAS REDES</h3>
+              <hr style={{
+            backgroundColor: "light",
+            height: 6}} />
               <div className="container ">
                 <div className="row">
                   <div className="col-2"></div>
@@ -61,9 +72,9 @@ export default function PiedePagina() {
       </section>
       <selection className="">
       <div >
-        <h5 className="text-center  mt-4 text-light">
-          Todos los Derechos Reservados 2021 © GANO HEALTHY MEDELLÍN
-        </h5>
+        <h4 className="text-center  mt-4 text-light">
+         <font  size = '5'>Todos los Derechos Reservados 2021 ©</font>   GANO HEALTHY MEDELLÍN
+        </h4>
       </div>
     
       </selection>

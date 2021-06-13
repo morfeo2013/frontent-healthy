@@ -59,11 +59,11 @@ function App(props) {
       <Router>
         <Nav />
         <PublicRoutes />
-
+        
         {/* AL INGRESAR  A DETERMINADA DIRECCION SE ACTIVA UN ARCHIVO JSX QUE REDERIZARA LA PAGINA CON EL CONTENIDO DESIGNADO */}
-
-        <Route path="/inicio" component={inicio} />
-
+      
+        <Route path="/inicio" component={inicio}/>
+        
         <Route path="/VistaProductosUsuario" component={VistaUsuario} />
         <Route path="/usuario" component={Login} />
         <Route path="/Recuperar_Contrasena" component={RecuperarContrasena} />
@@ -86,7 +86,7 @@ function App(props) {
 
         {
           <div className="fluid">
-            <div className="row pt-4">
+            <div className="row">
               <div className="col-sm-12 col-md-3 mx-auto">
                 <Route path="/administrador1" component={Administrador} />
               </div>
