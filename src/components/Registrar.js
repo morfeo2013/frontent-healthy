@@ -74,7 +74,10 @@ export default function Registrar() {
   };
   return (
     <div>
-      <div className="row pt-4">
+      <div className="container p-4 " id="inicio1">
+        <div className="container p-5 "></div>
+      </div>
+      <div className="row ">
         <div className="col-lg-6 col-md-8 mx-auto">
           <div className="card">
             <div className="container text-center fa-5x">
@@ -100,7 +103,7 @@ export default function Registrar() {
 
                                 </div> */}
 
-                <div className="form-group mt-2">
+               {/*  <div className="form-group mt-2">
                   <input
                     className="form-control"
                     type="text"
@@ -108,9 +111,9 @@ export default function Registrar() {
                     required
                     onChange={(e) => setContacto(e.target.value)}
                   />
-                </div>
+                </div> */}
 
-                <div className="form-group mt-2">
+                {/* <div className="form-group mt-2">
                   <input
                     type="text"
                     name="contrasena"
@@ -119,7 +122,7 @@ export default function Registrar() {
                     required
                     onChange={(e) => setDireccion(e.target.value)}
                   />
-                </div>
+                </div> */}
                 <div className="form-group mt-2">
                   <input
                     type="text"

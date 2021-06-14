@@ -71,7 +71,8 @@ export default function Login() {
     }
   };
   return (
-    <div className="row pt-4">
+    <div className="row pt-5">
+      <div className="container p-5 "></div>
       <div className="col-lg-6 col-md-8 mx-auto">
         <div className="card">
           <div className="container text-center fa-4x">
@@ -117,9 +118,21 @@ export default function Login() {
           </div>
         </div>
         <div className="text-primary text-center">
+          <Link to="/registrar">
+            {" "}
+            <h6>¿Eres Nuevo? Registrarme</h6>
+           
+            
+           
+          </Link>
+        </div>
+        <div className="text-primary text-center">
           <Link to="/Recuperar_Contrasena/">
             {" "}
-            <h5>Olvide mi contraseña?</h5>
+            
+            <h6>Olvide mi contraseña?</h6>
+            
+           
           </Link>
         </div>
       </div>

@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 
 
 /* eslint-disable react-hooks/exhaustive-deps */
@@ -5,8 +6,10 @@ import React, { useState, useEffect } from "react";
 /* import ReactDOM from 'react-dom'; */
 import { Link } from "react-router-dom";
 
+$(".droptown-toggle").on("click", function(e) {
+$(".dropdown-submenu .dropdown-menu").hide()
+  })
 
-import App from "../App";
 
 /* import AlbumOfTheWeek from './estadoGlobal'
 import Axios from 'axios'/* PARA PODER HACER LAS PETICIONES GET,PUT,POS,DELETE EN EL BACKEND */
@@ -73,7 +76,7 @@ export default function Nav() {
             
             />
           </div>
-      <div className="navprincipal navbarGeneral rounded ">
+      <div className="navprincipal navbarGeneral rounded col-auto">
         {" "}
         {/* "VOLVER FIJO LA PARTE SUPERIOR" sticky-top  */}{" "}
         {/* PARA QUEQUEDE SIEMPRE VSIBLE EL PIE DE PAGINA'sticky-top' */}
@@ -96,43 +99,185 @@ export default function Nav() {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className="container">
-            <div className="collapse navbar-collapse " id="navbarNavDropdown">
+          <div className="col-auto">
+          <div className="collapse navbar-collapse " id="navbarNavDropdown">
+            <ul className="navbar-nav ">
+            
+              {!menu ? (
+           null
+              ) : (
+                <div class="col-9"></div>
+              )}
+            </ul>
+            {menu ? (
+              <div className="container ">
+                <ul className="navbar-nav col-6">
+                  {admin ? null : (
+                    <li className="nav-item text-success">
+                      <Link
+                        id="listar1"
+                        className="nav-link"
+                        to="/VistaProductosUsuario"
+                      >
+                        PRODUCTOS
+                      </Link>
+                      {/*  <div className="text-center">
+      <span className="badge badge-danger ">
+    {fav2}
+        
+        </span> 
+    </div> */}
+                    </li>
+                  )}
+                  {admin ? null : (
+                    /*  /listarusuarios */
+                    // eslint-disable-next-line no-undef
+                    <li className="nav-item col-6">
+                      <Link
+                        className="nav-link position-relative"
+                        to={"/favoritos/" + id}
+                      >
+                        MIS FAVORITOS
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                          {fredy}
+                          <span class="visually-hidden"></span>
+                        </span>
+                      </Link>
+                    </li>
+                  )}
+                  {admin ? (
+                    <li className="nav-item col-6">
+                      <Link className="nav-link" to="/ingresar">
+                        {/* Ingrasar nuevo producto */}
+                      </Link>{" "}
+                      {/* colcar el ink "/ingresar" igual a el del acceso en aap.js */}
+                    </li>
+                  ) : null}
+                  {id === id2 ? (
+                    <div class="col-12">
+                      <ul className="navbar-nav ">
+                        <li className="nav-item ml-auto col-6">
+                          <Link className="nav-link " to="/visualAdmin/">
+                            Administrador: Bienvenida{" "}
+                            {sessionStorage.getItem("nombre")}{" "}
+                          </Link>
+                          {/* obtiiene el nombre y lo muestra */}
+                        </li>
+                      </ul>
+                    </div>
+                  ) : (
+                    <div className="ml-auto">
+                      <li className="nav-item col-6">
+                        <Link id="listar2" className="nav-link " to="/perfil">
+                         USUARIO: Bienvenido {sessionStorage.getItem("nombre")}{" "}
+                        </Link>
+                        {/* obtiiene el nombre y lo muestra */}
+                      </li>
+                    </div>
+                  )}
+                </ul>
+                <div class="col-md-2"></div>
+                <div className=" d-flex justify-content-between">
+                  <ul className="navbar-nav "></ul>
+                </div>
+              </div>
+            ) : (
+              <div className="container d-flex ">
+                <div class="col-md-5"></div>
+                <ul className="navbar-nav">
+                <li className="nav-item col-auto d-flex">
+                <Link
+                  id="listar1"
+                  className="nav-link nav-success"
+                  to="/inicio"
+                >
+                 
+                  
+                </Link>
+                {/*  <Link className="nav-link nav-success" to="/visual"><i className="fas fa-mug-hot"></i>
+      Inicio</Link> */}
+              </li>
+              <li className="nav-item col-6">
+                <Link
+                  id="listar1"
+                  className="nav-link nav-success"
+                  to="/inicio"
+                >
+                  
+                  INICIO
+                </Link>
+                {/*  <Link className="nav-link nav-success" to="/visual"><i className="fas fa-mug-hot"></i>
+      Inicio</Link> */}
+              </li>
+                  <li className="nav-item  col-6">
+                    <Link
+                      id="listar1"
+                      className="nav-link nav-success text-justify "
+                      to="/VistaProductos"
+                    >
+                     
+                      PRODUCTOS
+                    </Link>
+                    {/*  <Link className="nav-link nav-success" to="/visual"><i className="fas fa-mug-hot"></i>
+      Inicio</Link> */}
+                  </li>
+                  <li className="nav-item col-6">
+                  <Link id="ingresar" className="nav-link " to="/autor">
+                     <p>CONTACTOS</p> 
+                    </Link>
+                  </li>
+                  <li className="nav-item col-6">
+                    <Link id="ingresar" className="nav-link " to="/usuario">
+                     <p>ACCEDER</p> 
+                    </Link>
+                  </li>
+                  <li className="nav-item col-6">
+                    <Link id="ingresar" className="nav-link " to="/usuario">
+                     <p>             CARRITO</p> 
+                    </Link>
+                  </li>
+                </ul>
+                <ul className="navbar-nav navbar-right ">
+                
+                </ul>
+                <ul className="navbar-nav navbar-right ">
+                  
+                  
+                 
+                 
+                </ul>
+              </div>
+            )}
+            {admin && menu ? (
               <ul className="navbar-nav ">
                 <li className="nav-item ">
                   <Link
-                    id="listar1"
-                    className="nav-link nav-success text-light text-justify "
+                    id="listar3"
+                    className="nav-link"
                     to="/inicio"
+                    onClick={() => salir()}
                   >
-                   <h4 >INICIO </h4>
-                    
+                    Salir
                   </Link>
-                  {/*  <Link className="nav-link nav-success" to="/visual"><i className="fas fa-mug-hot"></i>
-      Inicio</Link> */}
                 </li>
-                {!menu ? (
-                  <ul className="navbar-nav  text-justify">
-                    <li className="nav-item">
-                      <Link
-                        id="listar1"
-                        className="nav-link nav-success text-light "
-                        to="/VistaProductos"
-                      >
-                        <h4> PRODUCTOS</h4>
-                      
-                      </Link>
-                      {/*  <Link className="nav-link nav-success" to="/visual"><i className="fas fa-mug-hot"></i>
-      Inicio</Link> */}
-                    </li>
-                  </ul>
-                ) : (
-                  <div class=""></div>
-                )}
               </ul>
-              
-            </div>
+            ) : null}
+            {!admin && menu ? (
+              <ul className="navbar-nav ">
+                <li className="nav-item ">
+                  <Link
+                    id="listar3"
+                    className="nav-link"
+                    to="/inicio"
+                    onClick={() => salir()}
+                  >
+                    Salir
+                  </Link>
+                </li>
+              </ul>
+            ) : null}
           </div>
+        </div>
         </nav>
       </div>
     </div>

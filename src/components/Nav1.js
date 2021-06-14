@@ -80,7 +80,7 @@ export default function Nav1() {
         <div className="container">
           <div className="collapse navbar-collapse " id="navbarNavDropdown">
             <ul className="navbar-nav ">
-              <li className="nav-item">
+              <li className="nav-item ">
                 <Link
                   id="listar1"
                   className="nav-link nav-success"

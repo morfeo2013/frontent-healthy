@@ -14,26 +14,30 @@ export default function PiedePagina() {
               <hr style={{
             backgroundColor: "light",
             height: 6}} />
-              <h4>Nuestra Empresa</h4>
+            <div className="offset-md-3">
+               <h4>Nuestra Empresa</h4>
               <h4>Productos</h4>
               <h4>Block</h4>
               <h4>PQR</h4>
               <h4>Preguntas frecuentes</h4>
-              <h4>Politicas de h4rivacidad</h4>
+              <h4>Politicas de Privacidad</h4>
               <h4>Terminos y condiciones</h4>
             </div>
+             
+            </div>
 
-            <div className="col-sm-12 col-md-4  text-light">
+            <div className="col-sm-12 col-md-4  text-light ">
               <h3 className="m-2 text-center">SUSCRIBETE</h3>
              
               <hr style={{
             backgroundColor: "light",
             height: 6}} />
-              <h4>
+            <div className="offset-md-3">
+            <h4>
                 Mantente al tanto de nuestros productos, promociones y
                 concursos!
               </h4>
-              <h4 className="mt-5">Direccion de correo electronico</h4>
+              <h6 className="mt-5">Deseo recivir boletines y promociones</h6>
 
               <input
                 type="email"
@@ -41,6 +45,8 @@ export default function PiedePagina() {
                 id="exampleFormControlInput1"
                 placeholder="Tu dirección de correo elecrónico"
               ></input>
+            </div>
+             
             </div>
 
             <div className="col-sm-12 col-md-4 text-center text-light">
@@ -73,15 +79,19 @@ export default function PiedePagina() {
       </section>
       <selection className="">
       <div >
-        <h4 className="text-center  mt-4 text-light">
-         <font  size = '5'>Todos los Derechos Reservados 2021 ©</font>   GANO HEALTHY MEDELLÍN
+        <p  className="text-center  mt-4 text-light">
+        <font font  size = '5'>Todos los Derechos Reservados 2021 ©</font>
+         <font font  size = '4'><strong>GANO HEALTHY MEDELLÍN</strong> </font>   
 
-        </h4>
+        </p>
        
         
        
       </div>
-      <a className="text-center btn btn-success " type="button" href='#' id='volver-arriba'>Volver arriba </a>
+    <div className="text-center">
+    <a className="text-center btn btn-success " type="button" href='#' id='volver-arriba'>Volver arriba </a>
+    </div>
+     
       </selection>
       
       </div>

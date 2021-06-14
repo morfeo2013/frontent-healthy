@@ -200,7 +200,7 @@ export default function ListarLibro() {
   return (
     <div className=" container border border-secondary">
      
-
+     <div className="container p-5 mt-3"></div>
       <div className="mt-5"></div>
       {/* AGREGAR PARA ADMINISTRADOR OPCION AGREGAR NUEVO PRODUCTO*/}
       {admin ? (

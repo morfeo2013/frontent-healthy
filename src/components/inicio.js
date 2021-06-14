@@ -3,7 +3,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-
 $(document).ready(function () {
   $("#staticBackdrop").modal("show");
 });
@@ -11,7 +10,6 @@ $(document).ready(function () {
 export default function inicio() {
   return (
     <div className=" " id="inicio" autofocus>
-   
       <div
         class="modal fade"
         id="staticBackdrop"
@@ -20,10 +18,10 @@ export default function inicio() {
         aria-hidden="true"
       >
         <div class="modal-dialog modal-dialog-centered modal-lg">
-          <div class="modal-content">
+          <div class="modal-content" id="llamado-accion">
             <div class="modal-header">
-              <div className="container text-center">
-                <div className="row">
+              <div>
+                <div className="row text-center">
                   <button
                     type="button"
                     class="btn-close text-top"
@@ -37,7 +35,7 @@ export default function inicio() {
                   </h4>
                 </div>
 
-                <div className="row mt-2">
+                <div className="row mt-2 text-center">
                   <h5>Se parte de nuestra comunidad</h5>
                   <h5>Descubre increibles tips de bienestar y compra los</h5>
                   <h5>mejores productos de tu ciudad.</h5>
@@ -46,38 +44,71 @@ export default function inicio() {
             </div>
             <div class="modal-body">
               <form>
-              <div className="container">
-              <div className="row">
-              <div  className="col-4">
-              <h5>mejores productos de tu ciudad.</h5>
-              </div>
-              <div className="col-4">
-              <select class="form-select" aria-label="Default select example">
-                  <option selected>Añadir una Ciudad</option>
-                  <option value="1">Medellin</option>
-                  <option value="2">Bogota</option>
-                  <option value="3">Cali</option>
-                  <option value="3">Pereira</option>
-                  <option value="3">Manizales</option>
-                  <option value="3">Cucuta</option>
-                </select>
-              </div>
-              <div  className="col-4">
-              <button className="btn btn-outline-success" data-bs-dismiss="modal">Guardar</button>
-              </div>
-              
+
+                <div className="container col-12">
                
-              </div>
-              </div>
-              
+                  <div className="row text-center mb-2">
+                  <p><font color="red"><i><u> Suscribete a nuestros boletines mensuales</u></i></font></p>
+                    <div className="col-4">
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="exampleInputEmail1"
+                        aria-describedby="emailHelp"
+                        placeholder="Ingresa tu Correo"
+                      />
+                    </div>
+                   
+                    <div className="col-4">
+                    
+                      <select
+                        class="form-select"
+                        aria-label="Default select example"
+                      >
+                        <option selected>Añadir una Ciudad</option>
+                        <option value="1">Medellin</option>
+                        <option value="2">Bogota</option>
+                        <option value="3">Cali</option>
+                        <option value="3">Pereira</option>
+                        <option value="3">Manizales</option>
+                        <option value="3">Cucuta</option>
+                      </select>
+                    </div>
+                    <div className="col-4">
+                      <button
+                        className="btn btn-outline-success"
+                        data-bs-dismiss="modal"
+                      >
+                        Guardar
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </form>
-              
             </div>
-            <div class="modal-footer">
-              <a href="/VistaProductos">¿Ya tienes cuenta? Ingresar</a>
+
+            <div class="modal-footer ">
+              <form >
+                <div className="container d-flex text-center">
+                  <div className="row">
+                  <p>
+                  Puedes cambiar tus preferencias de suscripción en cualquier
+                  momento
+                </p>
+                <p>
+                  Al hacer click en Guardar, aceptas los Términos de servicio y
+                  la Política de Privacidad
+                </p>
+                <a href="/usuario">¿Ya tienes cuenta? Ingresar</a>
               <a href="#" data-bs-dismiss="modal">
                 No gracias
               </a>
+                  </div>
+               
+                </div>
+                
+              </form>
+              
             </div>
           </div>
         </div>
@@ -216,11 +247,6 @@ export default function inicio() {
       </section>
 
       <div className="container p-4"></div>
-      <p>
-        <a href="#" id="volver-arriba">
-          Volver arriba{" "}
-        </a>
-      </p>
     </div>
   );
 }

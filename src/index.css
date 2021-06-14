@@ -27,10 +27,10 @@ background-size:cover;
    /* para reducir la barrar navar */
    .navbar-nav > li > a, .navbar-brand {
     padding-top:10px !important; padding-bottom:0 !important;
-    height: 50px; /* aqui escoges el alto que necesites */
+    height: 36px; /* aqui escoges el alto que necesites */
 }
 .navbar {
-    min-height:30px !important; /* aqui escoges el alto que necesites */
+    min-height:20px !important; /* aqui escoges el alto que necesites */
 }
 
 
@@ -48,6 +48,20 @@ background-size:cover;
     background: rgb(141, 163, 70);
     opacity: 0.9;
 } 
+
+#footer {
+
+    background: rgb(160, 179, 98);
+
+
+}
+
+.piedepagina {
+
+    background: rgb(134, 156, 60);
+
+
+}
 
 #llamado-accion {
 
@@ -157,19 +171,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebe9f9', end
 } */
 
 
-#footer {
 
-    background: rgb(176, 197, 107);
-
-
-}
-
-.piedepagina {
-
-    background: rgb(140, 161, 69);
-
-
-}
 
 
 

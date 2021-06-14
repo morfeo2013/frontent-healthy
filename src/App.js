@@ -9,8 +9,8 @@ import IngresarLibro from "./components/IngresarLibro";
 
 import ListarLibro from "./components/ListarLibro";
 import Autor from "./components/Autor";
-import Login from "./components/Login";
-import Registrar from "./components/Registrar";
+
+
 import ListarUsuarios from "./components/ListarUsuarios";
 import Favoritos from "./components/Favoritos";
 import Administrador from "./components/Administrador";
@@ -20,7 +20,7 @@ import VistaUsuario from "./components/VistaUsuario";
 import VistaProductos from "./components/VistaProductos";
 /* const { default: Autor } = require("./components/Autor");  otra opcion*/
 
-import RecuperarContrasena from "./components/RecuperarContrasena";
+
 import PublicRoutes from "./routers/public.routes";
 
 /* importal los publicos */
@@ -55,6 +55,7 @@ else{return false}
 /* las props son para recivir todo lo que venga desde las rutas */
 function App(props) {
   return (
+ 
     <div className="fluid">
       <Router>
         <Nav />
@@ -65,13 +66,13 @@ function App(props) {
         <Route path="/inicio" component={inicio}/>
         
         <Route path="/VistaProductosUsuario" component={VistaUsuario} />
-        <Route path="/usuario" component={Login} />
-        <Route path="/Recuperar_Contrasena" component={RecuperarContrasena} />
+       
+      
 
         <Route path="/autor" component={Autor} />
         {/* PARA CREAR O EDITAR USUARIOS */}
         {/* <Route path='/ingresar' component ={IngresarLibro}/> */}
-        <Route path="/registrar" component={Registrar} />
+       
         {/*  <Route path='/editar/:id' component ={IngresarLibro}/> */}
         <Route path="/listar" component={ListarLibro} />
         <Route path="/favoritos/:id" component={Favoritos} />
