@@ -1,11 +1,89 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable no-undef */
 import React from "react";
 import { Link } from "react-router-dom";
-import App from "../App";
+
+
+$(document).ready(function () {
+  $("#staticBackdrop").modal("show");
+});
+
 export default function inicio() {
   return (
     <div className=" " id="inicio" autofocus>
-      
-      <div className="container p-5 ">
+   
+      <div
+        class="modal fade"
+        id="staticBackdrop"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <div className="container text-center">
+                <div className="row">
+                  <button
+                    type="button"
+                    class="btn-close text-top"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                  <h4 class="modal-title" id="staticBackdropLabel">
+                    {" "}
+                    ¡Bienvenido a{" "}
+                    <font color="Green">GANO HEALTHY MEDELLIN!</font>
+                  </h4>
+                </div>
+
+                <div className="row mt-2">
+                  <h5>Se parte de nuestra comunidad</h5>
+                  <h5>Descubre increibles tips de bienestar y compra los</h5>
+                  <h5>mejores productos de tu ciudad.</h5>
+                </div>
+              </div>
+            </div>
+            <div class="modal-body">
+              <form>
+              <div className="container">
+              <div className="row">
+              <div  className="col-4">
+              <h5>mejores productos de tu ciudad.</h5>
+              </div>
+              <div className="col-4">
+              <select class="form-select" aria-label="Default select example">
+                  <option selected>Añadir una Ciudad</option>
+                  <option value="1">Medellin</option>
+                  <option value="2">Bogota</option>
+                  <option value="3">Cali</option>
+                  <option value="3">Pereira</option>
+                  <option value="3">Manizales</option>
+                  <option value="3">Cucuta</option>
+                </select>
+              </div>
+              <div  className="col-4">
+              <button className="btn btn-outline-success" data-bs-dismiss="modal">Guardar</button>
+              </div>
+              
+               
+              </div>
+              </div>
+              
+              </form>
+              
+            </div>
+            <div class="modal-footer">
+              <a href="/VistaProductos">¿Ya tienes cuenta? Ingresar</a>
+              <a href="#" data-bs-dismiss="modal">
+                No gracias
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="container p-5 " id="inicio1">
         <div className="container p-5 mt-3"></div>
       </div>
 
@@ -30,7 +108,7 @@ export default function inicio() {
           <div className="row mt- ">
             <div className="col-sm-12 text-dark">
               <h1 className="text-center">
-                <strong>  QUIENES SOMOS</strong>
+                <strong> QUIENES SOMOS</strong>
               </h1>
 
               <div className="text-center"></div>
@@ -56,7 +134,7 @@ export default function inicio() {
                   herramientas para mejorar la calidad de vida.
                 </strong>
               </h3>
-              <button className="btn btn-info text-center mb-5">
+              <button className="btn btn-outline-success text-center mb-5">
                 Ver Mas <i className="fas fa-arrow-circle-right"></i>
               </button>
             </div>
@@ -77,7 +155,7 @@ export default function inicio() {
                   espiritual. Llevando salud y bienestar a todas las familias.
                 </strong>
               </h3>
-              <button className="btn btn-info text-center mb-5">
+              <button className="btn btn-outline-success text-center mb-5">
                 Ver Mas <i className="fas fa-arrow-circle-right"></i>
               </button>
             </div>
@@ -138,6 +216,11 @@ export default function inicio() {
       </section>
 
       <div className="container p-4"></div>
+      <p>
+        <a href="#" id="volver-arriba">
+          Volver arriba{" "}
+        </a>
+      </p>
     </div>
   );
 }

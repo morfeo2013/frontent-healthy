@@ -12,10 +12,14 @@ import App from "../App";
 import Axios from 'axios'/* PARA PODER HACER LAS PETICIONES GET,PUT,POS,DELETE EN EL BACKEND */
 const fredy = sessionStorage.getItem("contadorFavoritos");
 const fredy2 = sessionStorage.getItem("contProductos");
-const reload=App
+
+
 
 
 export default function Nav() {
+
+
+  
   /* para crear el ingreso inicial usuario o ya logeado */
   /* se crea el estado para evaluar que menu muestra */
   const [menu, setMenu] = useState(false);
@@ -59,8 +63,9 @@ export default function Nav() {
 
     /* para que el navbar este sin el espaciado blanco de arriba "style={{height:0}}" */
     <div className="sticky-top "  style={{height:0}}>
-        
-         <div className="imagenLogo position-relative">
+ 
+
+         <div className="imagenLogo ">
             <img className="img-fluid d-lg "
             src="https://res.cloudinary.com/dhiasghho/image/upload/c_scale,h_163/v1623350102/logos%20base/logo2_dja3q6.png"
             alt=""
@@ -100,7 +105,7 @@ export default function Nav() {
                     className="nav-link nav-success text-light text-justify "
                     to="/inicio"
                   >
-                   <h4>INICIO</h4>
+                   <h4 >INICIO </h4>
                     
                   </Link>
                   {/*  <Link className="nav-link nav-success" to="/visual"><i className="fas fa-mug-hot"></i>

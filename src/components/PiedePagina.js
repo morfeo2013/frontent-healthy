@@ -2,7 +2,7 @@
 /* eslint-disable react/style-prop-object */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
-
+import { Link } from "react-router-dom";
 export default function PiedePagina() {
   return (
     <div className="piedepagina pb-4">
@@ -24,7 +24,7 @@ export default function PiedePagina() {
             </div>
 
             <div className="col-sm-12 col-md-4  text-light">
-              <h3 className="mt-2 text-center">SUSCRIBETE</h3>
+              <h3 className="m-2 text-center">SUSCRIBETE</h3>
              
               <hr style={{
             backgroundColor: "light",
@@ -63,6 +63,7 @@ export default function PiedePagina() {
                         <i className="fab fa-instagram-square fa-3x"></i>
                       </a>
                     </p>
+                    <a href="tel:858652585">858 65 25 85</a>
                   </div>
                 </div>
               </div>
@@ -74,10 +75,15 @@ export default function PiedePagina() {
       <div >
         <h4 className="text-center  mt-4 text-light">
          <font  size = '5'>Todos los Derechos Reservados 2021 ©</font>   GANO HEALTHY MEDELLÍN
+
         </h4>
+       
+        
+       
       </div>
-    
+      <a className="text-center btn btn-success " type="button" href='#' id='volver-arriba'>Volver arriba </a>
       </selection>
+      
       </div>
   );
 }
