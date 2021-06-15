@@ -67,6 +67,7 @@ export default function PiedePagina() {
                         href="https://www.instagram.com/ganohealthy_medellin/?utm_source=qr"
                       >
                         <i className="fab fa-instagram-square fa-3x"></i>
+                       {/*  api.whatsapp.com/send/?phone=573156101684 */}
                       </a>
                     </p>
                     <a href="tel:858652585">858 65 25 85</a>

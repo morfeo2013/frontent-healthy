@@ -75,11 +75,11 @@ export default function Nav() {
         {/*  /* NAVRGADOR USANDO BOOSTRAP 5.0 */
         /* ULILIZACION DE UN NAV RESPONSIVE */}
         <nav
-          className="navbar navbar-expand-xl  navbar-dark  fondo-nav  "
+          className="navbar navbar-expand-lg   navbar-dark  fondo-nav  " /* expande a partr de lg */
           id="Menu-navegacion"
         >
           <button
-            className="navbar-toggler"
+            className="navbar-toggler col-xs-3 col-sm-12 col-md-12"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarNavDropdown"
@@ -92,7 +92,7 @@ export default function Nav() {
           <div className="">
             <div className="collapse navbar-collapse " id="navbarNavDropdown">
               <ul className=" navbar-nav ml-auto">
-                {!menu ? null : <div class="col-10"></div>}
+                {!menu ? null : <div class="col-12"></div>}
               </ul>
               {menu ? (
                 <div className="">
@@ -131,7 +131,7 @@ export default function Nav() {
                       </li>
                     )}
                     {admin ? (
-                      <li className="nav-item col--6">
+                      <li className="nav-item col-6">
                         <Link className="nav-link" to="/ingresar">
                           {/* Ingrasar nuevo producto */}
                         </Link>{" "}
@@ -143,7 +143,7 @@ export default function Nav() {
                         <ul className="navbar-nav ml-auto ">
                           <li className="nav-item ml-auto col-6">
                             <Link className="nav-link " to="/visualAdmin/">
-                              Administrador: Bienvenida{" "}
+                              Administrador: {" "}
                               {sessionStorage.getItem("nombre")}{" "}
                             </Link>
                             {/* obtiiene el nombre y lo muestra */}
@@ -182,7 +182,7 @@ export default function Nav() {
                       {/*  <Link className="nav-link nav-success" to="/visual"><i className="fas fa-mug-hot"></i>
       Inicio</Link> */}
                     </li>
-                    <li className="nav-item col-md-6 col-lg-3 col-xl-4">
+                    <li className="nav-item col-md-5 col-lg-3 col-xl-4">
                       <Link
                         id="listar1"
                         className="nav-link nav-success"
@@ -193,7 +193,7 @@ export default function Nav() {
                       {/*  <Link className="nav-link nav-success" to="/visual"><i className="fas fa-mug-hot"></i>
       Inicio</Link> */}
                     </li>
-                    <li className="nav-item col-md-6 col-lg-3 col-xl-5">
+                    <li className="nav-item col-md-5 col-lg-3 col-xl-5">
                       <Link
                         id="listar1"
                         className="nav-link nav-success text-justify "
