@@ -3,7 +3,7 @@ import React from "react";
 
 /* IMPORTAR LOS ELEMENTOS NECESARIOS  Y LAS RUTAS */
 import { BrowserRouter as Router, Route } from "react-router-dom";
-
+import Login from './components/Login';
 /* IMPORTA LOS CUATRO ELEMENTOS CREADOS EN JS */
 import IngresarLibro from "./components/IngresarLibro";
 
@@ -66,7 +66,7 @@ function App(props) {
         <Route path="/inicio" component={inicio}/>
         
         <Route path="/VistaProductosUsuario" component={VistaUsuario} />
-       
+        <Route exact path = "/usuarioApp" component={Login} />
       
 
         <Route path="/autor" component={Autor} />

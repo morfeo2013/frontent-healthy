@@ -2,7 +2,7 @@
 /* eslint-disable no-undef */
 
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState, useEffect } from "react";
+import React,{ useState, useEffect } from "react";
 /* import ReactDOM from 'react-dom'; */
 import { Link } from "react-router-dom";
 
@@ -14,6 +14,7 @@ $(".droptown-toggle").on("click", function (e) {
 import Axios from 'axios'/* PARA PODER HACER LAS PETICIONES GET,PUT,POS,DELETE EN EL BACKEND */
 const fredy = sessionStorage.getItem("contadorFavoritos");
 const fredy2 = sessionStorage.getItem("contProductos");
+
 
 export default function Nav() {
   /* para crear el ingreso inicial usuario o ya logeado */
@@ -207,12 +208,12 @@ export default function Nav() {
                       </Link>
                     </li>
                     <li className="nav-item col-md-6 col-lg-3 col-xl-5">
-                      <Link id="ingresar" className="nav-link " to="/usuario">
+                      <Link id="ingresar" className="nav-link " to="/usuarioApp">
                         <p>ACCEDER</p>
                       </Link>
                     </li>
                     <li className="nav-item col-md-6 col-lg-3 col-xl-5">
-                      <Link id="ingresar" className="nav-link " to="/usuario">
+                      <Link id="ingresar" className="nav-link " to="/usuario1">
                         <p> CARRITO</p>
                       </Link>
                     </li>

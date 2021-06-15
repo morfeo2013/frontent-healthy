@@ -1,15 +1,38 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable no-undef */
-import React from "react";
-import { Link } from "react-router-dom";
+
+import React,{useState,useEffect} from "react";
+/*CREAMOS UN ESTADO PARA CONTROLAR NO MOSTRAR EL MODAL CUANDO ESTE LOGIADO   */
+
+
 
 $(document).ready(function () {
   $("#staticBackdrop").modal("show");
+  
 });
 
+
+
+
 export default function inicio() {
+
+  const [menu, setMenu] = useState(false);
+
+
+  useEffect(() => {
+    if (sessionStorage.getItem("token")) {
+      setMenu(true);
+    }
+  }, [menu]);
+
+
   return (
     <div className=" " id="inicio" autofocus>
+      {/* CREACION DEL MODAL AL INICIO DE AL PAGINA */}
+      {menu ? null
+      :
+      
       <div
         class="modal fade"
         id="staticBackdrop"
@@ -44,11 +67,15 @@ export default function inicio() {
             </div>
             <div class="modal-body">
               <form>
-
                 <div className="container col-12">
-               
                   <div className="row text-center mb-2">
-                  <p><font color="red"><i><u> Suscribete a nuestros boletines mensuales</u></i></font></p>
+                    <p>
+                      <font color="red">
+                        <i>
+                          <u> Suscribete a nuestros boletines mensuales</u>
+                        </i>
+                      </font>
+                    </p>
                     <div className="col-4">
                       <input
                         type="email"
@@ -58,9 +85,8 @@ export default function inicio() {
                         placeholder="Ingresa tu Correo"
                       />
                     </div>
-                   
+
                     <div className="col-4">
-                    
                       <select
                         class="form-select"
                         aria-label="Default select example"
@@ -88,31 +114,33 @@ export default function inicio() {
             </div>
 
             <div class="modal-footer ">
-              <form >
+              <form>
                 <div className="container d-flex text-center">
                   <div className="row">
-                  <p>
-                  Puedes cambiar tus preferencias de suscripción en cualquier
-                  momento
-                </p>
-                <p>
-                  Al hacer click en Guardar, aceptas los Términos de servicio y
-                  la Política de Privacidad
-                </p>
-                <a href="/usuario">¿Ya tienes cuenta? Ingresar</a>
-              <a href="#" data-bs-dismiss="modal">
-                No gracias
-              </a>
+                    <p>
+                      Puedes cambiar tus preferencias de suscripción en
+                      cualquier momento
+                    </p>
+                    <p>
+                      Al hacer click en Guardar, aceptas los Términos de
+                      servicio y la Política de Privacidad
+                    </p>
+                    <a href="/usuarioPublico">¿Ya tienes cuenta? Ingresar</a>
+                    <a href="#" data-bs-dismiss="modal">
+                      No gracias
+                    </a>
                   </div>
-               
                 </div>
-                
               </form>
-              
             </div>
           </div>
         </div>
       </div>
+     /* fin modal */
+
+      }
+
+      
 
       <div className="container p-5 " id="inicio1">
         <div className="container p-5 mt-3"></div>
@@ -123,7 +151,6 @@ export default function inicio() {
           <div className="row  ">
             <div className="col-12 fondo-blur  ">
               <img
-               
                 // eslint-disable-next-line react/style-prop-object
                 src="https://res.cloudinary.com/dhiasghho/image/upload/v1623371947/logos%20base/logos_circulos_pagina_completa3_zh77fa.png"
                 alt=""
@@ -194,7 +221,7 @@ export default function inicio() {
         </div>
       </section>
 
-      <section >
+      <section>
         <div className="container">
           <h1 className="text-center mt-4 "> NUESTROS VALORES</h1>
           <div className="row mt-5">

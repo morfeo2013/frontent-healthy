@@ -15,7 +15,7 @@ const PublicRoutes =()=>{
 
         <Switch>
              <PublicRoute exact path = "/cambiopassword/:id1/:id2" component={cambiarpassword} />
-             <PublicRoute exact path = "/usuario" component={Login} />
+             <PublicRoute exact path = "/usuarioPublico" component={Login} />
              <PublicRoute exact path="/Recuperar_Contrasena" component={RecuperarContrasena} />
              <PublicRoute path="/registrar" component={Registrar} />
               {/* inyecta la pagina creada  */}
