@@ -123,7 +123,7 @@ export default function inicio() {
           <div className="row  ">
             <div className="col-12 fondo-blur  ">
               <img
-                id="logos-base"
+               
                 // eslint-disable-next-line react/style-prop-object
                 src="https://res.cloudinary.com/dhiasghho/image/upload/v1623371947/logos%20base/logos_circulos_pagina_completa3_zh77fa.png"
                 alt=""
@@ -194,12 +194,12 @@ export default function inicio() {
         </div>
       </section>
 
-      <section id="testimonios">
+      <section >
         <div className="container">
           <h1 className="text-center mt-4 "> NUESTROS VALORES</h1>
           <div className="row mt-5">
             <div className="col-sm-12 col-md-3 text-center">
-              <div className="card">
+              <div className="">
                 <div className="card-boddy">
                   <h4>PASION</h4>
                   <p className="mt-2">
@@ -210,7 +210,7 @@ export default function inicio() {
               </div>
             </div>
             <div className="col-sm-12 col-md-3 text-center">
-              <div className="card">
+              <div className="">
                 <div className="card-boddy">
                   <h4>TRANSPARENCIA</h4>
                   <p className="mt-2">
@@ -221,7 +221,7 @@ export default function inicio() {
               </div>
             </div>
             <div className="col-sm-12 col-md-3 text-center">
-              <div className="card">
+              <div className="">
                 <div className="card-boddy">
                   <h4>EMPATIA</h4>
                   <p className="mt-2">
@@ -232,7 +232,7 @@ export default function inicio() {
               </div>
             </div>
             <div className="col-sm-12 col-md-3 text-center">
-              <div className="card">
+              <div className="">
                 <div className="card-boddy">
                   <h4>CALIDAD</h4>
                   <p className="mt-2">

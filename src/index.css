@@ -18,7 +18,7 @@ background-size:cover;
 .navprincipal{ 
     position:relative;
    
-    top:50px;
+    top:60px;
     
    
    }
@@ -27,7 +27,7 @@ background-size:cover;
    /* para reducir la barrar navar */
    .navbar-nav > li > a, .navbar-brand {
     padding-top:10px !important; padding-bottom:0 !important;
-    height: 36px; /* aqui escoges el alto que necesites */
+    height: 40px; /* aqui escoges el alto que necesites */
 }
 .navbar {
     min-height:20px !important; /* aqui escoges el alto que necesites */
@@ -35,12 +35,15 @@ background-size:cover;
 
 
 
-.imagenLogo{ position:relative;
+.imagenLogo1{ position:relative;
     z-index:2; /* pocision de una imagen sobre otra */
     top: 7px;
-    left:-590px;
     
+    float: left;
     height:13px;
+
+
+ 
    }
 
 .navbarGeneral {
@@ -71,8 +74,8 @@ background-size:cover;
 
 
 .imagenLogo {
-    margin: auto;
-    text-align: center;
+    width: 100%;
+  height: auto;
 }
 
 
