@@ -28,7 +28,7 @@ export default function inicio() {
 
 
   return (
-    <div className=" " id="inicio" autofocus>
+    <div className="" id="inicio" autofocus>
       {/* CREACION DEL MODAL AL INICIO DE AL PAGINA */}
       {menu ? null
       :

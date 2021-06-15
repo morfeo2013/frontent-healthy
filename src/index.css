@@ -33,18 +33,30 @@ background-size:cover;
     min-height:20px !important; /* aqui escoges el alto que necesites */
 }
 
+@media screen and (min-width:576px) { /* Hacemos la búsqueda y si coincide modificamos las propiedades de la imagen */
+    .imagenLogo1{ position:relative;
+        z-index:2; /* pocision de una imagen sobre otra */
+     
+        
+        float: left;
+       
+      
+     
+       }
+       
+     
+        }
 
-
-.imagenLogo1{ position:relative;
-    z-index:2; /* pocision de una imagen sobre otra */
-    top: 7px;
-    
-    float: left;
-    height:13px;
-
-
- 
-   }
+        @media screen and (max-width:575px) { /* Hacemos la búsqueda y si coincide modificamos las propiedades de la imagen */
+            .imagenLogo1{
+                position:absolute;
+                z-index:2; /* pocision de una imagen sobre otra */
+                margin-left: 9.5pc;
+                transform: scale(0.6, 0.6);
+               
+              
+            }
+        }
 
 .navbarGeneral {
 

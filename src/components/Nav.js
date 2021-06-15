@@ -58,12 +58,14 @@ export default function Nav() {
 
   return (
     /* para que el navbar este sin el espaciado blanco de arriba "style={{height:0}}" */
-    <div  /* className="sticky-top "  */ style={{ height: 0 }}>
-      <div className="imagenLogo1 ">
+    <div className="" /* className="sticky-top "  */ style={{ height: 0 }}>
+      <div className=" imagenLogo1 ">
         <img
-          className=" "
+          className=""
+          
           src="https://res.cloudinary.com/dhiasghho/image/upload/v1623350102/logos%20base/logo2_dja3q6.png"
           alt=""
+          
         />
       </div>
       <div className="navprincipal navbarGeneral rounded col-auto">
