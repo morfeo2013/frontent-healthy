@@ -10,7 +10,7 @@ export default function PiedePagina() {
         <div className="container ">
           <div className="row">
             <div className="col-sm-12 col-md-4 text-light ">
-              <h3 className="mt-2 text-center">ENLASES</h3>
+              <h3 className="mt-2 text-center">ENLACES</h3>
               <hr style={{
             backgroundColor: "light",
             height: 6}} />

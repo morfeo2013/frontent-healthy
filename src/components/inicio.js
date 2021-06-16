@@ -185,16 +185,14 @@ export default function inicio() {
               <h3 className="mt-4">
                 <strong>
                   {" "}
-                  Ser reconocidos como empresalíderen Colombia distinguiéndonos
+                  Ser reconocidos como empresa líder en Colombia distinguiéndonos
                   por la calidad y eficacia de nuestros productos dirigidos a la
                   salud y el bienestar, reconocidos mundialmente por la
                   capacidad de generar bienestar, brindando conocimiento y
                   herramientas para mejorar la calidad de vida.
                 </strong>
               </h3>
-              <button className="btn btn-outline-success text-center mb-5">
-                Ver Mas <i className="fas fa-arrow-circle-right"></i>
-              </button>
+             
             </div>
             <div className="col-sm-12 col-md-12 text-center">
               <h1 className="mt-4">
@@ -213,9 +211,7 @@ export default function inicio() {
                   espiritual. Llevando salud y bienestar a todas las familias.
                 </strong>
               </h3>
-              <button className="btn btn-outline-success text-center mb-5">
-                Ver Mas <i className="fas fa-arrow-circle-right"></i>
-              </button>
+              
             </div>
           </div>
         </div>
@@ -228,10 +224,10 @@ export default function inicio() {
             <div className="col-sm-12 col-md-3 text-center">
               <div className="">
                 <div className="card-boddy">
-                  <h4>PASION</h4>
+                  <h4><strong>PASION</strong></h4>
                   <p className="mt-2">
-                    Por medio de nustros canales de difucion, pretendemos llegar
-                    a todos los lugares de colombia yde LatinoAmerica.
+                  <font font  size = '4'><strong>Por medio de nustros canales de difucion, pretendemos llegar
+                    a todos los lugares de colombia yde LatinoAmerica.</strong></font>
                   </p>
                 </div>
               </div>
@@ -239,10 +235,10 @@ export default function inicio() {
             <div className="col-sm-12 col-md-3 text-center">
               <div className="">
                 <div className="card-boddy">
-                  <h4>TRANSPARENCIA</h4>
+                  <h4><strong>TRANSPARENCIA</strong></h4>
                   <p className="mt-2">
-                    Por medio de nustros canales de difucion, pretendemos llegar
-                    a todos los lugares de colombia yde LatinoAmerica.
+                  <font font  size = '4'> <strong> Por medio de nustros canales de difucion, pretendemos llegar
+                    a todos los lugares de colombia yde LatinoAmerica.</strong></font>
                   </p>
                 </div>
               </div>
@@ -250,10 +246,10 @@ export default function inicio() {
             <div className="col-sm-12 col-md-3 text-center">
               <div className="">
                 <div className="card-boddy">
-                  <h4>EMPATIA</h4>
+                  <h4><strong>EMPATIA</strong></h4>
                   <p className="mt-2">
-                    Por medio de nustros canales de difucion, pretendemos llegar
-                    a todos los lugares de colombia yde LatinoAmerica.
+                  <font font  size = '4'> <strong> Por medio de nustros canales de difucion, pretendemos llegar
+                    a todos los lugares de colombia yde LatinoAmerica.</strong></font>
                   </p>
                 </div>
               </div>
@@ -261,10 +257,10 @@ export default function inicio() {
             <div className="col-sm-12 col-md-3 text-center">
               <div className="">
                 <div className="card-boddy">
-                  <h4>CALIDAD</h4>
+                  <h4><strong>CALIDAD</strong></h4>
                   <p className="mt-2">
-                    Por medio de nustros canales de difucion, pretendemos llegar
-                    a todos los lugares de colombia yde LatinoAmerica.
+                  <font font  size = '4'> <strong> Por medio de nustros canales de difucion, pretendemos llegar
+                    a todos los lugares de colombia yde LatinoAmerica.</strong></font>
                   </p>
                 </div>
               </div>
