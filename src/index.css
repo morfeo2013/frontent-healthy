@@ -4,16 +4,13 @@ no-repeat fixed center rgb(228, 223, 223);
 background-size:cover;
 
 }
-#marco1{
+.marco1{
+border: 3px solid black;
 
-    border: silver 10px solid;
-  border-image-source: url("https://res.cloudinary.com/dhiasghho/image/upload/v1618703539/ganohealthy/marco_principal_1_jecnwd.jpg");
-  border-image-slice: 30 fill ;/* fill vuelve el marcotrasparente */;
-  border-image-width: auto;
-  text-align: justify;
+   
 }
 
-
+  
 
 .navprincipal{ 
     position:relative;
