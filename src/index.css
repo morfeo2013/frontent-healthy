@@ -4,10 +4,24 @@ no-repeat fixed center rgb(228, 223, 223);
 background-size:cover;
 
 }
-.marco1{
-border: 3px solid black;
 
-   
+
+
+@media screen and (min-width:993px) { /* Hacemos la búsqueda y si coincide modificamos las propiedades de la imagen */
+    .marco1{
+        height: 230px;    
+        border: 2px solid black;
+        
+           
+        }
+}
+@media screen and (max-width:992px) { /* Hacemos la búsqueda y si coincide modificamos las propiedades de la imagen */
+    .marco1{
+           
+        border: 2px solid black;
+        
+           
+        }
 }
 
   
@@ -32,6 +46,8 @@ border: 3px solid black;
 
 
 
+/* POCISION DEL LOGO PRICIPAL EN LAS DIFERENTES ESOLUCIONES*/
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 @media screen and (min-width:992px) { /* Hacemos la búsqueda y si coincide modificamos las propiedades de la imagen */
     .imagenLogo1{ position:relative;
         z-index:2; /* pocision de una imagen sobre otra */
@@ -102,6 +118,8 @@ border: 3px solid black;
               
             }
         }
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
 
 .navbarGeneral {
 

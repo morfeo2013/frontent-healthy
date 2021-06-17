@@ -53,7 +53,7 @@ export default function cambiarpassword(props) {
   return (
     <div>
       <p>Pagina para cambiar contraseña</p>
-
+      
       <div className="form-group  mt-3">
         <input
           type="text"

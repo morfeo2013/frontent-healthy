@@ -10,13 +10,14 @@ export default function Administrador() {
   return (
     <div>
       {id === id2 ? <div>{null}</div> : <Redirect to="/inicio" />}
-
+      
       <div className="container">
         <div className="card">
           <div className="card-header bg-success text-white">
             <h4>
               <i className="fas fa-align-justify"></i> Menú Principal
             </h4>
+            
           </div>
           <div className="card-body">
             <ul className="list-group">

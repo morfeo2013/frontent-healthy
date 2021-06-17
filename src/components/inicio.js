@@ -43,8 +43,8 @@ export default function inicio() {
                       ></button>
                       <h4 class="modal-title" id="staticBackdropLabel">
                         {" "}
-                        ¡Bienvenido a{" "}
-                        <font color="Green">GANO HEALTHY MEDELLIN!</font>
+                        &#11088;¡Bienvenido a{" "}
+                        <font color="Green">GANO HEALTHY MEDELLIN!&#11088;</font>
                       </h4>
                     </div>
 
@@ -74,16 +74,16 @@ export default function inicio() {
                             class="form-control"
                             id="exampleInputEmail1"
                             aria-describedby="emailHelp"
-                            placeholder="Ingresa tu Correo"
+                            placeholder="&#128231; Ingresa tu Correo"
                           />
                         </div>
-
+ 
                         <div className="col-4">
                           <select
                             class="form-select"
                             aria-label="Default select example"
                           >
-                            <option selected>Añadir una Ciudad</option>
+                            <option selected>Añadir una Ciudad  ⇩</option>
                             <option value="1">Medellin</option>
                             <option value="2">Bogota</option>
                             <option value="3">Cali</option>
@@ -172,7 +172,7 @@ export default function inicio() {
           <div className="row mt-3">
             <div className="col-sm-12 col-md-12 text-center">
               <h1 className="mt-3">
-                <strong> VISION</strong>
+                <strong>&#127758; VISION</strong>
               </h1>
               <h3 className="mt-4">
                 <strong>
@@ -187,7 +187,7 @@ export default function inicio() {
             </div>
             <div className="col-sm-12 col-md-12 text-center">
               <h1 className="mt-4">
-                <strong>MISION</strong>
+                <strong>&#127760; MISION</strong>
               </h1>
               <h3 className="mt-5">
                 <strong>
@@ -209,14 +209,14 @@ export default function inicio() {
 
       <section>
         <div className="container">
-          <h1 className="text-center mt-4 "> NUESTROS VALORES</h1>
+          <h1 className="text-center mt-4 ">&#129351; NUESTROS VALORES</h1>
           <div className="row mt-5">
             <div className="col-md-12 col-lg-3 text-center">
               <div className="marco1">
                 <div className="tablaigual">
                 <div className="card-boddy">
                   <h4>
-                    <strong>PASION</strong>
+                    <strong>&#11088; PASION</strong>
                   </h4>
                   <p min className="mt-2">
                     <font font size="4">
@@ -238,7 +238,7 @@ export default function inicio() {
                 <div className="tablaigual">
                 <div className="card-boddy">
                   <h4>
-                    <strong>TRANSPARENCIA</strong>
+                    <strong>&#11088; TRANSPARENCIA</strong>
                   </h4>
                   <p min className="mt-2">
                     <font font size="4">
@@ -258,7 +258,7 @@ export default function inicio() {
                 <div className="tablaigual">
                 <div className="card-boddy">
                   <h4>
-                    <strong>EMPATIA</strong>
+                    <strong>&#11088; EMPATIA</strong>
                   </h4>
                   <p min className="mt-2">
                     <font font size="4">
@@ -280,7 +280,7 @@ export default function inicio() {
                 <div className="tablaigual">
                 <div className="card-boddy">
                   <h4>
-                    <strong>CALIDAD</strong>
+                    <strong>&#11088; CALIDAD</strong>
                   </h4>
                   <p min className="mt-2">
                     <font font size="4">
