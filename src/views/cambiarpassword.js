@@ -4,7 +4,9 @@ import React, { useState } from "react";
 
 /* exportarlo como componente para inyectar en public.routes.js*/
 export default function cambiarpassword(props) {
+  /* se crea el stado cuando el usuario ingrese la neuva contraseña para ser enviada al backen */
   var [newPassword, setNewPassword] = useState("");
+
   /* se toman las PROPS para sacar el valor del la URL */
 
   /* tomamos el valor que envia el baken por la url y la destructuramos */
@@ -19,28 +21,33 @@ export default function cambiarpassword(props) {
     <PublicRoute exact path = "/cambiopassword/:id1/:id2" component={cambiarpassword} */
 
   /* DOS MANERAS ES LO MISMO */
-  const tokenTiempo = props.match.params.id1; /* SE TOMA DERECTO DE LOS PROPS */
+  const tokenTiempo =
+    props.match.params
+      .id1; /* SE TOMA DERECTO DE LOS PROPS PARA SACAR EL TOKEN GENERADO DESDE EL BACKE*/
   const idUsuario =
-    params.id2; /* SE DESTRUCTURA CON   const  { match: { params } } = props; */
+    params.id2; /* SE DESTRUCTURA CON   const  { match: { params } } = props;  PARA SACAR EL USUARIIO ID*/
 
-  console.log(tokenTiempo); // mostraria el token
+  /*  console.log(tokenTiempo); */ // mostraria el token
 
   /* ENVIOS DE LA INFORMACIOIN AL BACKEND PARA LA MODIFICACION DE LA CONTRASEÑA */
 
   const envioNuevoPasswors = async () => {
     const respuesta = await Axios.get(
-      "https://ganohealthy.herokuapp.com/cambio_password/" +
-        idUsuario +
+      "https://ganohealthy.herokuapp.com/cambio_password/" /* direccion para capeta ruter del backen */ +
+        idUsuario /* el id del usuario para que el backend sepa cual contraseña va a cambiar */ +
         "/" +
-        newPassword,
-      { headers: { autorizacion: "bearer " + tokenTiempo } }
+        newPassword /* tomade del estado useState para enviar la nueva contraseña */,
+      {
+        headers: { autorizacion: "bearer " + tokenTiempo },
+      } /* clave acceso para ingresar ala carpeta token y revisar la validad del token y el tiempo */
 
       /*  'http://localhost:4000/cambio_password/' + idUsuario + '/' + newPassword , { headers: { autorizacion: "bearer " + tokenTiempo } } */
     );
 
+    /* PENDIENTE CONFIGURAR AL CINFIRMACION DEL BACKEND DE QUE SE REALIZO EL CAMBIODE CONTRASEÑA */
     const mensaje = respuesta.data.mensage;
 
-    console.log(respuesta.data.mensage);
+    /* console.log(respuesta.data.mensage); */
   };
 
   return (
@@ -64,7 +71,7 @@ export default function cambiarpassword(props) {
       >
         <i className="far fa-trash-alt"> </i>{" "}
         {/* agregar el onClick para ejecutaar la funcion eliminar APROVECHA Y SACA EL ._ID Y LO ENVIA A LA FUNCION ELIMINAR(_ID)*/}
-        Eliminar
+        Cambiar contraseña
       </button>
     </div>
   );
