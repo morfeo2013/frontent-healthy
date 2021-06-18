@@ -11,13 +11,80 @@ $(document).ready(function () {
 
 export default function inicio() {
   const [menu, setMenu] = useState(false);
-
+  
   useEffect(() => {
     if (sessionStorage.getItem("token")) {
       setMenu(true);
     }
   }, [menu]);
 
+
+  function validar(){
+
+    /*creo una variable de tipo booleano que en principio tendrá un valor true(verdadero),
+    y que se convertirá en false(falso) cuando la condición no se cumpla*/
+    var todo_correcto = true;
+    
+    /*El primer campo a comprobar es el del nombre. Lo traemos por id y verificamos
+    la condición, en este caso, por ejemplo, le decimos que tiene que tener más de dos dígitos
+    para que sea un nombre válido. Si no tiene más de dos dígitos, la variable todo_correcto
+    devolverá false.*/
+    
+    if(document.getElementById('nombre').value.length < 2 ){
+        todo_correcto = false;
+    }
+    
+    /*Hacemos lo mismo con el campo dirección. En este caso le pediremos al usuario que
+    introduzca al menos 10 caracteres.*/
+    if(document.getElementById('direccion').value.length < 10 ){
+        todo_correcto = false;
+    }
+    
+    /*Para comprobar la edad, utilizaremos la función isNaN(), que nos dirá si el valor
+    ingresado NO es un número (NaN son las siglas de Not a Number). Si la edad no es un
+    número, todo_correcto será false.*/
+    if(isNaN(document.getElementById('edad').value)){
+        todo_correcto = false;
+    }
+    
+    /*Para comprobar el email haremos uso de una expresión regular. Esto es una secuencia
+    de caracteres que nos dirá si el valor ingresado por el usuario tiene estructura de
+    correo electrónico. Lo que hacemos es obtener el value del campo de texto destinado
+    al email, y le aplicamos el método test() del objeto global RegExp(que nos permite
+    trabajar con expresiones regulares).*/
+    var expresion = /^[a-z][\w.-]+@\w[\w.-]+\.[\w.-]*[a-z][a-z]$/i;
+    var email = document.form1.email.value;
+    if (!expresion.test(email)){
+        todo_correcto = false;
+    }
+    
+    /*Para validar el select debemos añadir un value distinto a cada option. En el
+    código, he asignado un value con  valor vacío al primer option. Los siguientes,
+    al no estar definidos toman el valor por defecto. Por tanto, si todos tienen value,
+    lo único que tenemos que comprobar es que este no sea vacío. Si es vacío, todo_correcto
+    será false.*/
+    if(document.getElementById('estudios').value === ''){
+        todo_correcto = false;
+    }
+    
+    /*Validaremos también el checkbox del formulario. Todos los
+    checkbox tienen una propiedad llamada checked. Entonces
+    hacemos el if y decimos que si nuestro checkbox NO está
+    checked, estará mal.*/
+    if(!document.getElementById('acepto').checked){
+        todo_correcto = false;
+    }
+    
+    /*Por último, y como aviso para el usuario, si no está todo bién, osea, si la variable
+    todo_correcto ha devuelto false al menos una vez, generaremos una alerta advirtiendo
+    al usuario de que algunos datos ingresados no son los que esperamos.*/
+    if(!todo_correcto){
+    alert('Algunos campos no están correctos, vuelva a revisarlos');
+    }
+    
+    return todo_correcto;
+    }
+    
   return (
     <div className="" id="inicio" autofocus>
       {/* CREACION DEL MODAL AL INICIO DE AL PAGINA */}
@@ -28,7 +95,7 @@ export default function inicio() {
             id="staticBackdrop"
             tabindex="-1"
             aria-labelledby="staticBackdropLabel"
-            aria-hidden="true"
+            aria-hidden="true" 
           >
             <div class="modal-dialog modal-dialog-centered modal-lg">
               <div class="modal-content" id="llamado-accion">
@@ -44,7 +111,9 @@ export default function inicio() {
                       <h4 class="modal-title" id="staticBackdropLabel">
                         {" "}
                         &#11088;¡Bienvenido a{" "}
-                        <font color="Green">GANO HEALTHY MEDELLIN!&#11088;</font>
+                        <font color="Green">
+                          GANO HEALTHY MEDELLIN!&#11088;
+                        </font>
                       </h4>
                     </div>
 
@@ -58,9 +127,11 @@ export default function inicio() {
                   </div>
                 </div>
                 <div class="modal-body">
-                  <form>
-                    <div className="container col-12">
-                      <div className="row text-center mb-2">
+                  
+                  <form  onSubmit={validar}>
+                  
+                    <div className="container col-12 text-center">
+                      <div className="row d-flex">
                         <p>
                           <font color="red">
                             <i>
@@ -68,36 +139,41 @@ export default function inicio() {
                             </i>
                           </font>
                         </p>
-                        <div className="col-4">
-                          <input
+
+                        <div className="col-5">
+                          
+                           <input
                             type="email"
                             class="form-control"
                             id="exampleInputEmail1"
                             aria-describedby="emailHelp"
                             placeholder="&#128231; Ingresa tu Correo"
                           />
+                          
                         </div>
- 
-                        <div className="col-4">
+
+                        <div className="col-5">
                           <select
                             class="form-select"
                             aria-label="Default select example"
                           >
-                            <option selected>Añadir una Ciudad  ⇩</option>
+                            <option selected>Añadir una Ciudad ⇩</option>
                             <option value="1">Medellin</option>
                             <option value="2">Bogota</option>
                             <option value="3">Cali</option>
-                            <option value="3">Pereira</option>
-                            <option value="3">Manizales</option>
-                            <option value="3">Cucuta</option>
+                            <option value="4">Pereira</option>
+                            <option value="4">Manizales</option>
+                            <option value="6">Cucuta</option>
                           </select>
                         </div>
-                        <div className="col-4">
+                        <div className="col-2">
                           <button
-                            className="btn btn-outline-success"
-                            data-bs-dismiss="modal"
+                            type="submit"
+                            class="btn btn-primary " data-bs-dismiss="modal"
+                          
                           >
-                            Guardar
+                          
+                            Submit
                           </button>
                         </div>
                       </div>
@@ -106,7 +182,7 @@ export default function inicio() {
                 </div>
 
                 <div class="modal-footer ">
-                  <form>
+                  <form >
                     <div className="container d-flex text-center">
                       <div className="row">
                         <p>
@@ -134,6 +210,7 @@ export default function inicio() {
         /* fin modal */
       }
 
+        
       <div className="container p-5 " id="inicio1">
         <div className="container p-5 mt-3"></div>
       </div>
@@ -185,7 +262,7 @@ export default function inicio() {
                 </strong>
               </h3>
             </div>
-            <div className="col-sm-12 col-md-12 text-center">
+            <div className="col-sm-12 col-md-12 text-center ">
               <h1 className="mt-4">
                 <strong>&#127760; MISION</strong>
               </h1>
@@ -214,88 +291,83 @@ export default function inicio() {
             <div className="col-md-12 col-lg-3 text-center">
               <div className="marco1">
                 <div className="tablaigual">
-                <div className="card-boddy">
-                  <h4>
-                    <strong>&#11088; PASION</strong>
-                  </h4>
-                  <p min className="mt-2">
-                    <font font size="4">
-                      <strong>
-                        ¡Estamos cambiando el mundo saludable! y para seguirlo
-                        haciendo el compromiso es ilimitado. a todos los lugares
-                        de colombia y de LatinoAmerica.
-                      </strong>
-                    </font>
-                  </p>
+                  <div className="card-boddy">
+                    <h4>
+                      <strong>&#11088; PASION</strong>
+                    </h4>
+                    <p min className="mt-2">
+                      <font font size="4">
+                        <strong>
+                          ¡Estamos cambiando el mundo saludable! y para seguirlo
+                          haciendo el compromiso es ilimitado. a todos los
+                          lugares de colombia y de LatinoAmerica.
+                        </strong>
+                      </font>
+                    </p>
+                  </div>
                 </div>
-                </div>
-                
-              </div>
-              
-            </div>
-            <div className="col-md-12 col-lg-3 text-center">
-              <div className="marco1">
-                <div className="tablaigual">
-                <div className="card-boddy">
-                  <h4>
-                    <strong>&#11088; TRANSPARENCIA</strong>
-                  </h4>
-                  <p min className="mt-2">
-                    <font font size="4">
-                      <strong>
-                      Somos auténticos y sinceros, no nos interesa cambiar la verdad para sacar provecho.
-                      </strong>
-                    </font>
-                  </p>
-                </div>
-                </div>
-                
-              </div>
-              
-            </div>
-            <div className="col-md-12 col-lg-3 text-center">
-              <div className="marco1">
-                <div className="tablaigual">
-                <div className="card-boddy">
-                  <h4>
-                    <strong>&#11088; EMPATIA</strong>
-                  </h4>
-                  <p min className="mt-2">
-                    <font font size="4">
-                      {" "}
-                      <strong>
-                        Conectamos con nuestro cliente, poniéndonos en su lugar
-                        para comprender sus necesidades y lograr prestarle
-                        nuestra ayuda.
-                      </strong>
-                    </font>
-                  </p>
-                </div>
-                </div>
-                
               </div>
             </div>
             <div className="col-md-12 col-lg-3 text-center">
               <div className="marco1">
                 <div className="tablaigual">
-                <div className="card-boddy">
-                  <h4>
-                    <strong>&#11088; CALIDAD</strong>
-                  </h4>
-                  <p min className="mt-2">
-                    <font font size="4">
-                      {" "}
-                      <strong>
+                  <div className="card-boddy">
+                    <h4>
+                      <strong>&#11088; TRANSPARENCIA</strong>
+                    </h4>
+                    <p min className="mt-2">
+                      <font font size="4">
+                        <strong>
+                          Somos auténticos y sinceros, no nos interesa cambiar
+                          la verdad para sacar provecho.
+                        </strong>
+                      </font>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-12 col-lg-3 text-center">
+              <div className="marco1">
+                <div className="tablaigual">
+                  <div className="card-boddy">
+                    <h4>
+                      <strong>&#11088; EMPATIA</strong>
+                    </h4>
+                    <p min className="mt-2">
+                      <font font size="4">
                         {" "}
-                        Nos comprometemos, que los procesos de nuestros
-                        productos sean los mejores posibles, no nos conformamos
-                        con menos.
-                      </strong>
-                    </font>
-                  </p>
+                        <strong>
+                          Conectamos con nuestro cliente, poniéndonos en su
+                          lugar para comprender sus necesidades y lograr
+                          prestarle nuestra ayuda.
+                        </strong>
+                      </font>
+                    </p>
+                  </div>
                 </div>
+              </div>
+            </div>
+            <div className="col-md-12 col-lg-3 text-center">
+              <div className="marco1">
+                <div className="tablaigual">
+                  <div className="card-boddy">
+                    <h4>
+                      <strong>&#11088; CALIDAD</strong>
+                    </h4>
+                    <p min className="mt-2">
+                      <font font size="4">
+                        {" "}
+                        <strong>
+                          {" "}
+                          Nos comprometemos, que los procesos de nuestros
+                          productos sean los mejores posibles, no nos
+                          conformamos con menos.
+                        </strong>
+                      </font>
+                    </p>
+                  </div>
                 </div>
-                
               </div>
             </div>
           </div>

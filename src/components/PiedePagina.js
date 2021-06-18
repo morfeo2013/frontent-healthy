@@ -43,13 +43,17 @@ export default function PiedePagina() {
                   concursos!
                 </h4>
                 <h6 className="mt-5">Deseo recivir boletines y promociones</h6>
-
-                <input
-                  type="email"
-                  class="form-control"
-                  id="exampleFormControlInput1"
-                  placeholder="Tu dirección de correo elecrónico"
-                ></input>
+                <form className="form-group d-flex">
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="exampleFormControlInput1"
+                    placeholder="Tu dirección de correo elecrónico"
+                  ></input>
+                  <button type="submit" className="btn btn-success">
+                    Enviar
+                  </button>
+                </form> 
               </div>
             </div>
 
