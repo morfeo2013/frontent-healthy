@@ -75,7 +75,7 @@ export default function inicio() {
                           </font>
                         </p>
 
-                        <div className="col-5">
+                        <div className="col-xs-3 col-sm-5">
                           
                            <input
                             type="email"
@@ -87,7 +87,7 @@ export default function inicio() {
                           
                         </div>
 
-                        <div className="col-5">
+                        <div className="col-xs-3 col-sm-5">
                           <select
                             class="form-select"
                             aria-label="Default select example"
@@ -101,14 +101,14 @@ export default function inicio() {
                             <option value="6">Cucuta</option>
                           </select>
                         </div>
-                        <div className="col-2">
+                        <div className="col-xs-6 col-sm-2 d-grid gap-2">
                           <button
                             type="submit"
-                            class="btn btn-primary " data-bs-dismiss="modal"
+                            class="btn btn-outline-success btn-block" data-bs-dismiss="modal"
                           
                           >
                           
-                            Submit
+                            Enviar
                           </button>
                         </div>
                       </div>
