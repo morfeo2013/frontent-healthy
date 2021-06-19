@@ -103,16 +103,16 @@ export default function PiedePagina() {
             </font>
           </p>
         </div>
-        <div className="text-center">
+        {/* <div className="text-center" > 
           <a
-            className="text-center btn btn-success "
+            className="text-center btn btn-success " 
             type="button"
             href="#"
             id="volver-arriba"
           >
             Volver arriba{" "}
           </a>
-        </div>
+        </div> */}
       </selection>
     </div>
   );

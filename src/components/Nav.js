@@ -59,6 +59,8 @@ export default function Nav() {
   return (
     /* para que el navbar este sin el espaciado blanco de arriba "style={{height:0}}" */
     <div className="" /* className="sticky-top "  */ style={{ height: 0 }}>
+
+      
       <div className=" imagenLogo1 ">
         <img
           className=""

@@ -46,7 +46,7 @@ background-size:cover;
 
 
 
-/* POCISION DEL LOGO PRICIPAL EN LAS DIFERENTES ESOLUCIONES*/
+/*INICIO POCISION DEL LOGO PRICIPAL EN LAS DIFERENTES ESOLUCIONES*/
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 @media screen and (min-width:992px) { /* Hacemos la búsqueda y si coincide modificamos las propiedades de la imagen */
     .imagenLogo1{ position:relative;
@@ -118,6 +118,8 @@ background-size:cover;
               
             }
         }
+        /* POCISION DEL LOGO PRICIPAL EN LAS DIFERENTES POCIONES*/
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
 
@@ -215,41 +217,71 @@ background-size:cover;
 }
 
 
-#card2 {
 
-
-    /*   background: rgba(235,233,249,1);
-background: -moz-linear-gradient(top, rgba(235,233,249,1) 0%, rgba(216,208,239,1) 42%, rgba(206,199,236,1) 56%, rgba(196,193,235,1) 89%, rgba(193,191,234,1) 100%);
-background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(235,233,249,1)), color-stop(42%, rgba(216,208,239,1)), color-stop(56%, rgba(206,199,236,1)), color-stop(89%, rgba(196,193,235,1)), color-stop(100%, rgba(193,191,234,1)));
-background: -webkit-linear-gradient(top, rgba(235,233,249,1) 0%, rgba(216,208,239,1) 42%, rgba(206,199,236,1) 56%, rgba(196,193,235,1) 89%, rgba(193,191,234,1) 100%);
-background: -o-linear-gradient(top, rgba(235,233,249,1) 0%, rgba(216,208,239,1) 42%, rgba(206,199,236,1) 56%, rgba(196,193,235,1) 89%, rgba(193,191,234,1) 100%);
-background: -ms-linear-gradient(top, rgba(235,233,249,1) 0%, rgba(216,208,239,1) 42%, rgba(206,199,236,1) 56%, rgba(196,193,235,1) 89%, rgba(193,191,234,1) 100%);
-background: linear-gradient(to bottom, rgba(235,233,249,1) 0%, rgba(216,208,239,1) 42%, rgba(206,199,236,1) 56%, rgba(196,193,235,1) 89%, rgba(193,191,234,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebe9f9', endColorstr='#c1bfea', GradientType=0 ); */
-
-
-}
 
 .imagenLogo img {
     
     flex-wrap: wrap;
     justify-content: justify;
-   /*  height: 200px; */
-    /* width: 200px; */
-    /* border-radius: 100%; */
-    /* border: 1px solid beige */;
+
 
 }
-/* 
-#inicio {
-    background: url("https://morfeo12345678.s3-sa-east-1.amazonaws.com/fotos+ganoderma/bg-breadcrumbl+largo.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-
-} */
 
 
 
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/*INICIO REDES SOCIALES */
 
+/* EFECTO QUE QUEDE A LA DERECHA Y FLOTANTE */
+.social-bar {
+	position: fixed;
+	right: 0;
+	top: 35%;
+	font-size: 2rem; /* tamaño de los iconos */
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	z-index: 100;
+}
+/* COLOR DE LOS ICONOS */
+.icon {
+	color: white;
+	text-decoration: none;
+	padding: .7rem;
+	display: flex;
+	transition: all .5s;
+}
+/* FONDO DE LA PALETA  */
+.icon-facebook {
+	background: #2E406E;
+}
 
+.icon-whatshap {
+	background: #47c727;
+}
 
+.icon-subir {
+	background: #E83028;
+}
+
+.icon-instagram {
+	background: #3F60A5;
+}
+
+/* EL PRIMERO DE EL EFECTO REDONDEADO SE REDONDEE */
+.icon:first-child {
+	border-radius: 1rem 0 0 0;
+}
+/* EL ULTIMO DE EL EFECTO REDONDEADO SE REDONDEE */
+.icon:last-child {
+	border-radius: 0 0 0 1rem;
+}
+/* AL SALIR EL ICONO SE REDONDEE TODO */
+.icon:hover {
+	padding-right: 3rem;
+	border-radius: 1rem 0 0 1rem;
+	box-shadow: 0 0 .5rem rgba(0, 0, 0, 0.822);
+}
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/*FINAL REDES SOCIALES */

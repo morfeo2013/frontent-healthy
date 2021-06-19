@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Login from './components/Login';
 /* IMPORTA LOS CUATRO ELEMENTOS CREADOS EN JS */
 import IngresarLibro from "./components/IngresarLibro";
-
+import RedesSociales from "./components/RedesSociales"
 import ListarLibro from "./components/ListarLibro";
 import Autor from "./components/Autor";
 
@@ -26,6 +26,7 @@ import PublicRoutes from "./routers/public.routes";
 /* importal los publicos */
 
 const { default: Nav } = require("./components/Nav");
+
 const { default: PiedePagina } = require("./components/PiedePagina");
 
 /* PARA PEDIR SI SI EN sessionStorage.getItem ESTA GENERADO CORRECTAMENTE EL TOQUE Y CREA LA CONDICION
@@ -58,7 +59,9 @@ function App(props) {
  
     <div className="fluid">
       <Router>
+      <Route path="/" component={RedesSociales}/>
         <Nav />
+       
         <PublicRoutes />
         
         {/* AL INGRESAR  A DETERMINADA DIRECCION SE ACTIVA UN ARCHIVO JSX QUE REDERIZARA LA PAGINA CON EL CONTENIDO DESIGNADO */}
