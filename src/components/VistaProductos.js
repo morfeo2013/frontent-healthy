@@ -150,25 +150,22 @@ export default function VistaProductos() {
 
     // eslint-disable-next-line no-unused-vars
     var swiper = new Swiper(".mySwiper", {
-        autoplay: {
-            delay: 2500,
-            disableOnInteraction: false,
-          },
-        effect: "coverflow",
-        grabCursor: true,
+        spaceBetween: 30,
         centeredSlides: true,
-        slidesPerView: "auto",
-        coverflowEffect: {
-          rotate: 50,
-          stretch: 0,
-          depth: 100,
-          modifier: 1,
-          slideShadows: true,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
         },
         pagination: {
           el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
         },
       });
+
 
 
 
@@ -190,12 +187,10 @@ export default function VistaProductos() {
             {/* AGREGAR PARA ADMINISTRADOR OPCION AGREGAR NUEVO PRODUCTO*/}
 
          
- <div class="swiper-container mySwiper">
-      <div class="b-5 swiper-wrapper">
+            <div class="swiper-container mySwiper">
+      <div class="swiper-wrapper">
       {datos.map(libros => (
-           
     <img className="swiper-slide " src={libros.imagen} alt=""></img>
-  
   ))}
         
       </div>
