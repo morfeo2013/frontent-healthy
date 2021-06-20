@@ -150,7 +150,7 @@ export default function VistaProductos() {
 
     // eslint-disable-next-line no-unused-vars
     var swiper = new Swiper(".mySwiper", {
-        spaceBetween: 30,
+     
         centeredSlides: true,
         autoplay: {
           delay: 2500,
@@ -165,7 +165,6 @@ export default function VistaProductos() {
           prevEl: ".swiper-button-prev",
         },
       });
-
 
 
 
@@ -190,7 +189,7 @@ export default function VistaProductos() {
 
          
  <div class="swiper-container mySwiper">
-      <div class="swiper-wrapper">
+      <div class="b-5 swiper-wrapper">
       {datos.map(libros => (
     <img className="swiper-slide " src={libros.imagen} alt=""></img>
   ))}
