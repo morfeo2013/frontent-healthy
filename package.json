@@ -43,16 +43,9 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
-    ],
+    ]
     
-      "tags": [
-        "swiper"
-      ],
-      "name": "Swiper - Effect coverflow",
-      "dependencies": {
-        "swiper": "latest",
-        "parcel-bundler": "^1.6.1"
-      
-    }
+    
+    
   }
 }
