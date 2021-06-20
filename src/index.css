@@ -287,9 +287,9 @@ background-size:cover;
 /*FINAL REDES SOCIALES */
 
 .swiper-container {
-    width: 60%;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
   }
 
   .swiper-slide {
