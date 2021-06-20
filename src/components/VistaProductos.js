@@ -176,11 +176,6 @@ export default function VistaProductos() {
 
 
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 98199e09e82332b953379e52810a22b4bdd28b99
     /* const g ="https://morfeo12345678.s3-sa-east-1.amazonaws.com/fotos+ganoderma/Screenshot_20201103_093714.jpg " */
 
 
