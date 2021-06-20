@@ -1,14 +1,14 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import Axios from "axios";
 import React, { useState } from "react";
-
+import Swal from "sweetalert2";
 /* exportarlo como componente para inyectar en public.routes.js*/
 export default function cambiarpassword(props) {
   /* se crea el stado cuando el usuario ingrese la neuva contraseña para ser enviada al backen */
   var [newPassword, setNewPassword] = useState("");
-
+  var [newPassword2, setNewPassword2] = useState("");
   /* se toman las PROPS para sacar el valor del la URL */
-
+  var [mensaje1, setMensaje1] = useState("");
   /* tomamos el valor que envia el baken por la url y la destructuramos */
   const {
     match: { params },
@@ -31,23 +31,85 @@ export default function cambiarpassword(props) {
 
   /* ENVIOS DE LA INFORMACIOIN AL BACKEND PARA LA MODIFICACION DE LA CONTRASEÑA */
 
-  const envioNuevoPasswors = async () => {
-    const respuesta = await Axios.get(
-      "https://ganohealthy.herokuapp.com/cambio_password/" /* direccion para capeta ruter del backen */ +
-        idUsuario /* el id del usuario para que el backend sepa cual contraseña va a cambiar */ +
-        "/" +
-        newPassword /* tomade del estado useState para enviar la nueva contraseña */,
-      {
-        headers: { autorizacion: "bearer " + tokenTiempo },
-      } /* clave acceso para ingresar ala carpeta token y revisar la validad del token y el tiempo */
+const mensajeError=()=>{
+  if(newPassword!==newPassword2){
+   
+     
+      Swal.fire({
+        icon: "error",
+        title: "Error No coinciden las Claves",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+  
+  }
 
-      /*  'http://localhost:4000/cambio_password/' + idUsuario + '/' + newPassword , { headers: { autorizacion: "bearer " + tokenTiempo } } */
-    );
 
-    /* PENDIENTE CONFIGURAR AL CINFIRMACION DEL BACKEND DE QUE SE REALIZO EL CAMBIODE CONTRASEÑA */
-    const mensaje = respuesta.data.mensage;
+  
+  }
+  
+  const envioNuevoPasswors = async (e) => {
 
-    /* console.log(respuesta.data.mensage); */
+  
+      setMensaje1("Ingresaste correctamente la contraseña")
+      const respuesta = await Axios.get(
+        "https://ganohealthy.herokuapp.com/cambio_password/" /* direccion para capeta ruter del backen */ +
+          idUsuario /* el id del usuario para que el backend sepa cual contraseña va a cambiar */ +
+          "/" +
+          newPassword /* tomade del estado useState para enviar la nueva contraseña */,
+        {
+          headers: { autorizacion: "bearer " + tokenTiempo },
+        } /* clave acceso para ingresar ala carpeta token y revisar la validad del token y el tiempo */
+  
+        /*  'http://localhost:4000/cambio_password/' + idUsuario + '/' + newPassword , { headers: { 
+          
+        autorizacion: "bearer " + tokenTiempo } } */
+
+        
+      );
+    
+      /* PENDIENTE CONFIGURAR AL CINFIRMACION DEL BACKEND DE QUE SE REALIZO EL CAMBIODE CONTRASEÑA */
+      
+      
+      
+      const mensage = respuesta.data.mensage;
+      console.log(mensage);
+      if (mensage==='Ingresaste a la recuperacion de password  '){
+        
+        setTimeout(() => {
+          Swal.fire({
+            icon: "success",
+            title: mensage,
+            showConfirmButton: false,
+          });
+            
+        }, 1500);
+
+          
+
+            
+            window.location.href = "/login";
+         
+        
+         
+      }else{
+        setTimeout(() => {
+          Swal.fire({
+            icon: "error",
+            title: "Su tiempo caduco",
+            showConfirmButton: false,
+          });
+            
+        }, 1500);
+      }
+      
+    
+    
+    
+
+
+
+    
   };
 
   return (
@@ -63,6 +125,7 @@ export default function cambiarpassword(props) {
             <div className="card-header text-center">
              <h4>¿Tienes problemas para entrar?</h4> 
             </div>
+            <h4>{mensaje1}</h4>
             <p className="text-center m-3">
             Introduce tu correo electrónico y te enviaremos un enlace para que vuelvas a entrar en tu cuenta.
 
@@ -71,11 +134,21 @@ export default function cambiarpassword(props) {
               <form >
                 <div className="form-group mt-2">
                 <input
-          type="text"
+          type="password"
           className="form-control"
           value={newPassword}
-          onChange={(e) => setNewPassword(e.target.value.toLowerCase())}
-          placeholder="codigo"
+          onChange={(e) =>  setNewPassword(e.target.value.toLowerCase())}
+          placeholder="Ingresa la nueva Contraseña"
+          required
+        />
+                </div>
+                <div className="form-group mt-2">
+                <input
+          type="password"
+          className="form-control"
+          value={newPassword2}
+          onChange={(e) => setNewPassword2(e.target.value.toLowerCase())}
+          placeholder="Ingresa la nuevamente Contraseña"
           required
         />
                 </div>
@@ -84,7 +157,9 @@ export default function cambiarpassword(props) {
                   <button 
                    className="btn btn-warning mt-3 btn-block"
                    id="desactivar"
-                   onClick={() => envioNuevoPasswors()}
+                   onClick={() => (newPassword===newPassword2)?  envioNuevoPasswors()
+                  :mensajeError()
+                  }
                    /*  agregar el onClick para ejecutaar la funcion eliminar APROVECHA Y SACA EL ._ID Y LO ENVIA A LA FUNCION ELIMINAR(_ID) */
                   
                   >
