@@ -32,7 +32,7 @@ export default function VistaProductos() {
 
 
     const [buscar, setBuscar] = useState([])/* aca el arrays recojera el OBJETO json del estado datos */
-    const [buscar2, setBuscar2] = useState([])
+   
 
     const [opcion, setOpcion] = useState('') /* este estado realiza el contro del tipo de busqueda que se realizara */
 
@@ -149,25 +149,20 @@ export default function VistaProductos() {
 
 
     // eslint-disable-next-line no-unused-vars
-    const swiper = new Swiper('.swiper-container', {
-        // Optional parameters
-        direction: 'horizontal',
-        loop: true,
-      
-        // If we need pagination
+    var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
         pagination: {
-          el: '.swiper-pagination',
+          el: ".swiper-pagination",
+          clickable: true,
         },
-      
-        // Navigation arrows
         navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-      
-        // And if we need scrollbar
-        scrollbar: {
-          el: '.swiper-scrollbar',
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
         },
       });
 
@@ -194,25 +189,17 @@ export default function VistaProductos() {
             {/* AGREGAR PARA ADMINISTRADOR OPCION AGREGAR NUEVO PRODUCTO*/}
 
          
-<div class="swiper-container">
-
-  <div class="swiper-wrapper">
-   
-  {datos.map(libros => (
+ <div class="swiper-container mySwiper">
+      <div class="swiper-wrapper">
+      {datos.map(libros => (
     <img className="swiper-slide " src={libros.imagen} alt=""></img>
   ))}
-    
-  </div>
-
-  <div class="swiper-pagination"></div>
-
- 
-  <div class="swiper-button-prev"></div>
-  <div class="swiper-button-next"></div>
-
-  
-  <div class="swiper-scrollbar"></div>
-</div>
+        
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
 
 
             <nav className="navbar "  >
