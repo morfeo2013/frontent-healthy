@@ -52,10 +52,25 @@ export default function cambiarpassword(props) {
 
   return (
     <div>
-      <p>Pagina para cambiar contraseña</p>
-      
-      <div className="form-group  mt-3">
-        <input
+  <div className="container p-5 "></div>
+      <div className="row pt-5">
+        <div className="col-lg-6 col-md-8 mx-auto">
+          <div className="card">
+            <div className="container text-center fa-4x">
+            
+            <i class="fab fa-expeditedssl"></i>
+            </div>
+            <div className="card-header text-center">
+             <h4>¿Tienes problemas para entrar?</h4> 
+            </div>
+            <p className="text-center m-3">
+            Introduce tu correo electrónico y te enviaremos un enlace para que vuelvas a entrar en tu cuenta.
+
+            </p>
+            <div className="card-boddy m-2">
+              <form >
+                <div className="form-group mt-2">
+                <input
           type="text"
           className="form-control"
           value={newPassword}
@@ -63,16 +78,26 @@ export default function cambiarpassword(props) {
           placeholder="codigo"
           required
         />
+                </div>
+
+                <div className="d-grid gap-2 m-2">
+                  <button 
+                   className="btn btn-warning mt-3 btn-block"
+                   id="desactivar"
+                   onClick={() => envioNuevoPasswors()}
+                   /*  agregar el onClick para ejecutaar la funcion eliminar APROVECHA Y SACA EL ._ID Y LO ENVIA A LA FUNCION ELIMINAR(_ID) */
+                  
+                  >
+                     Cambiar contraseña
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
-      <button
-        className="btn btn-danger mr-2"
-        id="desactivar"
-        onClick={() => envioNuevoPasswors()}
-      >
-        <i className="far fa-trash-alt"> </i>{" "}
-        {/* agregar el onClick para ejecutaar la funcion eliminar APROVECHA Y SACA EL ._ID Y LO ENVIA A LA FUNCION ELIMINAR(_ID)*/}
-        Cambiar contraseña
-      </button>
+
+  
     </div>
   );
 }

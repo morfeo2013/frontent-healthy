@@ -30,7 +30,7 @@ background-size:cover;
     position:relative;
    
     top:60px;
-    z-index:1; /* pocision de una imagen sobre otra */
+    z-index:5; /* pocision de una imagen sobre otra */
    
    }
 
@@ -50,7 +50,7 @@ background-size:cover;
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 @media screen and (min-width:992px) { /* Hacemos la búsqueda y si coincide modificamos las propiedades de la imagen */
     .imagenLogo1{ position:relative;
-        z-index:2; /* pocision de una imagen sobre otra */
+        z-index:6; /* pocision de una imagen sobre otra */
        
         
         float: left;  /* se hubique siempre a la derecha */
@@ -63,7 +63,7 @@ background-size:cover;
         }
 @media screen and (max-width:991px) { /* Hacemos la búsqueda y si coincide modificamos las propiedades de la imagen */
     .imagenLogo1{ position:relative;
-        z-index:2; /* pocision de una imagen sobre otra */
+        z-index:6; /* pocision de una imagen sobre otra */
         transform: scale(0.8, 0.8);
         
         float: left;  /* se hubique siempre a la derecha */
@@ -78,7 +78,7 @@ background-size:cover;
         @media screen and (max-width:575px) { /* Hacemos la búsqueda y si coincide modificamos las propiedades de la imagen */
             .imagenLogo1{
                 position:absolute;
-                z-index:2; /* pocision de una imagen sobre otra */
+                z-index:6; /* pocision de una imagen sobre otra */
                 margin-left: 9.5pc;
                 transform: scale(0.6, 0.6);
                
@@ -89,7 +89,7 @@ background-size:cover;
         @media screen and (max-width:414px) { /* Hacemos la búsqueda y si coincide modificamos las propiedades de la imagen */
             .imagenLogo1{
                 position:absolute;
-                z-index:2; /* pocision de una imagen sobre otra */
+                z-index:6; /* pocision de una imagen sobre otra */
                 margin-left: 8pc; /* MOVER IMAGEN A LA DERECHA */
                 transform: scale(0.6, 0.6);
                
@@ -100,7 +100,7 @@ background-size:cover;
         @media screen and (max-width:376px) { /* Hacemos la búsqueda y si coincide modificamos las propiedades de la imagen */
             .imagenLogo1{
                 position:absolute;
-                z-index:2; /* pocision de una imagen sobre otra */
+                z-index:6; /* pocision de una imagen sobre otra */
                 margin-left: 6pc;
                 transform: scale(0.6, 0.6);
                
@@ -111,7 +111,7 @@ background-size:cover;
         @media screen and (max-width:320px) { /* Hacemos la búsqueda y si coincide modificamos las propiedades de la imagen */
             .imagenLogo1{
                 position:absolute;
-                z-index:2; /* pocision de una imagen sobre otra */
+                z-index:6; /* pocision de una imagen sobre otra */
                 margin-left: 4.5pc;
                 transform: scale(0.6, 0.6);
                
@@ -232,16 +232,72 @@ background-size:cover;
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 /*INICIO REDES SOCIALES */
 
+/* tamaño normal */
+
 /* EFECTO QUE QUEDE A LA DERECHA Y FLOTANTE */
+
+@media screen and (min-width:768px) {
+    .social-bar {
+        position: fixed;
+        right: 0;
+        top: 35%;
+        font-size: 2rem; /* tamaño de los iconos */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        z-index: 3;
+    }
+    /* COLOR DE LOS ICONOS */
+    .icon {
+        color: white;
+        text-decoration: none;
+        padding: .7rem;
+        display: flex;
+        transition: all .5s;
+    }
+    /* FONDO DE LA PALETA  */
+    .icon-facebook {
+        background: #2E406E;
+    }
+    
+    .icon-whatshap {
+        background: #47c727;
+    }
+    
+    .icon-subir {
+        background: #E83028;
+    }
+    
+    .icon-instagram {
+        background: #3F60A5;
+    }
+    
+    /* EL PRIMERO DE EL EFECTO REDONDEADO SE REDONDEE */
+    .icon:first-child {
+        border-radius: 1rem 0 0 0;
+    }
+    /* EL ULTIMO DE EL EFECTO REDONDEADO SE REDONDEE */
+    .icon:last-child {
+        border-radius: 0 0 0 1rem;
+    }
+    /* AL SALIR EL ICONO SE REDONDEE TODO */
+    .icon:hover {
+        padding-right: 3rem;
+        border-radius: 1rem 0 0 1rem;
+        box-shadow: 0 0 .5rem rgba(0, 0, 0, 0.822);
+    }
+    
+    }
+@media screen and (max-width:767px) {
 .social-bar {
 	position: fixed;
 	right: 0;
 	top: 35%;
-	font-size: 2rem; /* tamaño de los iconos */
+	font-size: 1.3rem; /* tamaño de los iconos */
 	display: flex;
 	flex-direction: column;
 	align-items: flex-end;
-	z-index: 100;
+	z-index: 3;
 }
 /* COLOR DE LOS ICONOS */
 .icon {
@@ -283,11 +339,14 @@ background-size:cover;
 	box-shadow: 0 0 .5rem rgba(0, 0, 0, 0.822);
 }
 
+}
+
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 /*FINAL REDES SOCIALES */
 
 .swiper-container {
-    width: 80%;
+    height: 90%;
+
     padding-top: 10px;
     padding-bottom: 10px;
     

@@ -76,7 +76,8 @@ export default function Login() {
       <div className="col-lg-6 col-md-8 mx-auto">
         <div className="card">
           <div className="container text-center fa-4x">
-            <i className="fas fa-user"></i>
+           
+            <i class="fas fa-user-lock"></i>
           </div>
           <div className="card-header text-center">Iniciar Sesion</div>
 

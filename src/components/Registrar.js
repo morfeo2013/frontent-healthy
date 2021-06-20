@@ -81,7 +81,7 @@ export default function Registrar() {
         <div className="col-lg-6 col-md-8 mx-auto">
           <div className="card">
             <div className="container text-center fa-5x">
-              <i className="fas fa-user"></i>
+            <i class="far fa-address-book"></i>
             </div>
             <div className="card-header text-center">Registrarse</div>
 
@@ -160,7 +160,7 @@ export default function Registrar() {
                 <div className="d-grid gap-2 m-2">
                   <button
                     type="submit"
-                    className=" btn btn-success  mt-3 btn-block"
+                    className=" btn btn-primary  mt-3 btn-block"
                   >
                     Aceptar
                   </button>

@@ -190,8 +190,7 @@ export default function Nav() {
                         id="listar1"
                         className="nav-link nav-success"
                         to="/inicio"
-                      >
-                        INICIO
+                      ><i class="fas fa-globe-americas"></i> INICIO
                       </Link>
                       {/*  <Link className="nav-link nav-success" to="/visual"><i className="fas fa-mug-hot"></i>
       Inicio</Link> */}
@@ -201,25 +200,25 @@ export default function Nav() {
                         id="listar1"
                         className="nav-link nav-success text-justify "
                         to="/VistaProductos"
-                      >
-                        PRODUCTOS
+                      ><i class="fas fa-store"></i> PRODUCTOS
                       </Link>
                       {/*  <Link className="nav-link nav-success" to="/visual"><i className="fas fa-mug-hot"></i>
       Inicio</Link> */}
                     </li>
                     <li className="nav-item col-md-6 col-lg-3 col-xl-5">
                       <Link id="ingresar" className="nav-link " to="/autor">
-                        <p>CONTACTOS</p>
+                        <p><i class="fas fa-tty"></i> CONTACTOS</p>
                       </Link>
                     </li>
                     <li className="nav-item col-md-6 col-lg-3 col-xl-5">
                       <Link id="ingresar" className="nav-link " to="/usuarioApp">
-                        <p>ACCEDER</p>
+                        <p><i class="fas fa-users"></i> ACCEDER</p>
                       </Link>
                     </li>
                     <li className="nav-item col-md-6 col-lg-3 col-xl-5">
                       <Link id="ingresar" className="nav-link " to="/usuario1">
-                        <p> CARRITO</p>
+                        <p><i class="fas fa-cart-arrow-down"></i> CARRITO </p>
+                        
                       </Link>
                     </li>
                   </ul>
