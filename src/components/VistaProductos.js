@@ -7,6 +7,10 @@ import React, { useEffect, useState } from 'react' /* PARA UTILIZAR LOS ESTADOS 
 import { Link } from 'react-router-dom'  /* IMPORTAR PARA PODER ACCEDER AL PA PROPIEDAD LINK Y ACCEDER
 A LA PAGINA DONDE ESTA CREADO LA OPCION DE  CREAR USUARIOS EN EL RETUR DE CREACION DE PAGINAS */
 
+ // import Swiper bundle with all modules installed
+ import Swiper from 'swiper/bundle';
+
+ // init Swiper:
 
 
 
@@ -28,7 +32,7 @@ export default function VistaProductos() {
 
 
     const [buscar, setBuscar] = useState([])/* aca el arrays recojera el OBJETO json del estado datos */
-
+    const [buscar2, setBuscar2] = useState([])
 
     const [opcion, setOpcion] = useState('') /* este estado realiza el contro del tipo de busqueda que se realizara */
 
@@ -144,7 +148,28 @@ export default function VistaProductos() {
     /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
 
-    
+    // eslint-disable-next-line no-unused-vars
+    const swiper = new Swiper('.swiper-container', {
+        // Optional parameters
+        direction: 'horizontal',
+        loop: true,
+      
+        // If we need pagination
+        pagination: {
+          el: '.swiper-pagination',
+        },
+      
+        // Navigation arrows
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      
+        // And if we need scrollbar
+        scrollbar: {
+          el: '.swiper-scrollbar',
+        },
+      });
 
 
 
@@ -168,7 +193,26 @@ export default function VistaProductos() {
         <div className="container border border-success ">
             {/* AGREGAR PARA ADMINISTRADOR OPCION AGREGAR NUEVO PRODUCTO*/}
 
-           
+         
+<div class="swiper-container">
+
+  <div class="swiper-wrapper">
+   
+  {datos.map(libros => (
+    <img className="swiper-slide " src={libros.imagen} alt=""></img>
+  ))}
+    
+  </div>
+
+  <div class="swiper-pagination"></div>
+
+ 
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+
+  
+  <div class="swiper-scrollbar"></div>
+</div>
 
 
             <nav className="navbar "  >

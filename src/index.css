@@ -285,3 +285,8 @@ background-size:cover;
 
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 /*FINAL REDES SOCIALES */
+
+.swiper-container {
+    width: 600px;
+    height: 300px;
+  }
