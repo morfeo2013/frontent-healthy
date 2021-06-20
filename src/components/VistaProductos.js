@@ -150,19 +150,23 @@ export default function VistaProductos() {
 
     // eslint-disable-next-line no-unused-vars
     var swiper = new Swiper(".mySwiper", {
-     
-        centeredSlides: true,
         autoplay: {
-          delay: 2500,
-          disableOnInteraction: false,
+            delay: 2500,
+            disableOnInteraction: false,
+          },
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        coverflowEffect: {
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
         },
         pagination: {
           el: ".swiper-pagination",
-          clickable: true,
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
         },
       });
 
@@ -172,8 +176,11 @@ export default function VistaProductos() {
 
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 98199e09e82332b953379e52810a22b4bdd28b99
     /* const g ="https://morfeo12345678.s3-sa-east-1.amazonaws.com/fotos+ganoderma/Screenshot_20201103_093714.jpg " */
 
 
@@ -191,7 +198,9 @@ export default function VistaProductos() {
  <div class="swiper-container mySwiper">
       <div class="b-5 swiper-wrapper">
       {datos.map(libros => (
+           
     <img className="swiper-slide " src={libros.imagen} alt=""></img>
+  
   ))}
         
       </div>
