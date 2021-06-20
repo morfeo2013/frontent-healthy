@@ -287,16 +287,18 @@ background-size:cover;
 /*FINAL REDES SOCIALES */
 
 .swiper-container {
-    width: 60%;
+    width: 100%;
     padding-top: 10px;
     padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .swiper-slide {
     background-position: center;
-    background-size: cover;
-    width: 300px;
-    height: 300px;
+    background-size: center;
+    width: 1000px;
+    height:400px;
   }
 
   .swiper-slide img {
