@@ -150,6 +150,10 @@ export default function VistaProductos() {
 
     // eslint-disable-next-line no-unused-vars
     var swiper = new Swiper(".mySwiper", {
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+          },
         effect: "coverflow",
         grabCursor: true,
         centeredSlides: true,
@@ -165,7 +169,6 @@ export default function VistaProductos() {
           el: ".swiper-pagination",
         },
       });
-
 
 
 
