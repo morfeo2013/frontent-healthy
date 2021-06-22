@@ -206,17 +206,17 @@ export default function Nav() {
       Inicio</Link> */}
                     </li>
                     <li className="nav-item col-md-6 col-lg-3 col-xl-5">
-                      <Link id="ingresar" className="nav-link " to="/autor">
+                      <Link id="ingresar1" className="nav-link " to="/autor">
                         <p><i class="fas fa-tty"></i> CONTACTOS</p>
                       </Link>
                     </li>
                     <li className="nav-item col-md-6 col-lg-3 col-xl-5">
-                      <Link id="ingresar" className="nav-link " to="/usuarioApp">
+                      <Link id="ingresar2" className="nav-link " to="/usuarioApp">
                         <p><i class="fas fa-users"></i> ACCEDER</p>
                       </Link>
                     </li>
                     <li className="nav-item col-md-6 col-lg-3 col-xl-5">
-                      <Link id="ingresar" className="nav-link " to="/usuario1">
+                      <Link id="ingresar3" className="nav-link " to="/comprar">
                         <p><i class="fas fa-cart-arrow-down"></i> CARRITO </p>
                         
                       </Link>

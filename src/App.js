@@ -9,7 +9,7 @@ import IngresarLibro from "./components/IngresarLibro";
 import RedesSociales from "./components/RedesSociales"
 import ListarLibro from "./components/ListarLibro";
 import Autor from "./components/Autor";
-
+import carro from "./components/carrito"
 
 import ListarUsuarios from "./components/ListarUsuarios";
 import Favoritos from "./components/Favoritos";
@@ -73,6 +73,8 @@ function App(props) {
       
 
         <Route path="/autor" component={Autor} />
+
+        <Route path="/comprar" component={carro} />
         {/* PARA CREAR O EDITAR USUARIOS */}
         {/* <Route path='/ingresar' component ={IngresarLibro}/> */}
        
