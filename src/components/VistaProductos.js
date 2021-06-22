@@ -169,19 +169,32 @@ export default function VistaProductos() {
     <div className="container p-5 ">
       <div className="container p-5 mt-3"></div>
 
-      <div className="container-fluid border border-success ">
+      <div className="container border border-success b-5">
         {/* AGREGAR PARA ADMINISTRADOR OPCION AGREGAR NUEVO PRODUCTO*/}
 
-        <div class="swiper-container mySwiper">
-          <div class="swiper-wrapper">
-            {datos.map((libros) => (
-              <img className="swiper-slide" src={libros.imagen} alt=""></img>
-            ))}
-          </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-pagination"></div>
+         
+
+         <div className="container">
+           
+ 
+           
+         <div class="swiper-container mySwiper col-md-12 col-lg-7   text-center">
+        <div class="swiper-wrapper">
+          {datos.map((libros) => (
+            <img className="container-fluid swiper-slide" src={libros.imagen} alt=""></img>
+          ))}
         </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+    
+
+
+     
+
+         </div>
+        
 
         <nav className="navbar ">
           <div className="container">
