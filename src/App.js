@@ -74,7 +74,7 @@ function App(props) {
 
         <Route path="/autor" component={Autor} />
 
-        <Route path="/comprar" component={carro} />
+        <Route path="/comprarNR" component={carro} />
         {/* PARA CREAR O EDITAR USUARIOS */}
         {/* <Route path='/ingresar' component ={IngresarLibro}/> */}
        

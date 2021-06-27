@@ -15,6 +15,10 @@ import Swiper from "swiper/bundle";
 
 /* SE CREA EL COMPONENTE ListarLibro() */
 export default function VistaProductos() {
+  const [ff, setff] = useState()
+
+
+  
   /* ESTADOS PARA GUARDAR LOS DATOS RECIBIDOS DEL BACKEND DE TODOS LOS  USARIOS */
   const [datos, setDatos] = useState(
     []
@@ -172,29 +176,26 @@ export default function VistaProductos() {
       <div className="container border border-success b-5">
         {/* AGREGAR PARA ADMINISTRADOR OPCION AGREGAR NUEVO PRODUCTO*/}
 
-         
-
-         <div className="container">
-           
- 
-           
-         <div class="swiper-container mySwiper col-md-12 col-lg-7   text-center">
-        <div class="swiper-wrapper">
-          {datos.map((libros) => (
-            <img className="container-fluid swiper-slide" src={libros.imagen} alt=""></img>
-          ))}
+        <div className="container">
+          <div class="swiper-container mySwiper col-md-12 col-lg-7   text-center">
+            <div class="swiper-wrapper">
+              {datos.map((libros) => (
+              
+                 
+              
+                <img key={libros._id}
+                  className="container-fluid swiper-slide"
+                  src={libros.imagen}
+                  alt=""
+                ></img>
+                
+              ))}
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+          </div>
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-pagination"></div>
-      </div>
-    
-
-
-     
-
-         </div>
-        
 
         <nav className="navbar ">
           <div className="container">
@@ -258,7 +259,8 @@ export default function VistaProductos() {
             </div>
           </div>
         </nav>
-        {/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */}
+ 
+
 
         <div className="row " id="card1">
           {" "}
@@ -289,10 +291,68 @@ export default function VistaProductos() {
                     {libros.ficha}
                   </strong>
                 </div>
+
+    
                 <td>
-                  <Link className="btn btn-info mr-2" to="/registrar/">
+                  {/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */}
+{/* MODAL DETALLE PRODUCTO */}
+                <button
+               /*  onClick={() =>{setff(libros._id)} } */
+                  type="button"
+                  class="btn btn-primary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal"
+                ><i className="far fa-address-book  m-1"></i>
+                  Leer mas
+                </button>
+
+                <div
+                  class="modal fade"
+                  id="exampleModal"
+                  tabindex="-1"
+                  aria-labelledby="exampleModalLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">
+                          Catalogo 
+                        </h5>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div class="modal-body">
+                        
+                      </div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn btn-secondary"
+                          data-bs-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                        <button type="button" class="btn btn-primary">
+                          Save changes
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+{/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */}
+{/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/}
+{/* FIN MODAL */} 
+                  <Link
+                    className="btn btn-info mr-2"
+                    to={"/comprarNR/" + libros._id}
+                  >
                     <i className="far fa-address-book  m-1"></i>
-                    Registrate
+                    Comprar
                   </Link>
                 </td>
               </div>
