@@ -42,7 +42,7 @@ export default function PiedePagina() {
                   Mantente al tanto de nuestros productos, promociones y
                   concursos!
                 </h4>
-                <h6 className="mt-5">Deseo recivir boletines y promociones</h6>
+                <h6 className="mt-5">Deseo recibir boletines y promociones</h6>
                 <form className="form-group d-flex">
                   <input
                     type="email"
