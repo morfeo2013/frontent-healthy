@@ -179,9 +179,10 @@ export default function IngresarLibro(props) {
   return (
     /* el entorno para el ingreso o modificacion de nuevos usuarios o datos pos-put */
 
-    <div className="container m-auto">
-       
-      <di className="row">
+    <div className="container p-5 mt-4">
+        <div  className=" mt-5"></div>
+      
+      <di className="row mt-4">
         {editar === "" ? null : (
           <div className="container col-3 imagen6 text-center">
             <img

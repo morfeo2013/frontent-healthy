@@ -45,9 +45,9 @@ export default function RecuperarContrasena() {
 
   return (
     <div>
-      <div className="container p-5 "></div>
+      <div className="container p-5 mt-4"></div>
      
-      <div className="row pt-5">
+      <div className="row ">
         <div className="col-lg-6 col-md-8 mx-auto">
           <div className="card">
             <div className="container text-center fa-4x">

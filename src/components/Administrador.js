@@ -8,10 +8,13 @@ export default function Administrador() {
   const id2 = sessionStorage.getItem("admin");
 
   return (
-    <div>
+       
+    <div className="bt-5 mt-5">
+    
+      
       {id === id2 ? <div>{null}</div> : <Redirect to="/inicio" />}
       
-      <div className="container ">
+      <div className="bt-5 mt-5">
       
         <div className="card">
           <div className="card-header bg-success text-white">

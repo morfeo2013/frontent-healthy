@@ -64,7 +64,7 @@ export default function Favoritos() {
   };
 
   return (
-    <div className="container-fluid ">
+    <div className=" ">
      
       {/* CREO LA BARRA DE BUSQUEDA */}
       

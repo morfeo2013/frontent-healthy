@@ -12,7 +12,7 @@ export default function Autor() {
   return (
     <div>
       <div className="container text-center col-12">
-     
+      <div className="container p-5 mt-4"></div>
 
      
         <h1 className="text-center text-primary mt-4 "> <img className="img-fluid d-lg "

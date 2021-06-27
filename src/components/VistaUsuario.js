@@ -225,15 +225,22 @@ export default function VistaUsuario() {
 
 
     return (
-        <div className="container border border-success ">
-         
+        <div  className="container pt-5 mt-4">
+            
+       
+        <div className="container border border-success mt-2">
+      
             {/* AGREGAR PARA ADMINISTRADOR OPCION AGREGAR NUEVO PRODUCTO*/}
             {(admin) ?
+             
                 <div className="row">
+                   
                     <div className="card-body ">
+                    <div  className="b-5 mt-5"></div>
                         <div className="col-sm-12 text-center">
-                        <div className="container p-5 mt-5"></div>
+                    
                             <Link className="btn btn-info mr-2" to={'/ingresar/'}> <i className="fas fa-plus"></i>
+                            
                      Agregar Nuevo Producto
                                   </Link>
                         </div>
@@ -382,6 +389,6 @@ export default function VistaUsuario() {
 
 
         </div>
-
+        </div>
     )
 }

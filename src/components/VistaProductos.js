@@ -197,10 +197,10 @@ export default function VistaProductos() {
   /* CRACION DE LA TABLA BASICA PARA IMPORTAR LOS LISTADOS DESDE EL BACKEND */
 
   return (
-    <div className="container p-5 ">
+    <div className="container p-5 mt-4">
       
 
-      <div className="container border border-success b-5">
+      <div className="container border border-success  m-5">
         {/* AGREGAR PARA ADMINISTRADOR OPCION AGREGAR NUEVO PRODUCTO*/}
 
         <div className="container">

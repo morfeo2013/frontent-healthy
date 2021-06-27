@@ -71,8 +71,10 @@ export default function Login() {
     }
   };
   return (
-    <div className="row">
-      
+    <div className="row ">
+      <div className="container p-5 mt-4">
+        
+      </div>
       <div className="col-lg-6 col-md-8 mx-auto">
         <div className="card">
           <div className="container text-center fa-4x">

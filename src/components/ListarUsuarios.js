@@ -202,14 +202,11 @@ export default function ListarUsuarios() {
 
 
 
-        <div>
+        <div className="container col-11 pt-5 mt-4">
             
-        <div className="mt-5">
+       
 
-
-        </div>
-
-        <div className="container border border-secondary">
+        <div className="container border border-secondary m-5">
             {/* CREO LA BARRA DE BUSQUEDA */}
 
              

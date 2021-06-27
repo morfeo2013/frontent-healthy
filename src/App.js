@@ -57,7 +57,7 @@ else{return false}
 function App(props) {
   return (
  
-    <div className="fluid">
+    <div className="">
       <Router>
       <Route path="/" component={RedesSociales}/>
         <Nav />
@@ -67,11 +67,12 @@ function App(props) {
         {/* AL INGRESAR  A DETERMINADA DIRECCION SE ACTIVA UN ARCHIVO JSX QUE REDERIZARA LA PAGINA CON EL CONTENIDO DESIGNADO */}
       
         <Route path="/inicio" component={inicio}/>
-        <div className="mt-2"></div>
-        <div className="container p-5 mt-5"></div>
+      
+         
+      
         <Route path="/VistaProductosUsuario" component={VistaUsuario} />
         <Route exact path = "/usuarioApp" component={Login} />
-      
+
 
         <Route path="/autor" component={Autor} />
 
@@ -93,14 +94,14 @@ function App(props) {
         {/*PARA LA CONSOLA DEL ADMINSTRADOR */}
 
         {
-          <div className="fluid">
+          <div className="">
              
             <div className="row">
-              <div className="col-sm-12 col-md-4 mx-auto">
+              <div className="col-sm-12 col-md-3">
                 <Route path="/administrador1" component={Administrador} />
               </div>
 
-              <div className=" col-sm-12 col-md-8">
+              <div className=" col-sm-12 col-md-9">
                 <Route path="/administrador1" component={ListarLibro} />
               </div>
             </div>
@@ -141,7 +142,7 @@ function App(props) {
         {
           
            
-            <div className="row ">
+            <div className="row">
             <div className="col-sm-12 col-md-3">
               
               <Route path="/visualAdmin" component={Administrador} />

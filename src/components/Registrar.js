@@ -74,8 +74,8 @@ export default function Registrar() {
   };
   return (
     <div>
-      <div className="container p-4 " id="inicio1">
-        <div className="container p-5 "></div>
+      <div className="container p-5 mt-4 " id="inicio1">
+
       </div>
       <div className="row ">
         <div className="col-lg-6 col-md-8 mx-auto">

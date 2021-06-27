@@ -144,14 +144,11 @@ export default function inicio() {
         )
         /* fin modal */
       }
-
-        
-      <div className="container p-5 " id="inicio1">
-        <div className="container p-5 mt-3"></div>
-      </div>
-
+  <div className="container p-5 " id="inicio1">
+<div className="container p-5 mt-3"></div>
+</div>
       <section id="llamado-accion">
-        <div className="">
+        
           <div className="row  ">
             <div className="col-12 fondo-blur  ">
               <img
@@ -162,7 +159,7 @@ export default function inicio() {
               ></img>
             </div>
           </div>
-        </div>
+      
       </section>
 
       <section>
@@ -309,7 +306,7 @@ export default function inicio() {
         </div>
       </section>
 
-      <div className="container p-4"></div>
+     
     </div>
   );
 }
