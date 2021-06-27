@@ -28,7 +28,7 @@ export default function inicio() {
           <div
             class="modal fade"
             id="staticBackdrop"
-            tabindex="-1"
+            tabindex="2"
             aria-labelledby="staticBackdropLabel"
             aria-hidden="true" 
           >

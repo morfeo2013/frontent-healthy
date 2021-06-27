@@ -11,7 +11,8 @@ export default function Administrador() {
     <div>
       {id === id2 ? <div>{null}</div> : <Redirect to="/inicio" />}
       
-      <div className="container">
+      <div className="container ">
+      
         <div className="card">
           <div className="card-header bg-success text-white">
             <h4>
@@ -59,7 +60,7 @@ export default function Administrador() {
             </ul>
           </div>
         </div>
-
+     
         <div className="card mt-5">
           <div className="card-header bg-success text-white">
             <h4>

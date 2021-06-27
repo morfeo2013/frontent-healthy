@@ -198,7 +198,7 @@ export default function VistaProductos() {
 
   return (
     <div className="container p-5 ">
-      <div className="container p-5 mt-3"></div>
+      
 
       <div className="container border border-success b-5">
         {/* AGREGAR PARA ADMINISTRADOR OPCION AGREGAR NUEVO PRODUCTO*/}

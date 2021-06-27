@@ -67,7 +67,8 @@ function App(props) {
         {/* AL INGRESAR  A DETERMINADA DIRECCION SE ACTIVA UN ARCHIVO JSX QUE REDERIZARA LA PAGINA CON EL CONTENIDO DESIGNADO */}
       
         <Route path="/inicio" component={inicio}/>
-        
+        <div className="mt-2"></div>
+        <div className="container p-5 mt-5"></div>
         <Route path="/VistaProductosUsuario" component={VistaUsuario} />
         <Route exact path = "/usuarioApp" component={Login} />
       
@@ -80,6 +81,7 @@ function App(props) {
        
         {/*  <Route path='/editar/:id' component ={IngresarLibro}/> */}
         <Route path="/listar" component={ListarLibro} />
+        
         <Route path="/favoritos/:id" component={Favoritos} />
         <Route path="/listarUsuarios" component={ListarUsuarios} />
         <Route path="/comprar/:id" component={IngresarLibro} />
@@ -92,12 +94,13 @@ function App(props) {
 
         {
           <div className="fluid">
+             
             <div className="row">
-              <div className="col-sm-12 col-md-3 mx-auto">
+              <div className="col-sm-12 col-md-4 mx-auto">
                 <Route path="/administrador1" component={Administrador} />
               </div>
 
-              <div className=" col-sm-12 col-md-9">
+              <div className=" col-sm-12 col-md-8">
                 <Route path="/administrador1" component={ListarLibro} />
               </div>
             </div>
@@ -136,14 +139,20 @@ function App(props) {
           </div>
         }
         {
-          <div className="row ">
+          
+           
+            <div className="row ">
             <div className="col-sm-12 col-md-3">
+              
               <Route path="/visualAdmin" component={Administrador} />
             </div>
             <div className=" col-sm-12 col-md-9">
+            
               <Route path="/visualAdmin" component={VistaUsuario} />
             </div>
           </div>
+        
+          
         }
         <PiedePagina />
         {/*  <Redirect to='/inicio'/> */}

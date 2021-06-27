@@ -65,8 +65,10 @@ export default function Favoritos() {
 
   return (
     <div className="container-fluid ">
+     
       {/* CREO LA BARRA DE BUSQUEDA */}
-      <div className="container p-5 mt-5"></div>
+      
+
       <nav className="navbar ">
         <div className="container">
           <div className="col-md-6 ml-auto">
