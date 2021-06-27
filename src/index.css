@@ -4,13 +4,24 @@ no-repeat fixed center rgb(228, 223, 223);
 background-size:cover;
 
 }
-
+.marco0{
+   
+    border: 2px solid black;
+    
+       
+    }
 .marco2{
     height: 350px;    
     border: 2px solid rgb(134, 185, 137);
     
        
     }
+    .marco3{
+        height: 410px;    
+        border: 2px solid rgb(134, 185, 137);
+     
+           
+        }
 
 @media screen and (min-width:993px) { /* Hacemos la búsqueda y si coincide modificamos las propiedades de la imagen */
     .marco1{
@@ -19,6 +30,7 @@ background-size:cover;
         
            
         }
+
 }
 @media screen and (max-width:992px) { /* Hacemos la búsqueda y si coincide modificamos las propiedades de la imagen */
     .marco1{

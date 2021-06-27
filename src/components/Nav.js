@@ -216,7 +216,7 @@ export default function Nav() {
                       </Link>
                     </li>
                     <li className="nav-item col-md-6 col-lg-3 col-xl-5">
-                      <Link id="ingresar3" className="nav-link " to="/comprar">
+                      <Link id="ingresar3" className="nav-link " to="/comprar/">
                         <p><i class="fas fa-cart-arrow-down"></i> CARRITO </p>
                         
                       </Link>

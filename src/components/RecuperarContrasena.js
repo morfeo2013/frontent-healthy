@@ -46,6 +46,7 @@ export default function RecuperarContrasena() {
   return (
     <div>
       <div className="container p-5 "></div>
+     
       <div className="row pt-5">
         <div className="col-lg-6 col-md-8 mx-auto">
           <div className="card">

@@ -361,7 +361,7 @@ export default function VistaProductos() {
                             </div>
                           
                           <div className="col-xs-12 col-lg-6 text-start">
-                          <h4 >Producto: {genero}</h4>
+                          <h4 className="marco0 text-center">Producto: {genero}</h4>
                        <h4 className="mt-5">Descripcion: {autor}</h4>
                        <h4>Precio: ${ficha}</h4>
                           </div>
@@ -393,7 +393,7 @@ export default function VistaProductos() {
 {/* FIN MODAL */} 
                   <Link
                     className="btn btn-outline-warning mb-4"
-                    to={"/comprarNR/" + libros._id}
+                    to={"/comprar/"/*  + libros._id */}
                   >
                   <i className="fas fa-shopping-cart"></i>
                     Agregar Carrito
