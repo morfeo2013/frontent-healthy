@@ -5,7 +5,12 @@ background-size:cover;
 
 }
 
-
+.marco2{
+    height: 350px;    
+    border: 2px solid rgb(134, 185, 137);
+    
+       
+    }
 
 @media screen and (min-width:993px) { /* Hacemos la búsqueda y si coincide modificamos las propiedades de la imagen */
     .marco1{
@@ -194,15 +199,21 @@ background-size:cover;
 
 
 }
-
 .imagen6 img {
+    height: 80px;
+    width: 80px;
+
+
+
+}
+#imagen6{
     height: 300px;
     width: 300px;
 
 }
 
 #card1 {
-
+    
     width: 50;
     height: 50;
 

@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 import Axios from "axios"; /* PARA PODER HACER LAS PETICIONES GET,PUT,POS,DELETE EN EL BACKEND */
 
 import React, {
@@ -13,12 +14,38 @@ import Swiper from "swiper/bundle";
 
 // init Swiper:
 
+
+
+
+
+
 /* SE CREA EL COMPONENTE ListarLibro() */
 export default function VistaProductos() {
-  const [ff, setff] = useState()
 
-
+  const [titulo, setTitulo] = useState("");
+  const [autor, setAutor] = useState("");
+  const [genero, setGenero] = useState("");
+  const [ficha, setFicha] = useState("");
+  const [imagen, setImagen] = useState(""); 
+  const [idd, setIdd] = useState(""); 
+  const consultarusuarioUnico = async (id) => {
   
+    const respuesta = await Axios.get(
+      "https://ganohealthy.herokuapp.com/obtener/" + id
+    ); /* se envia la instruccion al backen para que  consulte un usuarios especifico con el id */
+    /*       console.log(respuesta) */
+
+    /* DESPUES DE RECIBIR LA INFORMACION SE ACTUALIZA LOS ESTADOS */
+     setIdd(respuesta.data._id);
+     setTitulo(respuesta.data.titulo);
+      setAutor(respuesta.data.autor);
+      setGenero(respuesta.data.genero);
+    setFicha(respuesta.data.ficha);
+     setImagen(respuesta.data.imagen);
+
+ 
+  };
+ 
   /* ESTADOS PARA GUARDAR LOS DATOS RECIBIDOS DEL BACKEND DE TODOS LOS  USARIOS */
   const [datos, setDatos] = useState(
     []
@@ -219,7 +246,7 @@ export default function VistaProductos() {
                   onChange={(e) => setOpcion(e.target.value)}
                 />
                 <label className="form-check-label" htmlFor="inlineRadio1">
-                  Buscar por producto
+                  Buscar por Linea
                 </label>
               </div>
 
@@ -233,7 +260,7 @@ export default function VistaProductos() {
                   onChange={(e) => setOpcion(e.target.value)}
                 />
                 <label className="form-check-label" htmlFor="inlineRadio2">
-                  Buscar por Codigo
+                  Buscar por producto
                 </label>
               </div>
 
@@ -266,10 +293,10 @@ export default function VistaProductos() {
           {" "}
           {/* para colocarlos en horizontal */}
           {buscar.map((libros) => (
-            <div className="col-md-4 pt-2" key={libros._id}>
-              <div className="card text-center" id="card2">
+            <div className="col-md-4 pt-2 " key={libros._id}>
+              <div className="card text-center marco2" >
                 <div className="card-header">
-                  <strong>Producto: {libros.titulo}</strong>
+                  <strong>Catalogo: {libros.titulo}</strong>
                 </div>
                 <div className=" imagen3 ">
                   <img
@@ -282,14 +309,14 @@ export default function VistaProductos() {
                   {console.log(libros.imagen)}
                 </div>
                 <div className="card-body ">
-                  <strong>codigo: {libros.genero}</strong>
-                  <p></p>
+                  <strong>Producto: {libros.genero}</strong>
+              {/*     <p></p>
                   <strong>Descripcion: {libros.autor}</strong>
                   <p></p>
                   <strong>
                     Valor: {"$"}
                     {libros.ficha}
-                  </strong>
+                  </strong> */}
                 </div>
 
     
@@ -297,9 +324,9 @@ export default function VistaProductos() {
                   {/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */}
 {/* MODAL DETALLE PRODUCTO */}
                 <button
-               /*  onClick={() =>{setff(libros._id)} } */
+              onClick={(e) => consultarusuarioUnico(libros._id)}
                   type="button"
-                  class="btn btn-primary"
+                  class="btn btn-outline-success mb-4"
                   data-bs-toggle="modal"
                   data-bs-target="#exampleModal"
                 ><i className="far fa-address-book  m-1"></i>
@@ -313,11 +340,11 @@ export default function VistaProductos() {
                   aria-labelledby="exampleModalLabel"
                   aria-hidden="true"
                 >
-                  <div class="modal-dialog">
+                  <div class="modal-dialog d-none-modal-md modal-lg">
                     <div class="modal-content">
                       <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">
-                          Catalogo 
+                          Catalogo: {titulo} 
                         </h5>
                         <button
                           type="button"
@@ -327,19 +354,36 @@ export default function VistaProductos() {
                         ></button>
                       </div>
                       <div class="modal-body">
-                        
+                        <div className="container-fluxer col-12">
+                          <div className="row">
+                            <div className="col-xs-12 col-lg-6">
+                            <img id="imagen6" src={imagen} alt=""/>
+                            </div>
+                          
+                          <div className="col-xs-12 col-lg-6 text-start">
+                          <h4 >Producto: {genero}</h4>
+                       <h4 className="mt-5">Descripcion: {autor}</h4>
+                       <h4>Precio: ${ficha}</h4>
+                          </div>
+                          </div>
+                        </div>
+                       
+                       
                       </div>
-                      <div class="modal-footer">
+                      <div class="modal-footer ">
+                        <div className="container text-center">
                         <button
                           type="button"
-                          class="btn btn-secondary"
+                          class="btn btn-danger "
                           data-bs-dismiss="modal"
                         >
-                          Close
+                          Cerrar
                         </button>
-                        <button type="button" class="btn btn-primary">
-                          Save changes
-                        </button>
+                        <a href={"https://api.whatsapp.com/send?phone=573105038758 &text=Me%20gustaría%20comprar%20el%20producto%20" +genero} type="button" class="btn btn-warning" target="_blank">
+                          Comprar
+                        </a>
+                        </div>
+                       
                       </div>
                     </div>
                   </div>
@@ -348,11 +392,11 @@ export default function VistaProductos() {
 {/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/}
 {/* FIN MODAL */} 
                   <Link
-                    className="btn btn-info mr-2"
+                    className="btn btn-outline-warning mb-4"
                     to={"/comprarNR/" + libros._id}
                   >
-                    <i className="far fa-address-book  m-1"></i>
-                    Comprar
+                  <i className="fas fa-shopping-cart"></i>
+                    Agregar Carrito
                   </Link>
                 </td>
               </div>

@@ -46,7 +46,7 @@ export default function PiedePagina() {
                 <form className="form-group d-flex">
                   <input
                     type="email"
-                    class="form-control"
+                    className="form-control"
                     id="exampleFormControlInput1"
                     placeholder="Tu dirección de correo elecrónico"
                   ></input>

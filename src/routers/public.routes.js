@@ -6,7 +6,7 @@ import RecuperarContrasena from "../components/RecuperarContrasena";
 import Registrar from "../components/Registrar";
 import cambiarpassword from '../views/cambiarpassword';
 import { PublicRoute } from './helperRoutes';
-
+import carro from "../components/carrito"
 const PublicRoutes =()=>{
     return(
     
@@ -18,6 +18,7 @@ const PublicRoutes =()=>{
              <PublicRoute exact path = "/usuarioPublico" component={Login} />
              <PublicRoute exact path="/Recuperar_Contrasena" component={RecuperarContrasena} />
              <PublicRoute path="/registrar" component={Registrar} />
+             <PublicRoute exact path="/comprarNR-modal" component={carro} />
               {/* inyecta la pagina creada  */}
             {/*  <PublicRoute exact path = "/inicio" component={inicio} /> */}
             

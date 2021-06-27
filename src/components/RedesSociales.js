@@ -6,33 +6,33 @@ function RedesSociales() {
   /* CREAMOS LOS ICONOS QUE ATRVEZ DE CSS LOS UBICAMOS A LA DERECLA Y CON EL EFECTO DE RESALTAR Y REDONDEADO */
 
   return (
-    <div class="social-bar">
+    <div className="social-bar">
      
-      <a href="#" class="icon icon-subir" id="">
-      <i class="fas fa-arrow-up"></i>
+      <a href="#" className="icon icon-subir" id="">
+      <i className="fas fa-arrow-up"></i>
       </a>
       
       <a
         href="https://www.facebook.com/ganhealthm"
-        class="icon icon-facebook"
+        className="icon icon-facebook"
         target="_blank"
       >
-        <i class="fab fa-facebook-square"></i>
+        <i className="fab fa-facebook-square"></i>
       </a>
 
       <a
         href="https://api.whatsapp.com/send?phone=573105038758 &text=Me%20gustaría%20conocer%20mas%20sobre%20el%20sitio%20web"
-        class="icon icon-whatshap"
+        className="icon icon-whatshap"
         target="_blank"
       >
-        <i class="fab fa-whatsapp"></i>
+        <i className="fab fa-whatsapp"></i>
       </a>
       <a
         href="https://instagram.com/ganohealthy_medellin/?hl=es-la"
-        class="icon icon-instagram"
+        className="icon icon-instagram"
         target="_blank"
       >
-        <i class="fab fa-instagram"></i>
+        <i className="fab fa-instagram"></i>
       </a>
     </div>
   );
