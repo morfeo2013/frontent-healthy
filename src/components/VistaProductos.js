@@ -293,7 +293,7 @@ export default function VistaProductos() {
           {" "}
           {/* para colocarlos en horizontal */}
           {buscar.map((libros) => (
-            <div className="col-md-4 pt-2 " key={libros._id}>
+            <div className="col-sm-12 col-md-6 col-lg-4 pt-2 " key={libros._id}>
               <div className="card text-center marco2" >
                 <div className="card-header">
                   <strong>Catalogo: {libros.titulo}</strong>
