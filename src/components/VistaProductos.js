@@ -310,6 +310,12 @@ export default function VistaProductos() {
                 </div>
                 <div className="card-body ">
                   <strong>Producto: {libros.genero}</strong>
+                  <p></p>
+                  <strong>
+                    Valor: {"$"} 
+                    {libros.ficha}
+                  </strong> 
+
               {/*     <p></p>
                   <strong>Descripcion: {libros.autor}</strong>
                   <p></p>
