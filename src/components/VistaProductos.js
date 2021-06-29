@@ -357,6 +357,7 @@ export default function VistaProductos() {
                           class="btn-close"
                           data-bs-dismiss="modal"
                           aria-label="Close"
+                          
                         ></button>
                       </div>
                       <div class="modal-body">
@@ -366,10 +367,18 @@ export default function VistaProductos() {
                             <img id="imagen6" src={imagen} alt=""/>
                             </div>
                           
-                          <div className="col-xs-12 col-lg-6 text-start">
-                          <h4 className="marco0 text-center">Producto: {genero}</h4>
-                       <h4 className="mt-5">Descripcion: {autor}</h4>
-                       <h4>Precio: ${ficha}</h4>
+                          <div className="row col-xs-12 col-lg-6 text-start">
+                            <div>
+                            <h4 className="marco0 text-center">Producto: {genero}</h4>
+                            </div>
+                            <div>
+                            <h4 className="mt-5">Descripcion: {autor}</h4>
+                            </div>
+                       <div>
+                       <h4 className="text-center align-self-end">Precio: ${ficha}</h4>
+                       </div>
+                      
+
                           </div>
                           </div>
                         </div>
@@ -385,7 +394,7 @@ export default function VistaProductos() {
                         >
                           Cerrar
                         </button>
-                        <a href={"https://api.whatsapp.com/send?phone=573105038758 &text=Me%20gustaría%20comprar%20el%20producto%20" +genero} type="button" class="btn btn-warning" target="_blank">
+                        <a href={"https://api.whatsapp.com/send?phone=573105038758 &text=Me%20gustaría%20comprar%20el%20producto%20" +genero} type="button" class="btn btn-warning" target="_blank"  >
                           Comprar
                         </a>
                         </div>
