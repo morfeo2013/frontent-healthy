@@ -295,8 +295,8 @@ export default function VistaProductos() {
           {buscar.map((libros) => (
             <div className="col-sm-12 col-md-6 col-lg-4 pt-2 " key={libros._id}>
               <div className="card text-center marco2" >
-                <div className="card-header">
-                  <strong>Catalogo: {libros.titulo}</strong>
+                <div className="card-header ">
+                  <stron className="text-center">Catalogo: {libros.titulo}</stron>
                 </div>
                 <div className=" imagen3 ">
                   <img
@@ -326,13 +326,13 @@ export default function VistaProductos() {
                 </div>
 
     
-                <td>
+                <td >
                   {/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */}
 {/* MODAL DETALLE PRODUCTO */}
                 <button
               onClick={(e) => consultarusuarioUnico(libros._id)}
                   type="button"
-                  class="btn btn-outline-success mb-4"
+                  className="btn btn-outline-success mb-4"
                   data-bs-toggle="modal"
                   data-bs-target="#exampleModal"
                 ><i className="far fa-address-book  m-1"></i>
@@ -340,29 +340,29 @@ export default function VistaProductos() {
                 </button>
 
                 <div
-                  class="modal fade"
+                  className="modal fade"
                   id="exampleModal"
                   tabindex="-1"
                   aria-labelledby="exampleModalLabel"
                   aria-hidden="true"
                 >
-                  <div class="modal-dialog d-none-modal-md modal-lg">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">
+                  <div className="modal-dialog d-none-modal-md modal-lg ">
+                    <div className="modal-content">
+                      <div className="modal-header ">
+                        <h5 className="modal-title " id="exampleModalLabel">
                           Catalogo: {titulo} 
                         </h5>
                         <button
                           type="button"
-                          class="btn-close"
+                          className="btn-close"
                           data-bs-dismiss="modal"
                           aria-label="Close"
                           
                         ></button>
                       </div>
-                      <div class="modal-body">
+                      <div className="modal-body">
                         <div className="container-fluxer col-12">
-                          <div className="row">
+                          <div className="row modal1">
                             <div className="col-xs-12 col-lg-6">
                             <img id="imagen6" src={imagen} alt=""/>
                             </div>
@@ -371,7 +371,7 @@ export default function VistaProductos() {
                             <div>
                             <h4 className="marco0 text-center">Producto: {genero}</h4>
                             </div>
-                            <div>
+                            <div >
                             <h4 className="mt-5">Descripcion: {autor}</h4>
                             </div>
                        <div>

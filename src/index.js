@@ -4,7 +4,8 @@ import ReactDOM from "react-dom"; /* llama a react  react-dom para manipular el 
 import App from "./App"; /* importa app.jsx para ejecutarlo  y pasarlo al index.html */
 
 /* activa el doom y le inyecta los archivos js */
-import "./index.css";
+import "./style/index.css";
+import "./style/modales.css"
 ReactDOM.render(
   <React.StrictMode>
     <App /> {/* MUESTRRA Y RENDERIZA EL ARCHIVO .JS IMPPORTADO AL INICI */}
