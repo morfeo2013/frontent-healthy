@@ -14,38 +14,29 @@ import Swiper from "swiper/bundle";
 
 // init Swiper:
 
-
-
-
-
-
 /* SE CREA EL COMPONENTE ListarLibro() */
 export default function VistaProductos() {
-
   const [titulo, setTitulo] = useState("");
   const [autor, setAutor] = useState("");
   const [genero, setGenero] = useState("");
   const [ficha, setFicha] = useState("");
-  const [imagen, setImagen] = useState(""); 
-  const [idd, setIdd] = useState(""); 
+  const [imagen, setImagen] = useState("");
+  const [idd, setIdd] = useState("");
   const consultarusuarioUnico = async (id) => {
-  
     const respuesta = await Axios.get(
       "https://ganohealthy.herokuapp.com/obtener/" + id
     ); /* se envia la instruccion al backen para que  consulte un usuarios especifico con el id */
     /*       console.log(respuesta) */
 
     /* DESPUES DE RECIBIR LA INFORMACION SE ACTUALIZA LOS ESTADOS */
-     setIdd(respuesta.data._id);
-     setTitulo(respuesta.data.titulo);
-      setAutor(respuesta.data.autor);
-      setGenero(respuesta.data.genero);
+    setIdd(respuesta.data._id);
+    setTitulo(respuesta.data.titulo);
+    setAutor(respuesta.data.autor);
+    setGenero(respuesta.data.genero);
     setFicha(respuesta.data.ficha);
-     setImagen(respuesta.data.imagen);
-
- 
+    setImagen(respuesta.data.imagen);
   };
- 
+
   /* ESTADOS PARA GUARDAR LOS DATOS RECIBIDOS DEL BACKEND DE TODOS LOS  USARIOS */
   const [datos, setDatos] = useState(
     []
@@ -198,8 +189,6 @@ export default function VistaProductos() {
 
   return (
     <div className="container pt-5 mt-4">
-      
-
       <div className="container border border-success  mt-5">
         {/* AGREGAR PARA ADMINISTRADOR OPCION AGREGAR NUEVO PRODUCTO*/}
 
@@ -207,15 +196,12 @@ export default function VistaProductos() {
           <div class="swiper-container mySwiper col-md-12 col-lg-7   text-center">
             <div class="swiper-wrapper">
               {datos.map((libros) => (
-              
-                 
-              
-                <img key={libros._id}
+                <img
+                  key={libros._id}
                   className="container-fluid swiper-slide"
                   src={libros.imagen}
                   alt=""
                 ></img>
-                
               ))}
             </div>
             <div class="swiper-button-next"></div>
@@ -286,17 +272,17 @@ export default function VistaProductos() {
             </div>
           </div>
         </nav>
- 
-
 
         <div className="row " id="card1">
           {" "}
           {/* para colocarlos en horizontal */}
           {buscar.map((libros) => (
             <div className="col-sm-12 col-md-6 col-lg-4 pt-2 " key={libros._id}>
-              <div className="card text-center marco2" >
+              <div className="card text-center marco2">
                 <div className="card-header ">
-                  <stron className="text-center">Catalogo: {libros.titulo}</stron>
+                  <stron className="text-center">
+                    Catalogo: {libros.titulo}
+                  </stron>
                 </div>
                 <div className=" imagen3 ">
                   <img
@@ -312,11 +298,11 @@ export default function VistaProductos() {
                   <strong>Producto: {libros.genero}</strong>
                   <p></p>
                   <strong>
-                    Valor: {"$"} 
+                    Valor: {"$"}
                     {libros.ficha}
-                  </strong> 
+                  </strong>
 
-              {/*     <p></p>
+                  {/*     <p></p>
                   <strong>Descripcion: {libros.autor}</strong>
                   <p></p>
                   <strong>
@@ -325,92 +311,104 @@ export default function VistaProductos() {
                   </strong> */}
                 </div>
 
-    
-                <td >
+                <td>
                   {/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */}
-{/* MODAL DETALLE PRODUCTO */}
-                <button
-              onClick={(e) => consultarusuarioUnico(libros._id)}
-                  type="button"
-                  className="btn btn-outline-success mb-4"
-                  data-bs-toggle="modal"
-                  data-bs-target="#exampleModal"
-                ><i className="far fa-address-book  m-1"></i>
-                  Leer mas
-                </button>
+                  {/* MODAL DETALLE PRODUCTO */}
+                  <button
+                    onClick={(e) => consultarusuarioUnico(libros._id)}
+                    type="button"
+                    className="btn btn-outline-success mb-4"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"
+                  >
+                    <i className="far fa-address-book  m-1"></i>
+                    Leer mas
+                  </button>
 
-                <div
-                  className="modal fade"
-                  id="exampleModal"
-                  tabindex="-1"
-                  aria-labelledby="exampleModalLabel"
-                  aria-hidden="true"
-                >
-                  <div className="modal-dialog d-none-modal-md modal-lg ">
-                    <div className="modal-content">
-                      <div className="modal-header ">
-                        <h5 className="modal-title " id="exampleModalLabel">
-                          Catalogo: {titulo} 
-                        </h5>
-                        <button
-                          type="button"
-                          className="btn-close"
-                          data-bs-dismiss="modal"
-                          aria-label="Close"
-                          
-                        ></button>
-                      </div>
-                      <div className="modal-body">
-                        <div className="container-fluxer col-12">
-                          <div className="row modal1">
-                            <div className="col-xs-12 col-lg-6">
-                            <img id="imagen6" src={imagen} alt=""/>
-                            </div>
-                          
-                          <div className="row col-xs-12 col-lg-6 text-start">
-                            <div>
-                            <h4 className="marco0 text-center">Producto: {genero}</h4>
-                            </div>
-                            <div >
-                            <h4 className="mt-5">Descripcion: {autor}</h4>
-                            </div>
-                       <div>
-                       <h4 className="text-center align-self-end">Precio: ${ficha}</h4>
-                       </div>
-                      
+                  <div
+                    className="modal fade"
+                    id="exampleModal"
+                    tabindex="-1"
+                    aria-labelledby="exampleModalLabel"
+                    aria-hidden="true"
+                  >
+                    <div className="modal-dialog d-none-modal-md modal-lg">
+                      <div className="modal-content  modal0">
+                        <div className="modal-header ">
+                          <h5 className="modal-title " id="exampleModalLabel">
+                            Catalogo: {titulo}
+                          </h5>
+                          <button
+                            type="button"
+                            className="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                          ></button>
+                        </div>
+                        <div className="modal-body ">
+                          <div className="container-fluxer col-12">
+                            <div className="row modal1 ">
+                              <div className="col-xs-12 col-lg-6 ">
+                                <img id="imagen6" src={imagen} alt="" />
+                              </div>
 
-                          </div>
+                              <div className="row col-xs-12 col-lg-6 text-start">
+                                <div>
+                                  <h4 className=" text-center">
+                                    Producto: {genero}
+                                  </h4>
+                                </div>
+                                <hr
+                                  style={{
+                                    backgroundColor: "light",
+                                    height: 6,
+                                  }}
+                                />
+                                <div>
+                                  <h4 className="mt-1">Descripcion: {autor}</h4>
+                                </div>
+                                <div>
+                                  <h4 className="text-center align-self-end modal2">
+                                    Precio: ${ficha}
+                                  </h4>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
-                       
-                       
-                      </div>
-                      <div class="modal-footer ">
-                        <div className="container text-center">
-                        <button
-                          type="button"
-                          class="btn btn-danger "
-                          data-bs-dismiss="modal"
-                        >
-                          Cerrar
-                        </button>
-                        <a href={"https://api.whatsapp.com/send?phone=573105038758 &text=Me%20gustaría%20comprar%20el%20producto%20" +genero} type="button" class="btn btn-warning" target="_blank"  >
-                          Comprar
-                        </a>
+                        <div class="modal-footer ">
+                          <div className="container text-center">
+                            <button
+                              type="button"
+                              class="btn btn-danger "
+                              data-bs-dismiss="modal"
+                            >
+                              Cerrar
+                            </button>
+                            <a
+                              href={
+                                "https://api.whatsapp.com/send?phone=573105038758 &text=Me%20gustaría%20comprar%20el%20producto%20" +
+                                genero
+                              }
+                              type="button"
+                              class="btn btn-warning"
+                              target="_blank"
+                            >
+                              Comprar
+                            </a>
+                          </div>
                         </div>
-                       
                       </div>
                     </div>
                   </div>
-                </div>
-{/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */}
-{/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/}
-{/* FIN MODAL */} 
+                  {/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */}
+                  {/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/}
+                  {/* FIN MODAL */}
                   <Link
                     className="btn btn-outline-warning mb-4"
-                    to={"/comprar/"/*  + libros._id */}
+                    to={"/comprar/" /*  + libros._id */}
                   >
-                  <i className="fas fa-shopping-cart"></i>
+                    <i className="fas fa-shopping-cart"></i>
                     Agregar Carrito
                   </Link>
                 </td>
