@@ -3,11 +3,17 @@ import Axios from "axios"; /* PARA PODER HACER LAS PETICIONES GET,PUT,POS,DELETE
 
 import React, {
   useEffect,
-  useState,
+  useState,useContext/* importamos el usecontext */
 } from "react"; /* PARA UTILIZAR LOS ESTADOS (useState) Y QUE SE EJECUTEN PRIMERO DETERMINADAS ACCIONES (useEffect) */
+
+/* luego de importar el useContext de React, llamamos la propiedad del componnete por destructuracion TemaContext */
+import { TemaContext } from "../context/Usecontext";
 
 import { Link } from "react-router-dom"; /* IMPORTAR PARA PODER ACCEDER AL PA PROPIEDAD LINK Y ACCEDER
 A LA PAGINA DONDE ESTA CREADO LA OPCION DE  CREAR USUARIOS EN EL RETUR DE CREACION DE PAGINAS */
+
+
+
 
 // import Swiper bundle with all modules installed
 import Swiper from "swiper/bundle";
@@ -186,6 +192,12 @@ export default function VistaProductos() {
   /* const g ="https://morfeo12345678.s3-sa-east-1.amazonaws.com/fotos+ganoderma/Screenshot_20201103_093714.jpg " */
 
   /* CRACION DE LA TABLA BASICA PARA IMPORTAR LOS LISTADOS DESDE EL BACKEND */
+
+
+/* importamos los estados que sern compartidos en todos los compoentes */
+const {contCarritoGeneral,setContCarritoGeneral} = useContext(TemaContext)
+
+
 
   return (
     <div className="container pt-5 mt-4">
@@ -406,10 +418,12 @@ export default function VistaProductos() {
                   {/* FIN MODAL */}
                   <Link
                     className="btn btn-outline-warning mb-4"
-                    to={"/comprar/" /*  + libros._id */}
+                    onClick={() => setContCarritoGeneral[libros._id]}
+                   /*  to={"/comprar/"  + libros._id} */
                   >
                     <i className="fas fa-shopping-cart"></i>
                     Agregar Carrito
+                    {console.log(contCarritoGeneral())}
                   </Link>
                 </td>
               </div>

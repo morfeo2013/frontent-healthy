@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-undef */
 import React from "react";
 /* ESTE ARCHIVO ES EL ENCARGADO DE ACTIVAR LOS DIFERENTES ARCHIVOS.JS SEGUN EL LINK INGRESADO */
 
@@ -20,10 +21,11 @@ import VistaUsuario from "./components/VistaUsuario";
 import VistaProductos from "./components/VistaProductos";
 /* const { default: Autor } = require("./components/Autor");  otra opcion*/
 
-
+/* importal los publicos */
 import PublicRoutes from "./routers/public.routes";
 
-/* importal los publicos */
+/* importar el usecontext */
+import  TemaContext  from "./context/Usecontext";
 
 const { default: Nav } = require("./components/Nav");
 
@@ -58,6 +60,9 @@ function App(props) {
   return (
  
     <div className="">
+      <TemaContext>
+
+      
       <Router>
       <Route path="/" component={RedesSociales}/>
         <Nav />
@@ -158,6 +163,7 @@ function App(props) {
         <PiedePagina />
         {/*  <Redirect to='/inicio'/> */}
       </Router>
+      </TemaContext>
     </div>
   );
 }
