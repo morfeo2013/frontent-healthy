@@ -85,6 +85,18 @@ export default function VistaProductos() {
     }
   }, [id, id2]);
 
+   /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+   /* para control del usecontext */
+
+
+  useEffect(() => {
+    if (contCarritoGeneral!=''){
+     console.log(contCarritoGeneral);
+    }
+   
+  
+   }, [contCarritoGeneral]); 
+ 
   /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
   /*FUNCION PARA LISTAR USUARIOS */
   const obtenerUsuarios = async () => {
@@ -113,12 +125,10 @@ export default function VistaProductos() {
     el useeffect es para iniciar automaticamente en determinada accion este caso 
         la funcion obtener listado de usarios */
   useEffect(() => {
-   if (contCarritoGeneral!=''){
-    console.log(contCarritoGeneral);
-   }
+   
   
     obtenerUsuarios();
-  }, [contCarritoGeneral]); 
+  }, []); 
 
 
  
