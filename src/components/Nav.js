@@ -2,9 +2,11 @@
 /* eslint-disable no-undef */
 
 /* eslint-disable react-hooks/exhaustive-deps */
-import React,{ useState, useEffect } from "react";
+import React,{ useState, useEffect,useContext } from "react";
 /* import ReactDOM from 'react-dom'; */
 import { Link } from "react-router-dom";
+
+import { TemaContext } from "../context/Usecontext";
 
 $(".droptown-toggle").on("click", function (e) {
   $(".dropdown-submenu .dropdown-menu").hide();
@@ -17,6 +19,12 @@ const fredy2 = sessionStorage.getItem("contProductos");
 
 
 export default function Nav() {
+
+  const {contCarritoGeneral} = useContext(TemaContext)
+  const {setContCarritoGeneral} = useContext(TemaContext)
+
+
+
   /* para crear el ingreso inicial usuario o ya logeado */
   /* se crea el estado para evaluar que menu muestra */
   const [menu, setMenu] = useState(false);
@@ -217,7 +225,7 @@ export default function Nav() {
                     </li>
                     <li className="nav-item col-md-6 col-lg-3 col-xl-5">
                       <Link id="ingresar3" className="nav-link " to="/comprar/">
-                        <p><i class="fas fa-cart-arrow-down"></i> CARRITO </p>
+                        <p><i class="fas fa-cart-arrow-down"></i> CARRITO {contCarritoGeneral.length}</p>
                         
                       </Link>
                     </li>

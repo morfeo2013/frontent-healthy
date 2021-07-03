@@ -22,6 +22,10 @@ import Swiper from "swiper/bundle";
 
 /* SE CREA EL COMPONENTE ListarLibro() */
 export default function VistaProductos() {
+  const {contCarritoGeneral} = useContext(TemaContext)
+  const {setContCarritoGeneral} = useContext(TemaContext)
+  const [fredy, setFredy]= useState([])
+
   const [titulo, setTitulo] = useState("");
   const [autor, setAutor] = useState("");
   const [genero, setGenero] = useState("");
@@ -109,9 +113,15 @@ export default function VistaProductos() {
     el useeffect es para iniciar automaticamente en determinada accion este caso 
         la funcion obtener listado de usarios */
   useEffect(() => {
-    obtenerUsuarios(); /* ACTIVA PRIMERAMENTE LAFUNCION OBTENERUSUARIOS */
-  }, []); /* es necesario dejar este  parametro vacio o sera un ciclo infito */
+   if (contCarritoGeneral!=''){
+    console.log(contCarritoGeneral);
+   }
+  
+    obtenerUsuarios();
+  }, [contCarritoGeneral]); 
 
+
+ 
   /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
   /* LOSSEGUNDO QUE EVALUARA ES QUE HAY EN EL ESTADO OPCION QUE ES EL ENCARGADO DE RECIVIR EL TEXTO DE LA BUSQUEDA  */
@@ -195,9 +205,25 @@ export default function VistaProductos() {
 
 
 /* importamos los estados que sern compartidos en todos los compoentes */
-const {contCarritoGeneral,setContCarritoGeneral} = useContext(TemaContext)
+
+var suma =0
 
 
+
+const ingresarProductoCarrito=()=>{
+  
+
+
+
+
+   
+ 
+ console.log(fredy)
+  
+  
+  
+  
+}
 
   return (
     <div className="container pt-5 mt-4">
@@ -304,7 +330,7 @@ const {contCarritoGeneral,setContCarritoGeneral} = useContext(TemaContext)
                     height="20"
                     alt=""
                   ></img>
-                  {console.log(libros.imagen)}
+                 {/*  {console.log(libros.imagen)} */}
                 </div>
                 <div className="card-body ">
                   <strong>Producto: {libros.genero}</strong>
@@ -418,12 +444,12 @@ const {contCarritoGeneral,setContCarritoGeneral} = useContext(TemaContext)
                   {/* FIN MODAL */}
                   <Link
                     className="btn btn-outline-warning mb-4"
-                    onClick={() => setContCarritoGeneral[libros._id]}
+                    onClick={() => setContCarritoGeneral([...contCarritoGeneral,libros._id])}
                    /*  to={"/comprar/"  + libros._id} */
                   >
                     <i className="fas fa-shopping-cart"></i>
                     Agregar Carrito
-                    {console.log(contCarritoGeneral())}
+                 
                   </Link>
                 </td>
               </div>

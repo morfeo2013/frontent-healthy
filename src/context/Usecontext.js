@@ -6,7 +6,7 @@ export const TemaContext = React.createContext()
 function Usecontext(props) {
 
     /* se crea los estados a ser compartidos  por los componentes */
-    const [contCarritoGeneral, setContCarritoGeneral]= useState([''])
+    const [contCarritoGeneral, setContCarritoGeneral]= useState([])
 
     return (
 
