@@ -36,8 +36,8 @@ function carrito() {
            <div class="card border-success mb-3" >
   <div class="card-header bg-transparent border-success"></div>
   <div class="card-body text-success">
-    <h5 class="card-title">Su Carrito Esta Vacio</h5>
-    <p class="card-text">Lo Invitamos a revisar todo nuestro gran portafolio de productos, pensados par austed. </p>
+    <h5 class="card-title">Su Carrito de Compras Esta Vacio</h5>
+    <p class="card-text">Lo Invitamos a revisar todo nuestro gran portafolio de productos, enfocados en el mejoramiento de la salud espiritual, mental, emocional, social y en el cuidado del medio ambiente. </p>
   </div>
   <div className="text-center">
   <img  id="imagen6"
