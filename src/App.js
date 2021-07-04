@@ -75,7 +75,7 @@ function App(props) {
       
          
       
-        <Route path="/VistaProductosUsuario" component={VistaUsuario} />
+        <Route exact path='/VistaProductosUsuario/personal' component={VistaUsuario} />
         <Route exact path = "/usuarioApp" component={Login} />
 
 

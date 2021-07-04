@@ -12,7 +12,7 @@ const PublicRoutes =()=>{
     
         // eslint-disable-next-line react/jsx-no-undef
 /* ACA SE COLOCAN LAS PAGINAS QUE PUEDEN ENTRAR SIN CONTROL */
-
+        
         <Switch>
              <PublicRoute exact path = "/cambiopassword/:id1/:id2" component={cambiarpassword} />
              <PublicRoute exact path = "/usuarioPublico" component={Login} />
@@ -26,7 +26,7 @@ const PublicRoutes =()=>{
     
         </Switch>
     
-    
+   
     
 
     )

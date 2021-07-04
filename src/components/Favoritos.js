@@ -1,17 +1,21 @@
 /* eslint-disable no-sequences */
 import Axios from "axios"; /* PARA PODER HACER LAS PETICIONES GET,PUT,POS,DELETE EN EL BACKEND */
 
-import React, {
-  useEffect,
-  useState,
-} from "react"; /* PARA UTILIZAR LOS ESTADOS (useState) Y QUE SE EJECUTEN PRIMERO DETERMINADAS ACCIONES (useEffect) */
+import React,{ useState, useEffect,useContext } from "react";
+/* PARA UTILIZAR LOS ESTADOS (useState) Y QUE SE EJECUTEN PRIMERO DETERMINADAS ACCIONES (useEffect) */
 
+import { TemaContext } from "../context/Usecontext";
+/* useContext
+ */
 import Swal from "sweetalert2"; /* EL EFECTO IMPORTADO DE ANIMACION */
 
 import { Link } from "react-router-dom"; /* IMPORTAR PARA PODER ACCEDER AL PA PROPIEDAD LINK Y ACCEDER
 A LA PAGINA DONDE ESTA CREADO LA OPCION DE  CREAR USUARIOS EN EL RETUR DE CREACION DE PAGINAS */
 
 export default function Favoritos() {
+  const {contFavoritos} = useContext(TemaContext)
+  const {setContFavoritos} = useContext(TemaContext)
+
   const [favoritos, setFavoritos] = useState([]);
   const id = sessionStorage.getItem("id");
 
@@ -27,11 +31,18 @@ export default function Favoritos() {
       "https://ganohealthy.herokuapp.com/favoritos/" + id
     ); /* usando axios se descarga con una peticion get la lista de  usuarios del backend */
     /* SE PASA LA INFORMACION AL ESTADO SETDATOS Y DATOS */
+
+  
     setFavoritos(
       respuesta.data.user2
     ); /* se envia la informacion al estado setdatos para ser almacenado en datos finalmente E NLA HUBICACION .DATA DEL OBJETO JSON RECIBIDO DE LBACKEND*/
     console.log(respuesta.data.user2);
-    console.log(respuesta.data.user2.length);
+
+    setContFavoritos([respuesta.data.user2.length])
+     
+
+  /*   console.log(sessionStorage.setItem("contadorFavoritos", respuesta.data.user2.length);); */
+
     sessionStorage.setItem("contadorFavoritos", respuesta.data.user2.length);
 
     /* llevar al inicio del listado */

@@ -7,12 +7,12 @@ function Usecontext(props) {
 
     /* se crea los estados a ser compartidos  por los componentes */
     const [contCarritoGeneral, setContCarritoGeneral]= useState([])
-
+    const [contFavoritos, setContFavoritos]= useState([])
     return (
 
         /*vamos a devolver el provaide para todos los componentes hijos  
         en value especifica como un objeto que se entra a evaluar*/
-       <TemaContext.Provider value= {{contCarritoGeneral, setContCarritoGeneral}}>
+       <TemaContext.Provider value= {{contCarritoGeneral, setContCarritoGeneral,contFavoritos, setContFavoritos}}>
        
        {/* al proveedor todo lo que se ponga lo renderiza */}
           {props.children}

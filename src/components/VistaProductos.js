@@ -91,10 +91,14 @@ export default function VistaProductos() {
 
   useEffect(() => {
     if (contCarritoGeneral!=''){
-     console.log(contCarritoGeneral);
-    }
-   
+    
+
+
+
   
+    console.log(contCarritoGeneral)
+  
+    }
    }, [contCarritoGeneral]); 
  
   /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
@@ -454,7 +458,7 @@ const ingresarProductoCarrito=()=>{
                   {/* FIN MODAL */}
                   <Link
                     className="btn btn-outline-warning mb-4"
-                    onClick={() => setContCarritoGeneral([...contCarritoGeneral,libros._id])}
+                    onClick={() => setContCarritoGeneral([...contCarritoGeneral,libros])}
                    /*  to={"/comprar/"  + libros._id} */
                   >
                     <i className="fas fa-shopping-cart"></i>

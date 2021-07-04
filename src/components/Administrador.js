@@ -10,14 +10,23 @@ export default function Administrador() {
   return (
        
     <div className="bt-5 mt-5">
-    
+    <div className="bt-5 mt-5">
+      
+   
       
       {id === id2 ? <div>{null}</div> : <Redirect to="/inicio" />}
       
       <div className="bt-5 mt-5">
       
-        <div className="card">
-          <div className="card-header bg-success text-white">
+        <div className="card  bt-5 mt-5">
+          
+          <div className="card-header  bt-5 mt-5">
+            <h4>
+              
+            </h4>
+            
+          </div>
+          <div className="card-header bg-success text-white bt-5 mt-5">
             <h4>
               <i className="fas fa-align-justify"></i> Menú Principal
             </h4>
@@ -91,6 +100,7 @@ export default function Administrador() {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }

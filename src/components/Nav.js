@@ -3,11 +3,11 @@
 
 /* eslint-disable react-hooks/exhaustive-deps */
 import React,{ useState, useEffect,useContext } from "react";
-/* import ReactDOM from 'react-dom'; */
-import { Link } from "react-router-dom";
-
 import { TemaContext } from "../context/Usecontext";
 
+
+
+import { Link } from "react-router-dom";
 $(".droptown-toggle").on("click", function (e) {
   $(".dropdown-submenu .dropdown-menu").hide();
 });
@@ -21,8 +21,8 @@ const fredy2 = sessionStorage.getItem("contProductos");
 export default function Nav() {
 
   const {contCarritoGeneral} = useContext(TemaContext)
-  const {setContCarritoGeneral} = useContext(TemaContext)
-
+  
+  const {contFavoritos} = useContext(TemaContext)
 
 
   /* para crear el ingreso inicial usuario o ya logeado */
@@ -135,7 +135,7 @@ export default function Nav() {
                         >
                           FAVORITOS
                           <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                            {fredy}
+                            {contFavoritos}
                             <span class="visually-hidden"></span>
                           </span>
                         </Link>
@@ -152,13 +152,7 @@ export default function Nav() {
                     {id === id2 ? (
                       <div class="col-12">
                         <ul className="navbar-nav ml-auto ">
-                          <li className="nav-item ml-auto col-6">
-                            <Link className="nav-link " to="/visualAdmin/">
-                              Administrador: {" "}
-                              {sessionStorage.getItem("nombre")}{" "}
-                            </Link>
-                            {/* obtiiene el nombre y lo muestra */}
-                          </li>
+                          
                         </ul>
                       </div>
                     ) : (
@@ -235,7 +229,18 @@ export default function Nav() {
                 </div>
               )}
               {admin && menu ? (
-                <ul className="navbar-nav ml-auto">
+                <div className ="row">
+                  <ul className="navbar-nav ">
+                  <li className="nav-item  col-12">
+                            <Link className="nav-link " to="/visualAdmin/">
+                              Menu Principal: {"         "}
+                             
+                            </Link>
+                            {/* obtiiene el nombre y lo muestra */}
+                          </li>
+                   <div className ="m-5 ">
+                    
+                   </div>       
                   <li className="nav-item ">
                     <Link
                       id="listar3"
@@ -247,9 +252,11 @@ export default function Nav() {
                     </Link>
                   </li>
                 </ul>
+                </div>
+                
               ) : null}
               {!admin && menu ? (
-                <ul className="navbar-nav ml-auto">
+                <ul className="navbar-nav ">
                   <li className="nav-item ">
                     <Link
                       

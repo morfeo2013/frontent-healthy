@@ -58,7 +58,7 @@ export default function Login() {
         if (admin === id) {
           window.location.href = "/visualAdmin";
         } /*vista para el admin */ else {
-          window.location.href = "/VistaProductosUsuario";
+          window.location.href = '/VistaProductosUsuario/personal';
         } /*vista para el ususario */
       }, 1500);
     } else {

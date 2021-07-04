@@ -233,7 +233,7 @@ export default function VistaUsuario() {
             {/* AGREGAR PARA ADMINISTRADOR OPCION AGREGAR NUEVO PRODUCTO*/}
             {(admin) ?
              
-                <div className="row">
+                <div className="row  pt-5 mt-4">
                    
                     <div className="card-body ">
                     <div  className="b-5 mt-5"></div>
