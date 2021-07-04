@@ -219,7 +219,12 @@ export default function Nav() {
                     </li>
                     <li className="nav-item col-md-6 col-lg-3 col-xl-5">
                       <Link id="ingresar3" className="nav-link " to="/comprar/">
-                        <p><i class="fas fa-cart-arrow-down"></i> CARRITO {contCarritoGeneral.length}</p>
+                        <p><i class="fas fa-cart-arrow-down"></i>
+                        CARRITO
+                        <span class="  position-absolute top-90 start-10 translate-middle  badge rounded-pill bg-danger">
+                        {contCarritoGeneral.length}
+                            <span class="visually-hidden"></span>
+                          </span></p>
                         
                       </Link>
                     </li>

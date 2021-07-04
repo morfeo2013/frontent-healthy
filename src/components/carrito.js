@@ -32,11 +32,23 @@ function carrito() {
     <div className="container pt-5 mt-5">
       <div>
         {swich ? (
-         <div className="container text-center">
-            <img className="responsive"
-            src="https://res.cloudinary.com/dhiasghho/image/upload/v1625373271/oie_76E55iSt67tq_dc4vwm.jpg"
+         <div className="container text-center mt-3">
+           <div class="card border-success mb-3" >
+  <div class="card-header bg-transparent border-success"></div>
+  <div class="card-body text-success">
+    <h5 class="card-title">Su Carrito Esta Vacio</h5>
+    <p class="card-text">Lo Invitamos a revisar todo nuestro gran portafolio de productos, pensados par austed. </p>
+  </div>
+  <div className="text-center">
+  <img  id="imagen6"
+            src="https://res.cloudinary.com/dhiasghho/image/upload/c_mfit,h_338/v1625379384/carrito-compras-supermercado-vacio-realista-aislado-blanco_53562-6809_vxgtwz.jpg"
             alt=""
           />
+  </div>
+ 
+  <div class="card-footer bg-transparent border-success"></div>
+</div>
+            
          </div>
          
         ) : null}
