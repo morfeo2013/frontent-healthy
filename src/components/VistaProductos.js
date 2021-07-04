@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-no-target-blank */
 import Axios from "axios"; /* PARA PODER HACER LAS PETICIONES GET,PUT,POS,DELETE EN EL BACKEND */
-
+import Swal from "sweetalert2"; /* EL EFECTO IMPORTADO DE ANIMACION */
 import React, {
   useEffect,
   useState,useContext/* importamos el usecontext */
@@ -79,6 +79,8 @@ export default function VistaProductos() {
   const id = sessionStorage.getItem("id");
 
   const id2 = sessionStorage.getItem("admin");
+
+
   useEffect(() => {
     if (id === id2) {
       setAdmin(true);
@@ -87,18 +89,26 @@ export default function VistaProductos() {
 
    /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
    /* para control del usecontext */
-
+const [cont, setCont] = useState(contCarritoGeneral.length);
 
   useEffect(() => {
-    if (contCarritoGeneral!=''){
+    const dd =(cont+1)
+    if (contCarritoGeneral.length > cont){
+       setCont(dd)
+      Swal.fire({
+        icon: "success",
+        title:"Producto Agregado al Carrito de compras",
+        showConfirmButton: false,
+        timer: 1500,
+      })
+    };
+
+
+  
+    console.log("Contador "+cont)
+  
+    console.log("contextr "+contCarritoGeneral.length)
     
-
-
-
-  
-    console.log(contCarritoGeneral)
-  
-    }
    }, [contCarritoGeneral]); 
  
   /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
@@ -459,6 +469,7 @@ const ingresarProductoCarrito=()=>{
                   <Link
                     className="btn btn-outline-warning mb-4"
                     onClick={() => setContCarritoGeneral([...contCarritoGeneral,libros])}
+                    
                    /*  to={"/comprar/"  + libros._id} */
                   >
                     <i className="fas fa-shopping-cart"></i>
