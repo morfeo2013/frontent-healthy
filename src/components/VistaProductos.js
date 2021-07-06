@@ -224,7 +224,9 @@ export default function VistaProductos() {
 
   var suma = 0;
 
-  const ingresarProductoCarrito = () => {};
+  const ingresarProductoCarrito = (libros) => {
+    setContCarritoGeneral([...contCarritoGeneral, libros])
+  };
 
   return (
     <div className="container pt-5 mt-4">
@@ -466,7 +468,7 @@ export default function VistaProductos() {
                     type="submit"
                     className="btn btn-outline-warning mb-4"
                     onClick={() =>
-                      setContCarritoGeneral([...contCarritoGeneral, libros])
+                      ingresarProductoCarrito(libros)
                     }
 
                     /*  to={"/comprar/"  + libros._id} */
