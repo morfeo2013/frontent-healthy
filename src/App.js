@@ -56,6 +56,12 @@ else{return false}
 } */
 
 /* las props son para recivir todo lo que venga desde las rutas */
+
+
+
+
+
+
 function App(props) {
   return (
  

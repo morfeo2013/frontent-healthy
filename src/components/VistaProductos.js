@@ -333,26 +333,33 @@ export default function VistaProductos() {
                   ></img>
                   {/*  {console.log(libros.imagen)} */}
                 </div>
-                <div className="card-body ">
+                <div className="card-heart ">
                   <strong>Producto: {libros.genero}</strong>
                   <p></p>
                   <strong>
                     Valor: {"$"}
                     {libros.ficha}
                   </strong>
-
-                  {/*     <p></p>
-                  <strong>Descripcion: {libros.autor}</strong>
-                  <p></p>
-                  <strong>
-                    Valor: {"$"}
-                    {libros.ficha}
-                  </strong> */}
+                </div>
+                <div className="card-body">
+                  <button className="btn btn-primary" type="">
+                    +
+                  </button>
+                  <button
+                    className="btn btn-outline-success"
+                    disabled="true"
+                    type=""
+                  >
+                    1
+                  </button>
+                  <button className="btn btn-primary" type="">
+                    -
+                  </button>
                 </div>
 
+                {/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */}
+                {/* MODAL DETALLE PRODUCTO */}
                 <td>
-                  {/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */}
-                  {/* MODAL DETALLE PRODUCTO */}
                   <button
                     onClick={(e) => consultarusuarioUnico(libros._id)}
                     type="button"
@@ -410,6 +417,21 @@ export default function VistaProductos() {
                             </div>
                           </div>
                         </div>
+                        <div className="card-body">
+                          <button className="btn btn-primary" type="">
+                            +
+                          </button>
+                          <button
+                            className="btn btn-outline-success"
+                            disabled="true"
+                            type=""
+                          >
+                            1
+                          </button>
+                          <button className="btn btn-primary" type="">
+                            -
+                          </button>
+                        </div>
                         <div class="modal-footer ">
                           <div className="container text-center">
                             <button
@@ -422,7 +444,8 @@ export default function VistaProductos() {
                             <a
                               href={
                                 "https://api.whatsapp.com/send?phone=573105038758 &text=Me%20gustaría%20comprar%20el%20producto%20" +
-                                genero
+                                genero +
+                                imagen
                               }
                               type="button"
                               class="btn btn-warning"
