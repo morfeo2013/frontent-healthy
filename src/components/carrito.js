@@ -10,8 +10,11 @@ function carrito() {
   const { setContCarritoGeneral } = useContext(TemaContext);
   var [swich, setSwich] = useState(true);
 
+
+
   useEffect(() => {
     if (contCarritoGeneral.length === 0) {
+     
       setSwich(true);
     } else {
       setSwich(false);
@@ -80,7 +83,10 @@ function carrito() {
                 </div>
                 <button
                   className="btn btn-danger mr-2"
-                  onClick={() => eliminarcarrito(libros._id)}
+                  onClick={() =>
+                    eliminarcarrito(libros._id)}
+                  
+                  /*   eliminarcarrito(libros._id) */
                 >
                   {" "}
                   <i className="far fa-trash-alt"></i>

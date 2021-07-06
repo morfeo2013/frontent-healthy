@@ -1,9 +1,11 @@
+/* eslint-disable no-undef */
 /* eslint-disable react/jsx-no-target-blank */
 import Axios from "axios"; /* PARA PODER HACER LAS PETICIONES GET,PUT,POS,DELETE EN EL BACKEND */
 import Swal from "sweetalert2"; /* EL EFECTO IMPORTADO DE ANIMACION */
 import React, {
   useEffect,
-  useState,useContext/* importamos el usecontext */
+  useState,
+  useContext /* importamos el usecontext */,
 } from "react"; /* PARA UTILIZAR LOS ESTADOS (useState) Y QUE SE EJECUTEN PRIMERO DETERMINADAS ACCIONES (useEffect) */
 
 /* luego de importar el useContext de React, llamamos la propiedad del componnete por destructuracion TemaContext */
@@ -12,9 +14,6 @@ import { TemaContext } from "../context/Usecontext";
 import { Link } from "react-router-dom"; /* IMPORTAR PARA PODER ACCEDER AL PA PROPIEDAD LINK Y ACCEDER
 A LA PAGINA DONDE ESTA CREADO LA OPCION DE  CREAR USUARIOS EN EL RETUR DE CREACION DE PAGINAS */
 
-
-
-
 // import Swiper bundle with all modules installed
 import Swiper from "swiper/bundle";
 
@@ -22,9 +21,9 @@ import Swiper from "swiper/bundle";
 
 /* SE CREA EL COMPONENTE ListarLibro() */
 export default function VistaProductos() {
-  const {contCarritoGeneral} = useContext(TemaContext)
-  const {setContCarritoGeneral} = useContext(TemaContext)
-  const [fredy, setFredy]= useState([])
+  const { contCarritoGeneral } = useContext(TemaContext);
+  const { setContCarritoGeneral } = useContext(TemaContext);
+  const [fredy, setFredy] = useState([]);
 
   const [titulo, setTitulo] = useState("");
   const [autor, setAutor] = useState("");
@@ -80,37 +79,35 @@ export default function VistaProductos() {
 
   const id2 = sessionStorage.getItem("admin");
 
-
   useEffect(() => {
     if (id === id2) {
       setAdmin(true);
     }
   }, [id, id2]);
 
-   /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-   /* para control del usecontext */
-const [cont, setCont] = useState(contCarritoGeneral.length);
+  /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+  /* para control del usecontext */
+  const [cont, setCont] = useState(contCarritoGeneral.length);
 
   useEffect(() => {
-    const dd =(cont+1)
-    if (contCarritoGeneral.length > cont){
-       setCont(dd)
+    const dd = cont + 1;
+    if (contCarritoGeneral.length > cont) {
+      setCont(dd);
       Swal.fire({
         icon: "success",
-        title:"Producto Agregado al Carrito de compras",
+        title: "Producto Agregado al Carrito de compras",
         showConfirmButton: false,
         timer: 1500,
-      })
-    };
+      });
+    }
 
+    /* jQuery("#"+contCarritoGeneral._id).prop('disabled', true); */
 
-  
-    console.log("Contador "+cont)
-  
-    console.log("contextr "+contCarritoGeneral.length)
-    
-   }, [contCarritoGeneral]); 
- 
+    console.log("Contador " + cont);
+
+    console.log("contextr " + contCarritoGeneral.length);
+  }, [contCarritoGeneral]);
+
   /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
   /*FUNCION PARA LISTAR USUARIOS */
   const obtenerUsuarios = async () => {
@@ -139,13 +136,9 @@ const [cont, setCont] = useState(contCarritoGeneral.length);
     el useeffect es para iniciar automaticamente en determinada accion este caso 
         la funcion obtener listado de usarios */
   useEffect(() => {
-   
-  
     obtenerUsuarios();
-  }, []); 
+  }, []);
 
-
- 
   /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
   /* LOSSEGUNDO QUE EVALUARA ES QUE HAY EN EL ESTADO OPCION QUE ES EL ENCARGADO DE RECIVIR EL TEXTO DE LA BUSQUEDA  */
@@ -227,27 +220,11 @@ const [cont, setCont] = useState(contCarritoGeneral.length);
 
   /* CRACION DE LA TABLA BASICA PARA IMPORTAR LOS LISTADOS DESDE EL BACKEND */
 
+  /* importamos los estados que sern compartidos en todos los compoentes */
 
-/* importamos los estados que sern compartidos en todos los compoentes */
+  var suma = 0;
 
-var suma =0
-
-
-
-const ingresarProductoCarrito=()=>{
-  
-
-
-
-
-   
- 
- console.log(fredy)
-  
-  
-  
-  
-}
+  const ingresarProductoCarrito = () => {};
 
   return (
     <div className="container pt-5 mt-4">
@@ -354,7 +331,7 @@ const ingresarProductoCarrito=()=>{
                     height="20"
                     alt=""
                   ></img>
-                 {/*  {console.log(libros.imagen)} */}
+                  {/*  {console.log(libros.imagen)} */}
                 </div>
                 <div className="card-body ">
                   <strong>Producto: {libros.genero}</strong>
@@ -420,12 +397,7 @@ const ingresarProductoCarrito=()=>{
                                     Producto: {genero}
                                   </h4>
                                 </div>
-                                <hr
-                                  style={{
-                                    backgroundColor: "light",
-                                    height: 6,
-                                  }}
-                                />
+                                <hr />
                                 <div>
                                   <h4 className="mt-1">Descripcion: {autor}</h4>
                                 </div>
@@ -466,16 +438,19 @@ const ingresarProductoCarrito=()=>{
                   {/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */}
                   {/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/}
                   {/* FIN MODAL */}
-                  <Link
+                  <button
+                    id={contCarritoGeneral._id}
+                    type="submit"
                     className="btn btn-outline-warning mb-4"
-                    onClick={() => setContCarritoGeneral([...contCarritoGeneral,libros])}
-                    
-                   /*  to={"/comprar/"  + libros._id} */
+                    onClick={() =>
+                      setContCarritoGeneral([...contCarritoGeneral, libros])
+                    }
+
+                    /*  to={"/comprar/"  + libros._id} */
                   >
                     <i className="fas fa-shopping-cart"></i>
                     Agregar Carrito
-                 
-                  </Link>
+                  </button>
                 </td>
               </div>
             </div>
