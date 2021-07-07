@@ -15,7 +15,7 @@ import carro from "./components/carrito"
 import ListarUsuarios from "./components/ListarUsuarios";
 import Favoritos from "./components/Favoritos";
 import Administrador from "./components/Administrador";
-import inicio from "./components/inicio";
+import inicio from "./components/Inicio";
 
 import VistaUsuario from "./components/VistaUsuario";
 import VistaProductos from "./components/VistaProductos";
@@ -81,7 +81,7 @@ function App(props) {
       
          
       
-        <Route exact path='/VistaProductosUsuario/personal' component={VistaUsuario} />
+        <Route exact path='/VistaProductosUsuario' component={VistaUsuario} />
         <Route exact path = "/usuarioApp" component={Login} />
 
 

@@ -9,7 +9,7 @@ $(document).ready(function () {
   $("#staticBackdrop").modal("show");
 });
 
-export default function inicio() {
+export default function Inicio() {
   const [menu, setMenu] = useState(false);
   
   useEffect(() => {

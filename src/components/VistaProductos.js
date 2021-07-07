@@ -224,7 +224,9 @@ export default function VistaProductos() {
 
   var suma = 0;
 
-  const ingresarProductoCarrito = () => {};
+  const ingresarProductoCarrito = (libros) => {
+    setContCarritoGeneral([...contCarritoGeneral, libros])
+  };
 
   return (
     <div className="container pt-5 mt-4">
@@ -434,14 +436,7 @@ export default function VistaProductos() {
                         </div>
                         <div class="modal-footer ">
                           <div className="container text-center">
-                            <button
-                              type="button"
-                              class="btn btn-danger "
-                              data-bs-dismiss="modal"
-                            >
-                              Cerrar
-                            </button>
-                            <a
+                          <a
                               href={
                                 "https://api.whatsapp.com/send?phone=573105038758 &text=Me%20gustaría%20comprar%20el%20producto%20" +
                                 genero +
@@ -450,9 +445,18 @@ export default function VistaProductos() {
                               type="button"
                               class="btn btn-warning"
                               target="_blank"
-                            >
+                            ><i class="far fa-money-bill-alt m-1"></i>
                               Comprar
                             </a>
+                            <button
+                              type="button"
+                              class="btn btn-danger "
+                              data-bs-dismiss="modal"
+                            >
+                             <i class="fas fa-times-circle m-1"></i>
+                             Cerrar
+                            </button>
+                           
                           </div>
                         </div>
                       </div>
@@ -466,7 +470,7 @@ export default function VistaProductos() {
                     type="submit"
                     className="btn btn-outline-warning mb-4"
                     onClick={() =>
-                      setContCarritoGeneral([...contCarritoGeneral, libros])
+                      ingresarProductoCarrito(libros)
                     }
 
                     /*  to={"/comprar/"  + libros._id} */
