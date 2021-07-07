@@ -20,7 +20,7 @@ export default function Autor() {
       <div className="container p-5 mt-4"></div>
     
         <h1 className="text-center text-primary mt-4 "> <img className="img-fluid d-lg "
-            src="https://res.cloudinary.com/dhiasghho/image/upload/c_scale,h_163/v1623350102/logos%20base/logo2_dja3q6.png"
+            src="https://res.cloudinary.com/dhiasghho/image/upload/v1625605306/targeta-oficial_kccebq.jpg"
             alt=""
             
             
