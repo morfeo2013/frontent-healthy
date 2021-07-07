@@ -25,7 +25,7 @@ export default function Autor() {
             
             
             />
-         <font color="green"> GanoHealthy Medellin</font>
+        
         </h1>
       </div>
     </div>
