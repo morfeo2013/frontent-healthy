@@ -104,8 +104,8 @@ export default function VistaProductos() {
     /* jQuery("#"+contCarritoGeneral._id).prop('disabled', true); */
 
     console.log("Contador " + cont);
-
-    console.log("contextr " + contCarritoGeneral.length);
+    console.log(contCarritoGeneral.sumatoria);
+    console.log("numero producto  agregado al carrito" + contCarritoGeneral.length);
   }, [contCarritoGeneral]);
 
   /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
@@ -222,10 +222,24 @@ export default function VistaProductos() {
 
   /* importamos los estados que sern compartidos en todos los compoentes */
 
-  var suma = 0;
+  
 
-  const ingresarProductoCarrito = () => {};
+/*   const ingresarProductoCarrito = (libros) => {
+    setContCarritoGeneral([...contCarritoGeneral, libros])
+    setContCarritoGeneral({contCarritoGeneral,operacion:0});
+  }; */
+  
+  const ingresarProductoCarrito = async(libros) => {
+    setContCarritoGeneral([...contCarritoGeneral, {libros,suma:123}])
 
+/*     setContCarritoGeneral([...contCarritoGeneral,  {suma:0}] ) */
+  /* await  setContCarritoGeneral([...contCarritoGeneral, {libros},{operacion:0}]) */
+   /*  setContCarritoGeneral({libros,operacion:0}); */
+    console.log(contCarritoGeneral[(contCarritoGeneral.length - 1)].suma);
+    console.log((contCarritoGeneral[(contCarritoGeneral.length - 1)].libros));
+    console.log((contCarritoGeneral));
+  /*  console.log(contCarritoGeneral); */
+  };
   return (
     <div className="container pt-5 mt-4">
       <div className="container border border-success  mt-5">
@@ -341,21 +355,7 @@ export default function VistaProductos() {
                     {libros.ficha}
                   </strong>
                 </div>
-                <div className="card-body">
-                  <button className="btn btn-primary" type="">
-                    +
-                  </button>
-                  <button
-                    className="btn btn-outline-success"
-                    disabled="true"
-                    type=""
-                  >
-                    1
-                  </button>
-                  <button className="btn btn-primary" type="">
-                    -
-                  </button>
-                </div>
+               
 
                 {/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */}
                 {/* MODAL DETALLE PRODUCTO */}
@@ -462,11 +462,11 @@ export default function VistaProductos() {
                   {/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/}
                   {/* FIN MODAL */}
                   <button
-                    id={contCarritoGeneral._id}
+                   /*  id={contCarritoGeneral._id} */
                     type="submit"
                     className="btn btn-outline-warning mb-4"
                     onClick={() =>
-                      setContCarritoGeneral([...contCarritoGeneral, libros])
+                      ingresarProductoCarrito(libros)
                     }
 
                     /*  to={"/comprar/"  + libros._id} */

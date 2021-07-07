@@ -24,11 +24,13 @@ function carrito() {
   // eslint-disable-next-line react-hooks/rules-of-hooks
 
   const eliminarcarrito = (eliminar) => {
-    const newUser = contCarritoGeneral.filter(
-      (user) => user.eliminar !== eliminar
+   /*  const newUser = contCarritoGeneral.filter(
+      (user) => user.eliminar._id !== eliminar
     );
     setContCarritoGeneral(newUser);
-    console.log(newUser);
+    console.log(newUser); */
+    
+    console.log(eliminar)
   };
 
   return (
@@ -60,7 +62,7 @@ function carrito() {
           {" "}
           {/* para colocarlos en horizontal */}
           {contCarritoGeneral.map((libros) => (
-            <div className="col-md-4 pt-2" key={libros._id}>
+            <div className="col-md-4 pt-2" key={libros.libros._id}>
               <div className="card text-center">
                 <div className="card-header">
                   <strong>Producto: {libros.titulo}</strong>
@@ -68,23 +70,43 @@ function carrito() {
                 <div className=" imagen3 ">
                   <img
                     className="  img-thumbnail img-fluid  text-center"
-                    src={libros.imagen}
+                    src={libros.libros.imagen}
                     width="20"
                     height="20"
                     alt=""
                   ></img>
                 </div>
-                <div className="card-body m-auto">
+                <div className=" m-auto">
                   <p></p>
                   <strong>
                     Valor: {"$"}
                     {libros.ficha}
                   </strong>
                 </div>
+                <div className="card-body2">
+                  <div className="m-2">
+                  <button className="btn btn-primary" type=""
+                  onClick={()=>{libros.libros.suma=libros.libros.suma+1}}
+                  >
+                    +
+                  </button>
+                  <button
+                    className="btn btn-outline-success"
+                    disabled="true"
+                    type=""
+                  >
+                    1
+                  </button>
+                  <button className="btn btn-primary" type="">
+                    -
+                  </button>
+                  </div>
+                  
+                </div>
                 <button
-                  className="btn btn-danger mr-2"
+                  className="btn btn-danger mt-2"
                   onClick={() =>
-                    eliminarcarrito(libros._id)}
+                    eliminarcarrito(libros )}
                   
                   /*   eliminarcarrito(libros._id) */
                 >
