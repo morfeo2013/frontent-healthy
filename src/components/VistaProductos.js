@@ -326,7 +326,7 @@ export default function VistaProductos() {
           </div>
         </nav>
 
-        <div className="row " id="card1">
+        <div className="row " >
           {" "}
           {/* para colocarlos en horizontal */}
           {buscar.map((libros) => (
