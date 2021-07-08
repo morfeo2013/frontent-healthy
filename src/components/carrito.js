@@ -83,13 +83,14 @@ function carrito() {
          </div>
          
         ) : null}
-
-        <div className="row " id="card1">
+           <div className="container pt-2 mt-2 ">
+      
+        <div className="row mmarco2" >
           {" "}
           {/* para colocarlos en horizontal */}
           {contCarritoGeneral.map((libros) => (
             <div className="col-md-4 pt-2" key={libros.libros._id}>
-              <div className="card text-center">
+              <div className="card text-center ">
                 <div className="card-header">
                   <strong>Producto: {libros.titulo}</strong>
                 </div>
@@ -129,6 +130,7 @@ function carrito() {
                   </div>
                   
                 </div>
+                <div className="container">
                 <button
                   className="btn btn-danger mt-2"
                   onClick={() =>
@@ -141,9 +143,14 @@ function carrito() {
                   {/* agregar el onClick para ejecutaar la funcion eliminar APROVECHA Y SACA EL ._ID Y LO ENVIA A LA FUNCION ELIMINAR(_ID)*/}
                   Eliminar
                 </button>
+                </div>
+            
               </div>
             </div>
           ))}
+        </div>
+        
+          
         </div>
       </div>
     </div>
