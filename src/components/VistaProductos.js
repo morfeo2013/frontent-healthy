@@ -230,13 +230,13 @@ export default function VistaProductos() {
   }; */
   
   const ingresarProductoCarrito = async(libros) => {
-    setContCarritoGeneral([...contCarritoGeneral, {libros,suma:123}])
+    setContCarritoGeneral([...contCarritoGeneral, {libros,suma:1}])
 
 /*     setContCarritoGeneral([...contCarritoGeneral,  {suma:0}] ) */
   /* await  setContCarritoGeneral([...contCarritoGeneral, {libros},{operacion:0}]) */
    /*  setContCarritoGeneral({libros,operacion:0}); */
-    console.log(contCarritoGeneral[(contCarritoGeneral.length - 1)].suma);
-    console.log((contCarritoGeneral[(contCarritoGeneral.length - 1)].libros));
+    /* console.log(contCarritoGeneral[(contCarritoGeneral.length - 1)].suma);
+    console.log((contCarritoGeneral[(contCarritoGeneral.length - 1)].libros)); */
     console.log((contCarritoGeneral));
   /*  console.log(contCarritoGeneral); */
   };
@@ -360,10 +360,11 @@ export default function VistaProductos() {
                 {/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */}
                 {/* MODAL DETALLE PRODUCTO */}
                 <td>
+                  <div className="mt-5 bt-5">
                   <button
                     onClick={(e) => consultarusuarioUnico(libros._id)}
                     type="button"
-                    className="btn btn-outline-success mb-4"
+                    className="btn btn-outline-success mb-2"
                     data-bs-toggle="modal"
                     data-bs-target="#exampleModal"
                   >
@@ -394,8 +395,8 @@ export default function VistaProductos() {
                         <div className="modal-body ">
                           <div className="container-fluxer col-12">
                             <div className="row modal1 ">
-                              <div className="col-xs-12 col-lg-6 ">
-                                <img id="imagen6" src={imagen} alt="" />
+                              <div className="col-xs-12 col-lg-6 imagen33">
+                                <img id="" src={imagen} alt="" />
                               </div>
 
                               <div className="row col-xs-12 col-lg-6 text-start">
@@ -464,7 +465,7 @@ export default function VistaProductos() {
                   <button
                    /*  id={contCarritoGeneral._id} */
                     type="submit"
-                    className="btn btn-outline-warning mb-4"
+                    className="btn btn-outline-warning mb-2"
                     onClick={() =>
                       ingresarProductoCarrito(libros)
                     }
@@ -474,6 +475,8 @@ export default function VistaProductos() {
                     <i className="fas fa-shopping-cart"></i>
                     Agregar Carrito
                   </button>
+                  </div>
+                
                 </td>
               </div>
             </div>

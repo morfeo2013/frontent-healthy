@@ -9,6 +9,7 @@ function carrito() {
   const { contCarritoGeneral } = useContext(TemaContext);
   const { setContCarritoGeneral } = useContext(TemaContext);
   var [swich, setSwich] = useState(true);
+  var [fredy, setFredy] = useState(123);
 
 
 
@@ -33,13 +34,38 @@ function carrito() {
     console.log(eliminar)
   };
 
+  const ingresarProductoCarrito = (libros) => {
+    
+    /* setContCarritoGeneral([...contCarritoGeneral, libros]); */
+  /*   contCarritoGeneral([...contador, {fredy:'hola'}])  */
+   /*  setFredy(libros.libros.suma(0)) */
+   /*  setContCarritoGeneral({libros,suma:0}); */
+   /* contCarritoGeneral([...contador, {fredy:'hola'}]) */
+
+ /*   setContCarritoGeneral([contCarritoGeneral, {libros,suma:2}]) */
+
+   console.log(contCarritoGeneral);
+    console.log( libros);
+    console.log( libros.libros);
+    console.log( libros.suma);
+/*    return (fredy) */
+  /*  contCarritoGeneral[(contCarritoGeneral.length - 1)].libros */
+    /* 
+    const dd =jQuery("#fff").prop('disabled', true);
+
+   console.log(contCarritoGeneral);
+     */
+ 
+ 
+   
+  };
+
   return (
-    <div className="container pt-5 mt-5">
+    <div className="container pt-5 mt-5 ">
       <div>
         {swich ? (
          <div className="container text-center mt-3">
-           <div class="card border-success mb-3" >
-  <div class="card-header bg-transparent border-success"></div>
+  <div class="card-header bg-transparent border-success">
   <div class="card-body text-success">
     <h5 class="card-title">Su Carrito de Compras Esta Vacio</h5>
     <p class="card-text">Lo Invitamos a revisar todo nuestro gran portafolio de productos, enfocados en el mejoramiento de la salud espiritual, mental, emocional, social y en el cuidado del medio ambiente. </p>
@@ -86,7 +112,7 @@ function carrito() {
                 <div className="card-body2">
                   <div className="m-2">
                   <button className="btn btn-primary" type=""
-                  onClick={()=>{libros.libros.suma=libros.libros.suma+1}}
+                  onClick={()=>ingresarProductoCarrito(libros)}
                   >
                     +
                   </button>
@@ -95,7 +121,7 @@ function carrito() {
                     disabled="true"
                     type=""
                   >
-                    1
+                   {libros.suma}
                   </button>
                   <button className="btn btn-primary" type="">
                     -

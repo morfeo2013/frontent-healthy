@@ -11,14 +11,19 @@ background-size:cover;
        
     }
 .marco2{
-    height: 400px;    
+    height: 415px;   
+    margin: 1em 0; 
     border: 2px solid rgb(134, 185, 137);
+    border-radius: 0.5em;
+    box-shadow: 1px 3px 5px 2px rgba(0, 0, 0, 0.822)
     
        
     }
     .marco3{
+
+        
         height: 410px;    
-        border: 2px solid rgb(134, 185, 137);
+        border: 2px solid rgb(0, 0, 0,17);
      
            
         }
@@ -196,6 +201,25 @@ background-size:cover;
 
 }
 
+@media screen and (max-width:413px) {
+    .imagen33 img {
+        height: 200px;
+        width: 200px;
+    
+    
+    
+    }
+    }
+@media screen and (min-width:414px) {
+.imagen33 img {
+    height: 300px;
+    width: 300px;
+
+
+
+}
+}
+
 .imagen4 img {
     height: 70px;
     width: 100px;
@@ -223,8 +247,12 @@ background-size:cover;
     width: 300px;
 
 }
+#card1{
+    background: rgba(249, 207, 253, 0.288);
+}
 
-#card1 {
+
+#card1beta {
     
     width: 50;
     height: 50;
