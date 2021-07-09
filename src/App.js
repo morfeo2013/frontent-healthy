@@ -81,7 +81,7 @@ function App(props) {
       
          
       
-        <Route exact path='/VistaProductosUsuario/personal' component={VistaUsuario} />
+        <Route exact path='/VistaProductosUsuario' component={VistaUsuario} />
         <Route exact path = "/usuarioApp" component={Login} />
 
 

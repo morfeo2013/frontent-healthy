@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable no-undef */
 /* eslint-disable react/jsx-no-target-blank */
 import Axios from "axios"; /* PARA PODER HACER LAS PETICIONES GET,PUT,POS,DELETE EN EL BACKEND */
@@ -451,13 +452,13 @@ export default function VistaProductos() {
                         </div>
                         <div class="modal-footer ">
                           <div className="container text-center">
-                            <button
+                            <a
                               type="button"
                               className="btn btn-danger "
                               data-bs-dismiss="modal"
                             >
                               Cerrar
-                            </button>
+                            </a>
                             <a className="btn btn-warning"
                             type="button"
                               href={unidades===1?
@@ -491,7 +492,7 @@ export default function VistaProductos() {
                     /*  to={"/comprar/"  + libros._id} */
                   >
                     <i className="fas fa-shopping-cart"></i>
-                    Agregar Carrito
+                    +Agregar
                   </button>
                   </div>
                 
