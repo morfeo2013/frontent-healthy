@@ -463,9 +463,9 @@ export default function VistaProductos() {
                             type="button"
                               href={unidades===1?
                                 "https://api.whatsapp.com/send?phone=573105038758 &text=Me%20gustaría%20comprar%20" + unidades+"%20Unidad%20de%20el%20producto:%20"+
-                                genero+"%20Por%20valor%20de:%20$"+ ficha*unidades+"%20Mil%20Pesos."
+                                genero+",%20Por%20un%20Total%20de:%20$"+ ficha*unidades+"%20Mil%20Pesos."
                                 :"https://api.whatsapp.com/send?phone=573105038758 &text=Me%20gustaría%20comprar%20" + unidades+"%20Unidades%20de%20el%20producto:%20"+
-                                genero+"%20Por%20valor%20de:%20$"+ ficha*unidades+"%20Mil%20Pesos."
+                                genero+"%20Por%20un%20Total%20de:%20$"+ ficha*unidades+"%20Mil%20Pesos."
                               }
                               
                               target="_blank"
