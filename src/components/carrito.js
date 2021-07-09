@@ -24,41 +24,71 @@ function carrito() {
 
   // eslint-disable-next-line react-hooks/rules-of-hooks
 
-  const eliminarcarrito = (eliminar) => {
-   /*  const newUser = contCarritoGeneral.filter(
-      (user) => user.eliminar._id !== eliminar
-    );
-    setContCarritoGeneral(newUser);
-    console.log(newUser); */
-    
-    console.log(eliminar)
+  const eliminarcarrito = (id) => {
+   /*  */
+    const nuvoArreglo =contCarritoGeneral.filter(buscadorID =>buscadorID.libros._id !== id)
+
+    setContCarritoGeneral (nuvoArreglo)
+    console.log(id)
+    console.log(nuvoArreglo)
+
   };
 
-  const ingresarProductoCarrito = (libros) => {
+  const ingresarProductoCarrito = (librosBase) => {
     
-    /* setContCarritoGeneral([...contCarritoGeneral, libros]); */
-  /*   contCarritoGeneral([...contador, {fredy:'hola'}])  */
-   /*  setFredy(libros.libros.suma(0)) */
-   /*  setContCarritoGeneral({libros,suma:0}); */
-   /* contCarritoGeneral([...contador, {fredy:'hola'}]) */
+  
 
- /*   setContCarritoGeneral([contCarritoGeneral, {libros,suma:2}]) */
+const id =librosBase.libros._id
 
-   console.log(contCarritoGeneral);
-    console.log( libros);
-    console.log( libros.libros);
-    console.log( libros.suma);
-/*    return (fredy) */
-  /*  contCarritoGeneral[(contCarritoGeneral.length - 1)].libros */
-    /* 
-    const dd =jQuery("#fff").prop('disabled', true);
+const libros= librosBase.libros
+const suma= librosBase.suma+1
+const nuevoArreglo2 ={libros,suma}
+const nuevoArreglo3 = contCarritoGeneral.map(buscadorID =>buscadorID.libros._id === id
+  ?
+  nuevoArreglo2
+  :
 
-   console.log(contCarritoGeneral);
-     */
- 
+  buscadorID
+  )
+setContCarritoGeneral(nuevoArreglo3)
+console.log( id);
+console.log( libros);
+console.log( nuevoArreglo2);
+console.log(suma);
+console.log(nuevoArreglo3);
+
+
  
    
   };
+
+  const restarProductoCarrito = (librosBase2) => {
+    
+  
+
+    const id =librosBase2.libros._id
+    
+    const libros= librosBase2.libros
+    const suma= librosBase2.suma-1
+    const nuevoArreglo4 ={libros,suma}
+    const nuevoArreglo5 = contCarritoGeneral.map(buscadorID =>buscadorID.libros._id === id
+      ?
+      nuevoArreglo4
+      :
+    
+      buscadorID
+      )
+    setContCarritoGeneral(nuevoArreglo5)
+    console.log( id);
+    console.log( libros);
+    console.log( nuevoArreglo4);
+    console.log(suma);
+    console.log(nuevoArreglo5);
+    
+    
+     
+       
+      };
 
   return (
     <div className="container pt-5 mt-5 ">
@@ -89,10 +119,10 @@ function carrito() {
           {" "}
           {/* para colocarlos en horizontal */}
           {contCarritoGeneral.map((libros) => (
-            <div className="col-md-4 pt-2" key={libros.libros._id}>
+            <li className="col-md-4 pt-2" key={libros.libros._id}>
               <div className="card text-center ">
                 <div className="card-header">
-                  <strong>Producto: {libros.titulo}</strong>
+                  <strong>Producto: {libros.libros.titulo}</strong>
                 </div>
                 <div className=" imagen3 ">
                   <img
@@ -107,7 +137,7 @@ function carrito() {
                   <p></p>
                   <strong>
                     Valor: {"$"}
-                    {libros.ficha}
+                    {libros.libros.ficha*libros.suma}
                   </strong>
                 </div>
                 <div className="card-body2">
@@ -124,7 +154,11 @@ function carrito() {
                   >
                    {libros.suma}
                   </button>
-                  <button className="btn btn-primary" type="">
+                  <button className="btn btn-primary" type=""
+                  onClick={() =>
+                    restarProductoCarrito(libros )}
+                    disabled={libros.suma===1} 
+                  >
                     -
                   </button>
                   </div>
@@ -134,7 +168,7 @@ function carrito() {
                 <button
                   className="btn btn-danger mt-2"
                   onClick={() =>
-                    eliminarcarrito(libros )}
+                    eliminarcarrito(libros.libros._id )}
                   
                   /*   eliminarcarrito(libros._id) */
                 >
@@ -146,7 +180,7 @@ function carrito() {
                 </div>
             
               </div>
-            </div>
+            </li>
           ))}
         </div>
         

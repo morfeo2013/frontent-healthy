@@ -466,6 +466,7 @@ export default function VistaProductos() {
                    /*  id={contCarritoGeneral._id} */
                     type="submit"
                     className="btn btn-outline-warning mb-2"
+                   /*  disable={contCarritoGeneral.libros.suma>1} */
                     onClick={() =>
                       ingresarProductoCarrito(libros)
                     }
