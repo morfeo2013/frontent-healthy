@@ -88,7 +88,8 @@ export default function VistaProductos() {
   /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
   /* para control del usecontext */
   const [cont, setCont] = useState(contCarritoGeneral.length);
-
+  const [unidades, setUnidades] = useState(1);
+  
   useEffect(() => {
     const dd = cont + 1;
     if (contCarritoGeneral.length > cont) {
@@ -239,7 +240,18 @@ export default function VistaProductos() {
     console.log((contCarritoGeneral[(contCarritoGeneral.length - 1)].libros)); */
     console.log((contCarritoGeneral));
   /*  console.log(contCarritoGeneral); */
-  };
+
+
+ 
+
+
+  }
+  const funcionResta=()=>{
+    
+    if (unidades>1){  /* evitar que pase de 1 */
+     setUnidades(unidades-1)
+    }
+   }
   return (
     <div className="container pt-5 mt-4">
       <div className="container border border-success  mt-5">
@@ -330,7 +342,7 @@ export default function VistaProductos() {
           {" "}
           {/* para colocarlos en horizontal */}
           {buscar.map((libros) => (
-            <div className="col-sm-12 col-md-6 col-lg-4 pt-2 " key={libros._id}>
+            <div className="col-xs-6 col-sm-12 col-md-6 col-lg-4 pt-2 " key={libros._id}>
               <div className="card text-center marco2">
                 <div className="card-header ">
                   <stron className="text-center">
@@ -411,7 +423,7 @@ export default function VistaProductos() {
                                 </div>
                                 <div>
                                   <h4 className="text-center align-self-end modal2">
-                                    Precio: ${ficha}
+                                    Precio: ${ficha*unidades}
                                   </h4>
                                 </div>
                               </div>
@@ -419,17 +431,21 @@ export default function VistaProductos() {
                           </div>
                         </div>
                         <div className="card-body">
-                          <button className="btn btn-primary" type="">
+                          <button className="btn btn-primary" type=""
+                          onClick= {()=>{setUnidades(unidades+1)}}
+                           >
                             +
+                            
                           </button>
                           <button
                             className="btn btn-outline-success"
                             disabled="true"
                             type=""
                           >
-                            1
+                            {unidades}
                           </button>
-                          <button className="btn btn-primary" type="">
+                          <button className="btn btn-primary" type=""
+                          onClick= {()=> funcionResta()}>
                             -
                           </button>
                         </div>
@@ -437,19 +453,20 @@ export default function VistaProductos() {
                           <div className="container text-center">
                             <button
                               type="button"
-                              class="btn btn-danger "
+                              className="btn btn-danger "
                               data-bs-dismiss="modal"
                             >
                               Cerrar
                             </button>
-                            <a
-                              href={
-                                "https://api.whatsapp.com/send?phone=573105038758 &text=Me%20gustaría%20comprar%20el%20producto%20" +
-                                genero +
-                                imagen
+                            <a className="btn btn-warning"
+                            type="button"
+                              href={unidades===1?
+                                "https://api.whatsapp.com/send?phone=573105038758 &text=Me%20gustaría%20comprar%20" + unidades+"%20Unidad%20de%20el%20producto:%20"+
+                                genero+"%20Por%20valor%20de:%20$"+ ficha*unidades+"%20Mil%20Pesos."
+                                :"https://api.whatsapp.com/send?phone=573105038758 &text=Me%20gustaría%20comprar%20" + unidades+"%20Unidades%20de%20el%20producto:%20"+
+                                genero+"%20Por%20valor%20de:%20$"+ ficha*unidades+"%20Mil%20Pesos."
                               }
-                              type="button"
-                              class="btn btn-warning"
+                              
                               target="_blank"
                             >
                               Comprar
