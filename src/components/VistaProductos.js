@@ -22,6 +22,9 @@ import Swiper from "swiper/bundle";
 
 /* SE CREA EL COMPONENTE ListarLibro() */
 export default function VistaProductos() {
+  const { actBoton } = useContext(TemaContext);
+  const {setActBoton } = useContext(TemaContext);
+  
   const { contCarritoGeneral } = useContext(TemaContext);
   const { setContCarritoGeneral } = useContext(TemaContext);
   const [fredy, setFredy] = useState([]);
