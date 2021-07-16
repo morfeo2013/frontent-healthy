@@ -320,7 +320,7 @@ background-size:cover;
     }
     
     .icon-instagram {
-        background: #3F60A5;
+        background: #7388b6;
     }
     
     /* EL PRIMERO DE EL EFECTO REDONDEADO SE REDONDEE */
@@ -335,7 +335,7 @@ background-size:cover;
     .icon:hover {
         padding-right: 3rem;
         border-radius: 1rem 0 0 1rem;
-        box-shadow: 0 0 .5rem rgba(0, 0, 0, 0.822);
+        box-shadow: 0 0 .5rem rgba(0, 0, 0, 0.42);
     }
     
     }
@@ -372,7 +372,7 @@ background-size:cover;
 }
 
 .icon-instagram {
-	background: #3F60A5;
+    background: #7388b6;
 }
 
 /* EL PRIMERO DE EL EFECTO REDONDEADO SE REDONDEE */

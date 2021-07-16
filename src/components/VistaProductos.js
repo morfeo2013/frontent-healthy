@@ -23,8 +23,8 @@ import Swiper from "swiper/bundle";
 /* SE CREA EL COMPONENTE ListarLibro() */
 export default function VistaProductos() {
   const { actBoton } = useContext(TemaContext);
-  const {setActBoton } = useContext(TemaContext);
-  
+  const { setActBoton } = useContext(TemaContext);
+
   const { contCarritoGeneral } = useContext(TemaContext);
   const { setContCarritoGeneral } = useContext(TemaContext);
   const [fredy, setFredy] = useState([]);
@@ -93,7 +93,7 @@ export default function VistaProductos() {
   /* para control del usecontext */
   const [cont, setCont] = useState(contCarritoGeneral.length);
   const [unidades, setUnidades] = useState(1);
-  
+
   useEffect(() => {
     const dd = cont + 1;
     if (contCarritoGeneral.length > cont) {
@@ -110,7 +110,9 @@ export default function VistaProductos() {
 
     console.log("Contador " + cont);
     console.log(contCarritoGeneral.sumatoria);
-    console.log("numero producto  agregado al carrito" + contCarritoGeneral.length);
+    console.log(
+      "numero producto  agregado al carrito" + contCarritoGeneral.length
+    );
   }, [contCarritoGeneral]);
 
   /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
@@ -227,35 +229,42 @@ export default function VistaProductos() {
 
   /* importamos los estados que sern compartidos en todos los compoentes */
 
-  
-
-/*   const ingresarProductoCarrito = (libros) => {
+  /*   const ingresarProductoCarrito = (libros) => {
     setContCarritoGeneral([...contCarritoGeneral, libros])
     setContCarritoGeneral({contCarritoGeneral,operacion:0});
   }; */
-  
-  const ingresarProductoCarrito = async(libros) => {
-    setContCarritoGeneral([...contCarritoGeneral, {libros,suma:1}])
 
-/*     setContCarritoGeneral([...contCarritoGeneral,  {suma:0}] ) */
-  /* await  setContCarritoGeneral([...contCarritoGeneral, {libros},{operacion:0}]) */
-   /*  setContCarritoGeneral({libros,operacion:0}); */
-    /* console.log(contCarritoGeneral[(contCarritoGeneral.length - 1)].suma);
-    console.log((contCarritoGeneral[(contCarritoGeneral.length - 1)].libros)); */
-    console.log((contCarritoGeneral));
-  /*  console.log(contCarritoGeneral); */
+  const ingresarProductoCarrito = async (libros) => {
+
+    /* Opcion 1 creando un objeto suma aparte de libros */
+
+    setContCarritoGeneral([...contCarritoGeneral,{ libros, suma: 1 }]);
+    console.log(contCarritoGeneral);
 
 
- 
+ /* Opcion 2 incluyendo suma un objeto   dentro de objetos libros */
+  /*  const libroSuma={...libros,suma:1}
+    setContCarritoGeneral([...contCarritoGeneral, libroSuma]);
+    console.log(contCarritoGeneral);
+ */
 
 
-  }
-  const funcionResta=()=>{
-    
-    if (unidades>1){  /* evitar que pase de 1 */
-     setUnidades(unidades-1)
+    /* Opcion 3 incluyendo suma varios objetos dentro del objeto libros  */
+    /* 
+    const suma={sumar:1,restar:2,multiplicar:3}
+    const librosss={...libros}
+    const libros1= {...librosss,...suma} despues de tener los dos con const se utiliza el ... en ambos
+    setContCarritoGeneral([ ...contCarritoGeneral,libros1 ]) */
+
+
+  };
+
+  const funcionResta = () => {
+    if (unidades > 1) {
+      /* evitar que pase de 1 */
+      setUnidades(unidades - 1);
     }
-   }
+  };
   return (
     <div className="container pt-5 mt-4">
       <div className="container border border-success  mt-5">
@@ -342,11 +351,14 @@ export default function VistaProductos() {
           </div>
         </nav>
 
-        <div className="row " >
+        <div className="row ">
           {" "}
           {/* para colocarlos en horizontal */}
           {buscar.map((libros) => (
-            <div className="col-xs-6 col-sm-12 col-md-6 col-lg-4 pt-2 " key={libros._id}>
+            <div
+              className="col-xs-6 col-sm-12 col-md-6 col-lg-4 pt-2 "
+              key={libros._id}
+            >
               <div className="card text-center marco2">
                 <div className="card-header ">
                   <stron className="text-center">
@@ -371,134 +383,149 @@ export default function VistaProductos() {
                     {libros.ficha}
                   </strong>
                 </div>
-               
 
                 {/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */}
                 {/* MODAL DETALLE PRODUCTO */}
                 <td>
                   <div className="mt-5 bt-5">
-                  <button
-                    onClick={(e) => consultarusuarioUnico(libros._id)}
-                    type="button"
-                    className="btn btn-outline-success mb-2"
-                    data-bs-toggle="modal"
-                    data-bs-target="#exampleModal"
-                  >
-                    <i className="far fa-address-book  m-1"></i>
-                    Leer mas
-                  </button>
+                    <button
+                      onClick={(e) => consultarusuarioUnico(libros._id)}
+                      type="button"
+                      className="btn btn-outline-success mb-2"
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModal"
+                    >
+                      <i className="far fa-address-book  m-1"></i>
+                      Leer mas
+                    </button>
 
-                  <div
-                    className="modal fade"
-                    id="exampleModal"
-                    tabindex="-1"
-                    aria-labelledby="exampleModalLabel"
-                    aria-hidden="true"
-                  >
-                    <div className="modal-dialog d-none-modal-md modal-lg">
-                      <div className="modal-content  modal0">
-                        <div className="modal-header ">
-                          <h5 className="modal-title " id="exampleModalLabel">
-                            Catalogo: {titulo}
-                          </h5>
-                          <button
-                            type="button"
-                            className="btn-close"
-                            data-bs-dismiss="modal"
-                            aria-label="Close"
-                          ></button>
-                        </div>
-                        <div className="modal-body ">
-                          <div className="container-fluxer col-12">
-                            <div className="row modal1 ">
-                              <div className="col-xs-12 col-lg-6 imagen33">
-                                <img id="" src={imagen} alt="" />
-                              </div>
+                    <div
+                      className="modal fade"
+                      id="exampleModal"
+                      tabindex="-1"
+                      aria-labelledby="exampleModalLabel"
+                      aria-hidden="true"
+                    >
+                      <div className="modal-dialog d-none-modal-md modal-lg">
+                        <div className="modal-content  modal0">
+                          <div className="modal-header ">
+                            <h5 className="modal-title " id="exampleModalLabel">
+                              Catalogo: {titulo}
+                            </h5>
+                            <button
+                              type="button"
+                              className="btn-close"
+                              data-bs-dismiss="modal"
+                              aria-label="Close"
+                            ></button>
+                          </div>
+                          <div className="modal-body ">
+                            <div className="container-fluxer col-12">
+                              <div className="row modal1 ">
+                                <div className="col-xs-12 col-lg-6 imagen33">
+                                  <img id="" src={imagen} alt="" />
+                                </div>
 
-                              <div className="row col-xs-12 col-lg-6 text-start">
-                                <div>
-                                  <h4 className=" text-center">
-                                    Producto: {genero}
-                                  </h4>
-                                </div>
-                                <hr />
-                                <div>
-                                  <h4 className="mt-1">Descripcion: {autor}</h4>
-                                </div>
-                                <div>
-                                  <h4 className="text-center align-self-end modal2">
-                                    Precio: ${ficha*unidades}
-                                  </h4>
+                                <div className="row col-xs-12 col-lg-6 text-start">
+                                  <div>
+                                    <h4 className=" text-center">
+                                      Producto: {genero}
+                                    </h4>
+                                  </div>
+                                  <hr />
+                                  <div>
+                                    <h4 className="mt-1">
+                                      Descripcion: {autor}
+                                    </h4>
+                                  </div>
+                                  <div>
+                                    <h4 className="text-center align-self-end modal2">
+                                      Precio: ${ficha * unidades}
+                                    </h4>
+                                  </div>
                                 </div>
                               </div>
                             </div>
                           </div>
-                        </div>
-                        <div className="card-body">
-                          <button className="btn btn-primary" type=""
-                          onClick= {()=>{setUnidades(unidades+1)}}
-                           >
-                            +
-                            
-                          </button>
-                          <button
-                            className="btn btn-outline-success"
-                            disabled="true"
-                            type=""
-                          >
-                            {unidades}
-                          </button>
-                          <button className="btn btn-primary" type=""
-                          onClick= {()=> funcionResta()}>
-                            -
-                          </button>
-                        </div>
-                        <div class="modal-footer ">
-                          <div className="container text-center">
-                            <a
-                              type="button"
-                              className="btn btn-danger "
-                              data-bs-dismiss="modal"
+                          <div className="card-body">
+                            <button
+                              className="btn btn-primary"
+                              type=""
+                              onClick={() => {
+                                setUnidades(unidades + 1);
+                              }}
                             >
-                              Cerrar
-                            </a>
-                            <a className="btn btn-warning"
-                            type="button"
-                              href={unidades===1?
-                                "https://api.whatsapp.com/send?phone=573105038758 &text=Me%20gustaría%20comprar%20" + unidades+"%20Unidad%20de%20el%20producto:%20"+
-                                genero+",%20Por%20un%20Total%20de:%20$"+ ficha*unidades+"%20Mil%20Pesos."
-                                :"https://api.whatsapp.com/send?phone=573105038758 &text=Me%20gustaría%20comprar%20" + unidades+"%20Unidades%20de%20el%20producto:%20"+
-                                genero+"%20Por%20un%20Total%20de:%20$"+ ficha*unidades+"%20Mil%20Pesos."
-                              }
-                              
-                              target="_blank"
+                              +
+                            </button>
+                            <button
+                              className="btn btn-outline-success"
+                              disabled="true"
+                              type=""
                             >
-                              Comprar
-                            </a>
+                              {unidades}
+                            </button>
+                            <button
+                              className="btn btn-primary"
+                              type=""
+                              onClick={() => funcionResta()}
+                            >
+                              -
+                            </button>
+                          </div>
+                          <div class="modal-footer ">
+                            <div className="container text-center">
+                              <a
+                                type="button"
+                                className="btn btn-danger "
+                                data-bs-dismiss="modal"
+                              >
+                                Cerrar
+                              </a>
+                              <a
+                                className="btn btn-warning"
+                                type="button"
+                                href={
+                                  unidades === 1
+                                    ? "https://api.whatsapp.com/send?phone=573105038758 &text=Me%20gustaría%20comprar%20" +
+                                      unidades +
+                                      "%20Unidad%20de%20el%20producto:%20" +
+                                      genero +
+                                      ",%20Por%20un%20Total%20de:%20$" +
+                                      ficha * unidades +
+                                      "%20Mil%20Pesos."
+                                    : "https://api.whatsapp.com/send?phone=573105038758 &text=Me%20gustaría%20comprar%20" +
+                                      unidades +
+                                      "%20Unidades%20de%20el%20producto:%20" +
+                                      genero +
+                                      "%20Por%20un%20Total%20de:%20$" +
+                                      ficha * unidades +
+                                      "%20Mil%20Pesos."
+                                }
+                                target="_blank"
+                              >
+                                Comprar
+                              </a>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  {/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */}
-                  {/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/}
-                  {/* FIN MODAL */}
-                  <button
-                   /*  id={contCarritoGeneral._id} */
-                    type="submit"
-                    className="btn btn-outline-warning mb-2"
-                   /*  disable={contCarritoGeneral.libros.suma>1} */
-                    onClick={() =>
-                      ingresarProductoCarrito(libros)
-                    }
+                    {/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */}
+                    {/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/}
+                    {/* FIN MODAL */}
+                    <button
+                      /*  id={contCarritoGeneral._id} */
+                      type="submit"
+                      className="btn btn-outline-warning mb-2"
+                      /*  disable={contCarritoGeneral.libros.suma>1} */
+                      onClick={() => ingresarProductoCarrito(libros)}
 
-                    /*  to={"/comprar/"  + libros._id} */
-                  >
-                    <i className="fas fa-shopping-cart"></i>
-                    +Agregar
-                  </button>
+                      /*  to={"/comprar/"  + libros._id} */
+                    >
+                      <i className="fas fa-shopping-cart"></i>
+                      +Agregar
+                    </button>
                   </div>
-                
                 </td>
               </div>
             </div>
