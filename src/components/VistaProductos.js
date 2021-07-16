@@ -241,7 +241,9 @@ export default function VistaProductos() {
     setContCarritoGeneral([...contCarritoGeneral,{ libros, suma: 1 }]);
     console.log(contCarritoGeneral);
 
-
+   
+   
+  
  /* Opcion 2 incluyendo suma un objeto   dentro de objetos libros */
   /*  const libroSuma={...libros,suma:1}
     setContCarritoGeneral([...contCarritoGeneral, libroSuma]);
