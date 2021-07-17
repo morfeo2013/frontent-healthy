@@ -49,41 +49,45 @@ const mensajeError=()=>{
   }
   
   const envioNuevoPasswors = async (e) => {
+    e.preventDefault();
+    console.log("fredy");
 
   
       setMensaje1("Ingresaste correctamente la contraseña")
       const respuesta = await Axios.get(
+
+        /* 'http://localhost:4000/cambio_password/'  */
         "https://ganohealthy.herokuapp.com/cambio_password/" /* direccion para capeta ruter del backen */ +
           idUsuario /* el id del usuario para que el backend sepa cual contraseña va a cambiar */ +
           "/" +
           newPassword /* tomade del estado useState para enviar la nueva contraseña */,
         {
           headers: { autorizacion: "bearer " + tokenTiempo },
-        } /* clave acceso para ingresar ala carpeta token y revisar la validad del token y el tiempo */
+        }
+        
+        /* clave acceso para ingresar ala carpeta token y revisar la valides del token y el tiempo */
   
         /*  'http://localhost:4000/cambio_password/' + idUsuario + '/' + newPassword , { headers: { 
           
         autorizacion: "bearer " + tokenTiempo } } */
-
+        
         
       );
     
       /* PENDIENTE CONFIGURAR AL CINFIRMACION DEL BACKEND DE QUE SE REALIZO EL CAMBIODE CONTRASEÑA */
       
+      console.log(respuesta);
       
-      
-      const mensage = respuesta.data.mensage;
+      const mensage = respuesta.data.mensaje;
       console.log(mensage);
-      if (mensage==='Ingresaste a la recuperacion de password  '){
+      if (mensage==='Ingresaste a la recuperacion de password'){
         
-        setTimeout(() => {
-          Swal.fire({
-            icon: "success",
-            title: mensage,
-            showConfirmButton: false,
-          });
-            
-        }, 1500);
+        Swal.fire({
+          icon: "success",
+          title:  "La contraseña fue Actualizada",
+          showConfirmButton: false,
+          timer: 1500,
+        });
 
           
 
@@ -92,15 +96,13 @@ const mensajeError=()=>{
          
         
          
-      }else{
-        setTimeout(() => {
-          Swal.fire({
-            icon: "error",
-            title: "Su tiempo caduco",
-            showConfirmButton: false,
-          });
-            
-        }, 1500);
+      }else {
+        Swal.fire({
+          icon: "error",
+          title:  "Su tiempo Caduco",
+          showConfirmButton: false,
+          timer: 1500,
+        });
       }
       
     
@@ -157,9 +159,10 @@ const mensajeError=()=>{
                   <button 
                    className="btn btn-warning mt-3 btn-block"
                    id="desactivar"
-                   onClick={() => (newPassword===newPassword2)?  envioNuevoPasswors()
-                  :mensajeError()
+                   onClick={(e) => (newPassword===newPassword2)?  envioNuevoPasswors(e)
+                  :mensajeError(e)
                   }
+                  
                    /*  agregar el onClick para ejecutaar la funcion eliminar APROVECHA Y SACA EL ._ID Y LO ENVIA A LA FUNCION ELIMINAR(_ID) */
                   
                   >

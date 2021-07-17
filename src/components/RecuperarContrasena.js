@@ -36,7 +36,7 @@ export default function RecuperarContrasena() {
     } else {
       Swal.fire({
         icon: "success",
-        title: mensaje,
+        title:  "Clave de recuperacion enviada a tu correo personal",
         showConfirmButton: false,
         timer: 1500,
       });
