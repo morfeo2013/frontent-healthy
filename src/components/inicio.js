@@ -181,25 +181,25 @@ export default function inicio() {
           <div className="row mt-3">
             <div className="col-sm-12 col-md-12 text-center">
               <h1 className="mt-3">
-                <strong>&#127758; VISION</strong>
+                <strong> VISION</strong>
               </h1>
               <h3 className="mt-4">
-                <strong>
+                <p>
                   {" "}
                   Ser reconocidos como empresa líder en Colombia
                   distinguiéndonos por la calidad y eficacia de nuestros
                   productos dirigidos a la salud y el bienestar, reconocidos
                   mundialmente por la capacidad de generar bienestar, brindando
                   conocimiento y herramientas para mejorar la calidad de vida.
-                </strong>
+                </p>
               </h3>
             </div>
             <div className="col-sm-12 col-md-12 text-center ">
               <h1 className="mt-4">
-                <strong>&#127760; MISION</strong>
+                <strong> MISION</strong>
               </h1>
               <h3 className="mt-5">
-                <strong>
+                <p>
                   {" "}
                   Somos una comunidad que quiere evolucionar y potenciar el
                   mundo de la salud y el bienestar; aprovechando todos los
@@ -209,7 +209,7 @@ export default function inicio() {
                   de vida a través de la toma de decisiones conscientes respecto
                   a su alimentación, salud, bienestar, actividad física y
                   espiritual. Llevando salud y bienestar a todas las familias.
-                </strong>
+                </p>
               </h3>
             </div>
           </div>
@@ -218,22 +218,22 @@ export default function inicio() {
 
       <section>
         <div className="container">
-          <h1 className="text-center mt-4 ">&#129351; NUESTROS VALORES</h1>
+          <h1 className="text-center mt-4 "> NUESTROS VALORES</h1>
           <div className="row mt-5">
             <div className="col-md-12 col-lg-3 text-center">
-              <div className="marco1">
+              <div >
                 <div className="tablaigual">
                   <div className="card-boddy">
                     <h4>
-                      <strong>&#11088; PASION</strong>
+                      <strong> PASION</strong>
                     </h4>
                     <p min className="mt-2">
                       <font font size="4">
-                        <strong>
+                        <p>
                           ¡Estamos cambiando el mundo saludable! y para seguirlo
                           haciendo el compromiso es ilimitado. a todos los
                           lugares de colombia y de LatinoAmerica.
-                        </strong>
+                        </p>
                       </font>
                     </p>
                   </div>
@@ -241,18 +241,18 @@ export default function inicio() {
               </div>
             </div>
             <div className="col-md-12 col-lg-3 text-center">
-              <div className="marco1">
+              <div >
                 <div className="tablaigual">
                   <div className="card-boddy">
                     <h4>
-                      <strong>&#11088; TRANSPARENCIA</strong>
+                      <strong>TRANSPARENCIA</strong>
                     </h4>
                     <p min className="mt-2">
                       <font font size="4">
-                        <strong>
+                        <p>
                           Somos auténticos y sinceros, no nos interesa cambiar
                           la verdad para sacar provecho.
-                        </strong>
+                        </p>
                       </font>
                     </p>
                   </div>
@@ -260,20 +260,20 @@ export default function inicio() {
               </div>
             </div>
             <div className="col-md-12 col-lg-3 text-center">
-              <div className="marco1">
+              <div>
                 <div className="tablaigual">
                   <div className="card-boddy">
                     <h4>
-                      <strong>&#11088; EMPATIA</strong>
+                      <strong> EMPATIA</strong>
                     </h4>
                     <p min className="mt-2">
                       <font font size="4">
                         {" "}
-                        <strong>
+                        <p>
                           Conectamos con nuestro cliente, poniéndonos en su
                           lugar para comprender sus necesidades y lograr
                           prestarle nuestra ayuda.
-                        </strong>
+                        </p>
                       </font>
                     </p>
                   </div>
@@ -281,21 +281,21 @@ export default function inicio() {
               </div>
             </div>
             <div className="col-md-12 col-lg-3 text-center">
-              <div className="marco1">
+              <div >
                 <div className="tablaigual">
                   <div className="card-boddy">
                     <h4>
-                      <strong>&#11088; CALIDAD</strong>
+                      <strong> CALIDAD</strong>
                     </h4>
                     <p min className="mt-2">
                       <font font size="4">
                         {" "}
-                        <strong>
+                        <p>
                           {" "}
                           Nos comprometemos, que los procesos de nuestros
                           productos sean los mejores posibles, no nos
                           conformamos con menos.
-                        </strong>
+                        </p>
                       </font>
                     </p>
                   </div>

@@ -125,11 +125,11 @@ const mensajeError=()=>{
             <i class="fab fa-expeditedssl"></i>
             </div>
             <div className="card-header text-center">
-             <h4>¿Tienes problemas para entrar?</h4> 
+             <h4>Sistema de recuperacion de clave</h4> 
             </div>
             <h4>{mensaje1}</h4>
             <p className="text-center m-3">
-            Introduce tu correo electrónico y te enviaremos un enlace para que vuelvas a entrar en tu cuenta.
+            Introduce tu nueva contraseña
 
             </p>
             <div className="card-boddy m-2">
@@ -150,7 +150,7 @@ const mensajeError=()=>{
           className="form-control"
           value={newPassword2}
           onChange={(e) => setNewPassword2(e.target.value.toLowerCase())}
-          placeholder="Ingresa la nuevamente Contraseña"
+          placeholder="Repite nuevamente la Contraseña"
           required
         />
                 </div>
