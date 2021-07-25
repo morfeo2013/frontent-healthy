@@ -8,6 +8,10 @@
     "@testing-library/user-event": "^12.6.0",
     "axios": "^0.21.1",
     "bootswatch": "^4.6.0",
+<<<<<<< HEAD
+=======
+    "heroku": "^7.56.1",
+>>>>>>> 97a1a26 (base)
     "json2xls": "^0.1.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
