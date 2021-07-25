@@ -45,9 +45,9 @@ export default function inicio() {
                       ></button>
                       <h4 class="modal-title" id="staticBackdropLabel">
                         {" "}
-                        &#11088;¡Bienvenido a{" "}
+                        ¡Bienvenido a{" "}
                         <font color="Green">
-                          GANO HEALTHY MEDELLIN!&#11088;
+                          GANO HEALTHY MEDELLIN!
                         </font>
                       </h4>
                     </div>
