@@ -154,7 +154,7 @@ console.log(nuevoArreglo3);
                             type="button"
                               href={
                                 "https://api.whatsapp.com/send?phone=573105038758 &text=Me%20gustaría%20comprar%20los%20siguientes%20productos:%20" 
-                               +totalProductos+"%20,%20por%20valor%20de:%20$"+totalPago
+                               +totalProductos+"%20,%20por%20valor%20Total%20de:%20$"+totalPago+"%20Pesos"
                               
                               }
                               
