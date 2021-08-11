@@ -36,7 +36,7 @@ console.log(result); */
      
      
         var Productos = contCarritoGeneral.reduce((sum2, value2) => (value2.libros.ficha !== 0 ? 
-          sum2 +" *Producto: "+ value2.libros.genero+", Unidades: "+value2.suma : sum2+", " ),"");
+          sum2 +"%0A*Producto: "+ value2.libros.genero+", Unidades: "+value2.suma : sum2+", " ),"");
           setTotalProductos(Productos)
     
 
@@ -154,7 +154,7 @@ console.log(nuevoArreglo3);
                             type="button"
                               href={
                                 "https://api.whatsapp.com/send?phone=573105038758 &text=Me%20gustaría%20comprar%20los%20siguientes%20productos:%20" 
-                               +totalProductos+"%20,%20por%20valor%20Total%20de:%20$"+totalPago+"%20Pesos"
+                               +totalProductos+"%0APor%20valor%20Total%20de:%20$"+totalPago+"%20Pesos"
                               
                               }
                               
