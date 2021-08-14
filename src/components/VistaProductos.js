@@ -367,7 +367,7 @@ export default function VistaProductos() {
               <div className="card text-center marco2">
                 <div className="card-header ">
                   <stron className="text-center">
-                   {/*  Catalogo: */} {libros.titulo}
+                   {/*  Catalogo: */} <b>{libros.titulo}</b>
                   </stron>
                 </div>
                 <h3 className="satisfy_id mt-2">{/* Producto: */} {libros.genero}</h3>
@@ -473,7 +473,7 @@ export default function VistaProductos() {
                                     </h1>
                                   </div>
                                   <hr />
-                                  <div  >
+                                  <div className="" >
                                     <h5 className="text-start display-linebreak">
                                       {/*  Descripcion:  */}{autor}
 

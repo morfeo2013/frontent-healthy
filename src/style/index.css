@@ -45,6 +45,10 @@ background-size:cover;
             src: url(Satisfy-Regular.ttf)
         } 
      
+        @font-face {
+            font-family: nunito;
+            src: url(Nunito-Light.ttf)
+        } 
 /* titulo producto */
 
    .satisfy_id{
@@ -52,9 +56,10 @@ background-size:cover;
     color:#ff936c;
    }
 
+   
    .ninuto_id{
-    font-family: ninuto;
-    color:#000000;
+    font-family: nunito;
+    
    }
 
 @media screen and (min-width:993px) { /* Hacemos la búsqueda y si coincide modificamos las propiedades de la imagen */
