@@ -180,8 +180,8 @@ export default function IngresarLibro(props) {
     /* el entorno para el ingreso o modificacion de nuevos usuarios o datos pos-put */
 
     <div className="container p-5 mt-4">
-        <div  className=" mt-5"></div>
-      
+      <div className=" mt-5"></div>
+
       <di className="row mt-4">
         {editar === "" ? null : (
           <div className="container col-3 imagen6 text-center">
@@ -316,14 +316,15 @@ text"
                     />
                   </div>
                   <div className="form-group  mt-3">
-                    <input
-                      type="text"
-                      className="form-control"
+                  
+                    <div class="input-group">
+                      <span class="input-group-text">Ingrese El Detalle</span>
+                      <textarea class="form-control" aria-label="With textarea"
                       value={autor}
                       onChange={(e) => setAutor(e.target.value.toLowerCase())}
-                      placeholder="detalle"
-                      required
-                    />
+                      ></textarea>
+                    </div>
+
                   </div>
 
                   <div className="input-group  mt-3">
@@ -363,7 +364,7 @@ text"
                   </h5>
                 ) : /* mostrar el check box  y  estar a la escucha para mandar a la funcion que hubo un cambio con ""onChange ={handleChangeCheckBox}" el value es para dar el valor o asignarlo de una tabla 
                                         ver video https://www.youtube.com/watch?v=1sCzFUUPIoE*/
-                null}
+                  null}
                 {editar === "modificar" ? (
                   <fieldset disabled={!botonActivo}>
                     {" "}

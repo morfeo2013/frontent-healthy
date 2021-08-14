@@ -17,29 +17,32 @@ export default function RecuperarContrasena() {
     const respuesta = await Axios.post(
       "https://ganohealthy.herokuapp.com/Recuperar",
       RecuperarContrasena
-      /* "http://localhost:4000/Recuperar",
+    /*   "http://localhost:4000/Recuperar",
       RecuperarContrasena */
     ); /* 
         enviara los datos json de la onstante usuario al backend */
 
-    const mensaje =
+    const mensage =
       respuesta.data
         .mensage; /* extraemos el mensaje desde el backen creado para mostrarlo en el sweetalert2 */
-
-    if (mensaje === "Correo incorecto o No existe") {
+      console.log( respuesta.data)
+    if (mensage === 'Correo incorecto o No existe') {
       Swal.fire({
         icon: "error",
-        title: mensaje,
+        title: "Correo incorecto o No existe",
         showConfirmButton: false,
         timer: 1500,
       });
+
+    
     } else {
       Swal.fire({
         icon: "success",
         title:  "Clave de recuperacion enviada a tu correo personal",
         showConfirmButton: false,
-        timer: 1500,
+        timer: 2000,
       });
+      window.location.href = "/login";
     }
   };
 

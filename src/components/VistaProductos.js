@@ -378,7 +378,7 @@ export default function VistaProductos() {
                   {/*  {console.log(libros.imagen)} */}
                 </div>
                 <div className="card-heart ">
-                  <strong>Producto: {libros.genero}</strong>
+                  <strong>{/* Producto: */} {libros.genero}</strong>
                   <p></p>
                   <strong>
                     Valor: {"$"}
@@ -431,13 +431,13 @@ export default function VistaProductos() {
                                 <div className="row col-xs-12 col-lg-6 text-start">
                                   <div>
                                     <h4 className=" text-center">
-                                      Producto: {genero}
+                                     {/*  Producto:  */}{genero}
                                     </h4>
                                   </div>
                                   <hr />
                                   <div>
                                     <h4 className="mt-1">
-                                      Descripcion: {autor}
+                                     {/*  Descripcion:  */}{autor}
                                     </h4>
                                   </div>
                                   <div>
