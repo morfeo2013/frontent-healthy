@@ -238,17 +238,17 @@ export default function VistaProductos() {
 
     /* Opcion 1 creando un objeto suma aparte de libros */
 
-    setContCarritoGeneral([...contCarritoGeneral,{ libros, suma: 1 }]);
+    setContCarritoGeneral([...contCarritoGeneral, { libros, suma: 1 }]);
     console.log(contCarritoGeneral);
 
-   
-   
-  
- /* Opcion 2 incluyendo suma un objeto   dentro de objetos libros */
-  /*  const libroSuma={...libros,suma:1}
-    setContCarritoGeneral([...contCarritoGeneral, libroSuma]);
-    console.log(contCarritoGeneral);
- */
+
+
+
+    /* Opcion 2 incluyendo suma un objeto   dentro de objetos libros */
+    /*  const libroSuma={...libros,suma:1}
+      setContCarritoGeneral([...contCarritoGeneral, libroSuma]);
+      console.log(contCarritoGeneral);
+   */
 
 
     /* Opcion 3 incluyendo suma varios objetos dentro del objeto libros  */
@@ -409,7 +409,7 @@ export default function VistaProductos() {
                       aria-hidden="true"
                     >
                       <div className="modal-dialog d-none-modal-md modal-lg">
-                        <div className="modal-content  modal0">
+                        <div className="modal-content modal0">
                           <div className="modal-header ">
                             <h5 className="modal-title " id="exampleModalLabel">
                               Catalogo: {titulo}
@@ -426,54 +426,59 @@ export default function VistaProductos() {
                               <div className="row modal1 ">
                                 <div className="col-xs-12 col-lg-6 imagen33">
                                   <img id="" src={imagen} alt="" />
+
+                                  <div >
+                                    
+                                    <div className="card-body">
+                                    <h2 className="text-center  mt-2">
+                                      {/* Precio: */} ${ficha * unidades}
+                                    </h2>
+                                      <button
+                                        className="btn btn-primary"
+                                        type=""
+                                        onClick={() => {
+                                          setUnidades(unidades + 1);
+                                        }}
+                                      >
+                                        +
+                                      </button>
+                                      <button
+                                        className="btn btn-outline-success"
+                                        disabled="true"
+                                        type=""
+                                      >
+                                        {unidades}
+                                      </button>
+                                      <button
+                                        className="btn btn-primary"
+                                        type=""
+                                        onClick={() => funcionResta()}
+                                      >
+                                        -
+                                      </button>
+                                    </div>
+                                  </div>
                                 </div>
 
-                                <div className="row col-xs-12 col-lg-6 text-start">
-                                  <div>
-                                    <h4 className=" text-center">
-                                     {/*  Producto:  */}{genero}
-                                    </h4>
+                                <div className=" col-xs-12 col-lg-6 ">
+                                  <div className="satisfy_id">
+                                    <h1 className=" text-center display-4">
+                                      {/* Producto: */} {genero}
+                                    </h1>
                                   </div>
                                   <hr />
-                                  <div>
-                                    <h4 className="mt-1">
-                                     {/*  Descripcion:  */}{autor}
-                                    </h4>
+                                  <div   style={{whiteSpace: 'pre-line'}}>
+                                    <h5 className="text-start">
+                                      {/*  Descripcion:  */}{autor}
+                                     
+                                    </h5>
                                   </div>
-                                  <div>
-                                    <h4 className="text-center align-self-end modal2">
-                                      Precio: ${ficha * unidades}
-                                    </h4>
-                                  </div>
+
                                 </div>
                               </div>
                             </div>
                           </div>
-                          <div className="card-body">
-                            <button
-                              className="btn btn-primary"
-                              type=""
-                              onClick={() => {
-                                setUnidades(unidades + 1);
-                              }}
-                            >
-                              +
-                            </button>
-                            <button
-                              className="btn btn-outline-success"
-                              disabled="true"
-                              type=""
-                            >
-                              {unidades}
-                            </button>
-                            <button
-                              className="btn btn-primary"
-                              type=""
-                              onClick={() => funcionResta()}
-                            >
-                              -
-                            </button>
-                          </div>
+
                           <div class="modal-footer ">
                             <div className="container text-center">
                               <a
@@ -489,19 +494,19 @@ export default function VistaProductos() {
                                 href={
                                   unidades === 1
                                     ? "https://api.whatsapp.com/send?phone=573105038758 &text=Me%20gustaría%20comprar%20" +
-                                      unidades +
-                                      "%20Unidad%20de%20el%20producto:%20" +
-                                      genero +
-                                      ",%20Por%20un%20Total%20de:%20$" +
-                                      ficha * unidades +
-                                      "%20Mil%20Pesos."
+                                    unidades +
+                                    "%20Unidad%20de%20el%20producto:%20" +
+                                    genero +
+                                    ",%20Por%20un%20Total%20de:%20$" +
+                                    ficha * unidades +
+                                    "%20Mil%20Pesos."
                                     : "https://api.whatsapp.com/send?phone=573105038758 &text=Me%20gustaría%20comprar%20" +
-                                      unidades +
-                                      "%20Unidades%20de%20el%20producto:%20" +
-                                      genero +
-                                      "%20Por%20un%20Total%20de:%20$" +
-                                      ficha * unidades +
-                                      "%20Mil%20Pesos."
+                                    unidades +
+                                    "%20Unidades%20de%20el%20producto:%20" +
+                                    genero +
+                                    "%20Por%20un%20Total%20de:%20$" +
+                                    ficha * unidades +
+                                    "%20Mil%20Pesos."
                                 }
                                 target="_blank"
                               >
@@ -522,7 +527,7 @@ export default function VistaProductos() {
                       /*  disable={contCarritoGeneral.libros.suma>1} */
                       onClick={() => ingresarProductoCarrito(libros)}
 
-                      /*  to={"/comprar/"  + libros._id} */
+                    /*  to={"/comprar/"  + libros._id} */
                     >
                       <i className="fas fa-shopping-cart"></i>
                       +Agregar

@@ -3,16 +3,17 @@
 
 .modal0{
   padding: 3px 10px;
-  border: rgb(190, 224, 216) 5px double;
+  border:#fffff0;
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
+  
 }
 .modal1{
     padding: 3px 10px;
     border: rgb(175, 175, 175) 5px double;
     border-top-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    background: rgb(241, 246, 247);
+    background: #fffff0;
   }
  
   .modal2{

@@ -28,6 +28,27 @@ background-size:cover;
            
         }
 
+/* estilo de letra a un tipo de titulo */
+        @font-face {
+            font-family: satisfy;
+            src: url(Satisfy-Regular.ttf)
+        } 
+        @font-face {
+            font-family: ninuto;
+            src: url(Nunito-Light.ttf)
+        } 
+
+
+   .satisfy_id{
+    font-family: satisfy;
+    color:#ff936c;
+   }
+
+   .ninuto_id{
+    font-family: ninuto;
+    color:#000000;
+   }
+
 @media screen and (min-width:993px) { /* Hacemos la búsqueda y si coincide modificamos las propiedades de la imagen */
     .marco1{
         height: 230px;    
