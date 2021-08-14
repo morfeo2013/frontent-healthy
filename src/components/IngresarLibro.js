@@ -302,7 +302,7 @@ text"
                       ) => setTitulo(e.target.value)}
                       required
                       autoFocus
-                      placeholder="Producto"
+                      placeholder="Linea"
                     />
                   </div>
                   <div className="form-group  mt-3">
@@ -311,7 +311,7 @@ text"
                       className="form-control"
                       value={genero}
                       onChange={(e) => setGenero(e.target.value)}
-                      placeholder="codigo"
+                      placeholder="Producto"
                       required
                     />
                   </div>
