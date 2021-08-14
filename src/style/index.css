@@ -4,6 +4,16 @@ no-repeat fixed center rgb(228, 223, 223);
 background-size:cover;
  
 }
+.display-linebreak {
+    white-space: pre-line;
+  }
+
+
+  textarea{
+  
+    height: 350px; 
+  
+  }
 .marco0{
    
     border: 2px solid black;
@@ -33,11 +43,8 @@ background-size:cover;
             font-family: satisfy;
             src: url(Satisfy-Regular.ttf)
         } 
-        @font-face {
-            font-family: ninuto;
-            src: url(Nunito-Light.ttf)
-        } 
-
+     
+/* titulo producto */
 
    .satisfy_id{
     font-family: satisfy;

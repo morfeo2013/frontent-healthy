@@ -129,10 +129,11 @@ export default function VistaProductos() {
     ); /* se envia la informacion al estado setdatos para ser almacenado en datos finalmente E NLA HUBICACION .DATA DEL OBJETO JSON RECIBIDO DE LBACKEND*/
     sessionStorage.setItem("contProductos", respuesta.data.length);
     console.log(respuesta.data.length);
-
+    
     /* llevar al inicio del listado */
 
     /* console.log(respuesta) */
+
   };
 
   /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
@@ -237,9 +238,10 @@ export default function VistaProductos() {
   const ingresarProductoCarrito = async (libros) => {
 
     /* Opcion 1 creando un objeto suma aparte de libros */
-
+   
     setContCarritoGeneral([...contCarritoGeneral, { libros, suma: 1 }]);
     console.log(contCarritoGeneral);
+    console.log("fredyyyyyyyyyyyyyy");
 
 
 
@@ -275,6 +277,7 @@ export default function VistaProductos() {
         <div className="container">
           <div class="swiper-container mySwiper col-md-12 col-lg-7   text-center">
             <div class="swiper-wrapper">
+
               {datos.map((libros) => (
                 <img
                   key={libros._id}
@@ -364,9 +367,10 @@ export default function VistaProductos() {
               <div className="card text-center marco2">
                 <div className="card-header ">
                   <stron className="text-center">
-                    Catalogo: {libros.titulo}
+                   {/*  Catalogo: */} {libros.titulo}
                   </stron>
                 </div>
+                <h3 className="satisfy_id mt-2">{/* Producto: */} {libros.genero}</h3>
                 <div className=" imagen3 ">
                   <img
                     className="  img-thumbnail img-fluid  text-center"
@@ -378,7 +382,7 @@ export default function VistaProductos() {
                   {/*  {console.log(libros.imagen)} */}
                 </div>
                 <div className="card-heart ">
-                  <strong>{/* Producto: */} {libros.genero}</strong>
+
                   <p></p>
                   <strong>
                     Valor: {"$"}
@@ -386,8 +390,7 @@ export default function VistaProductos() {
                   </strong>
                 </div>
 
-                {/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */}
-                {/* MODAL DETALLE PRODUCTO */}
+               
                 <td>
                   <div className="mt-5 bt-5">
                     <button
@@ -400,7 +403,8 @@ export default function VistaProductos() {
                       <i className="far fa-address-book  m-1"></i>
                       Leer mas
                     </button>
-
+ {/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */}
+               
                     <div
                       className="modal fade"
                       id="exampleModal"
@@ -408,6 +412,8 @@ export default function VistaProductos() {
                       aria-labelledby="exampleModalLabel"
                       aria-hidden="true"
                     >
+
+                      {/* MODAL +++++++++++++++++++++++++++++++++++++++++++++++++++ */}
                       <div className="modal-dialog d-none-modal-md modal-lg">
                         <div className="modal-content modal0">
                           <div className="modal-header ">
@@ -428,11 +434,11 @@ export default function VistaProductos() {
                                   <img id="" src={imagen} alt="" />
 
                                   <div >
-                                    
-                                    <div className="card-body">
                                     <h2 className="text-center  mt-2">
-                                      {/* Precio: */} ${ficha * unidades}
+                                      Precio: ${ficha /* * unidades */}
                                     </h2>
+                                    {/*    <div className="card-body">
+                                   
                                       <button
                                         className="btn btn-primary"
                                         type=""
@@ -456,21 +462,21 @@ export default function VistaProductos() {
                                       >
                                         -
                                       </button>
-                                    </div>
+                                    </div> */}
                                   </div>
                                 </div>
 
                                 <div className=" col-xs-12 col-lg-6 ">
                                   <div className="satisfy_id">
-                                    <h1 className=" text-center display-4">
+                                    <h1 className=" text-center display-3">
                                       {/* Producto: */} {genero}
                                     </h1>
                                   </div>
                                   <hr />
-                                  <div   style={{whiteSpace: 'pre-line'}}>
-                                    <h5 className="text-start">
+                                  <div  >
+                                    <h5 className="text-start display-linebreak">
                                       {/*  Descripcion:  */}{autor}
-                                     
+
                                     </h5>
                                   </div>
 
@@ -488,7 +494,7 @@ export default function VistaProductos() {
                               >
                                 Cerrar
                               </a>
-                              <a
+                              {/*  <a
                                 className="btn btn-warning"
                                 type="button"
                                 href={
@@ -511,7 +517,8 @@ export default function VistaProductos() {
                                 target="_blank"
                               >
                                 Comprar
-                              </a>
+                              </a> */}
+
                             </div>
                           </div>
                         </div>
@@ -521,12 +528,13 @@ export default function VistaProductos() {
                     {/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/}
                     {/* FIN MODAL */}
                     <button
+
                       /*  id={contCarritoGeneral._id} */
                       type="submit"
                       className="btn btn-outline-warning mb-2"
                       /*  disable={contCarritoGeneral.libros.suma>1} */
                       onClick={() => ingresarProductoCarrito(libros)}
-
+                      disabled={libros.suma===1}
                     /*  to={"/comprar/"  + libros._id} */
                     >
                       <i className="fas fa-shopping-cart"></i>

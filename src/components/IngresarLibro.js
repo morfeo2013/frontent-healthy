@@ -220,7 +220,7 @@ export default function IngresarLibro(props) {
                       value={null}
                       /* EL .toLowerCase() CONVIERTE LAS PALARAS INGRESADAS A MINUSCULAS */ onChange={(
                         e
-                      ) => setUnidades(e.target.value.toLowerCase())}
+                      ) => setUnidades(e.target.value)}
                       required
                       autoFocus
                       placeholder="Unidades a Comprar"
@@ -238,7 +238,7 @@ export default function IngresarLibro(props) {
                         value={titulo}
                         /* EL .toLowerCase() CONVIERTE LAS PALARAS INGRESADAS A MINUSCULAS */ onChange={(
                           e
-                        ) => setTitulo(e.target.value.toLowerCase())}
+                        ) => setTitulo(e.target.value)}
                         required
                         autoFocus
                         placeholder="Producto"
@@ -251,7 +251,7 @@ export default function IngresarLibro(props) {
                         className="form-control"
                         value={genero}
                         onChange={(e) =>
-                          setGenero(e.target.value.toLowerCase())
+                          setGenero(e.target.value)
                         }
                         placeholder="codigo"
                         required
@@ -263,7 +263,7 @@ export default function IngresarLibro(props) {
 text"
                         className="form-control"
                         value={autor}
-                        onChange={(e) => setAutor(e.target.value.toLowerCase())}
+                        onChange={(e) => setAutor(e.target.value)}
                         placeholder="detalle"
                         required
                       />
@@ -275,7 +275,7 @@ text"
 text"
                         className="form-control"
                         value={ficha}
-                        onChange={(e) => setFicha(e.target.value.toLowerCase())}
+                        onChange={(e) => setFicha(e.target.value)}
                         placeholder="Valor"
                         required
                       />
@@ -299,7 +299,7 @@ text"
                       value={titulo}
                       /* EL .toLowerCase() CONVIERTE LAS PALARAS INGRESADAS A MINUSCULAS */ onChange={(
                         e
-                      ) => setTitulo(e.target.value.toLowerCase())}
+                      ) => setTitulo(e.target.value)}
                       required
                       autoFocus
                       placeholder="Producto"
@@ -310,19 +310,24 @@ text"
                       type="text"
                       className="form-control"
                       value={genero}
-                      onChange={(e) => setGenero(e.target.value.toLowerCase())}
+                      onChange={(e) => setGenero(e.target.value)}
                       placeholder="codigo"
                       required
                     />
                   </div>
                   <div className="form-group  mt-3">
                   
+                   
                     <div class="input-group">
-                      <span class="input-group-text">Ingrese El Detalle</span>
+                      <span class="input-group-text">Descripcion del Producto</span>
                       <textarea class="form-control" aria-label="With textarea"
-                      value={autor}
-                      onChange={(e) => setAutor(e.target.value.toLowerCase())}
+                        value={autor}
+                        onChange={(e) => setAutor(e.target.value)}
                       ></textarea>
+                      <div className="text-center">
+                      <p >Copiar y pegar los simbolos: ✔ ❌  </p>
+                      </div>
+                      
                     </div>
 
                   </div>
@@ -334,7 +339,7 @@ text"
  text"
                       className="form-control"
                       value={ficha}
-                      onChange={(e) => setFicha(e.target.value.toLowerCase())}
+                      onChange={(e) => setFicha(e.target.value)}
                       placeholder="Valor"
                       required
                     />
