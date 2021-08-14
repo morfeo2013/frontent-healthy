@@ -417,7 +417,10 @@ export default function VistaProductos() {
                       <div className="modal-dialog d-none-modal-md modal-lg">
                         <div className="modal-content modal0">
                           <div className="modal-header ">
+                         
                             <h5 className="modal-title " id="exampleModalLabel">
+                             
+                            
                               Catalogo: {titulo}
                             </h5>
                             <button
@@ -428,8 +431,11 @@ export default function VistaProductos() {
                             ></button>
                           </div>
                           <div className="modal-body ">
-                            <div className="container-fluxer col-12">
-                              <div className="row modal1 ">
+                            
+                            <div className="col-12 modal1">
+                             <img  className=" d-block w-100" src="https://res.cloudinary.com/dhiasghho/image/upload/v1628963364/frutas_logo_catalogo_alargado_cowasl.png" alt="" />
+                              <div className="row  ">
+                              
                                 <div className="col-xs-12 col-lg-6 imagen33">
                                   <img id="" src={imagen} alt="" />
 
