@@ -235,15 +235,53 @@ export default function VistaProductos() {
     setContCarritoGeneral({contCarritoGeneral,operacion:0});
   }; */
 
+
+
+  const restarProductoCarrito = (librosBase2) => {
+    
+  
+
+    const id =librosBase2._id
+    
+    const libros= librosBase2
+    const suma= librosBase2.suma-1
+    const nuevoArreglo4 ={...libros,dbboton:true}
+    const nuevoArreglo5 = buscar.map(buscadorID =>buscadorID._id === id
+      ?
+      nuevoArreglo4
+      :
+    
+      buscadorID
+      )
+    setBuscar(nuevoArreglo5)
+/*     console.log( id);
+    console.log( libros);
+    console.log( nuevoArreglo4);
+    console.log(suma);
+    console.log(nuevoArreglo5); */
+    
+    
+     
+       
+      };
+
+
   const ingresarProductoCarrito = async (libros) => {
 
     /* Opcion 1 creando un objeto suma aparte de libros */
-   
+   /*  const libros= {...libros1,dbboton:'true'}
+    setBuscar([...buscar.libros,]) */
+/*    const id =libros._id
+    const nuvoArreglo =buscar.filter(buscadorID =>buscadorID._id !== id)
+
+    setBuscar (nuvoArreglo) */
+  
+    
     setContCarritoGeneral([...contCarritoGeneral, { libros, suma: 1 }]);
     console.log(contCarritoGeneral);
     console.log("fredyyyyyyyyyyyyyy");
 
-
+    restarProductoCarrito(libros)
 
 
     /* Opcion 2 incluyendo suma un objeto   dentro de objetos libros */
@@ -540,7 +578,7 @@ export default function VistaProductos() {
                       className="btn btn-outline-warning mb-2"
                       /*  disable={contCarritoGeneral.libros.suma>1} */
                       onClick={() => ingresarProductoCarrito(libros)}
-                      disabled={libros.suma===1}
+                      disabled={libros.dbboton===true}
                     /*  to={"/comprar/"  + libros._id} */
                     >
                       <i className="fas fa-shopping-cart"></i>
