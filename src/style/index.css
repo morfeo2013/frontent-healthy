@@ -4,6 +4,8 @@ no-repeat fixed center rgb(228, 223, 223);
 background-size:cover;
  
 }
+
+/* PARA ALINEAR EL TEXTO Y MOSTRARLO CORRECTAMENDE DESDE LLEGADA DEL TEXBOS A EL HTML */
 .display-linebreak {
     white-space: pre-line;
   }
@@ -44,6 +46,10 @@ background-size:cover;
             font-family: satisfy;
             src: url(Satisfy-Regular.ttf)
         } 
+        @font-face {
+            font-family: satisfy2;
+            src: url(Satisfy-Regular.ttf)
+        } 
      
         @font-face {
             font-family: nunito;
@@ -55,7 +61,11 @@ background-size:cover;
     font-family: satisfy;
     color:#ff936c;
    }
-
+   .satisfy_id2{
+    font-family: satisfy2;
+    color:#3d3d3d;
+    
+   }
    
    .ninuto_id{
     font-family: nunito;
@@ -437,5 +447,5 @@ background-size:cover;
     width: 100%;
     height: 370px
   }
-
+/* centrar algo en la pagina */
   

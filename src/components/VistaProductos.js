@@ -12,6 +12,11 @@ import React, {
 /* luego de importar el useContext de React, llamamos la propiedad del componnete por destructuracion TemaContext */
 import { TemaContext } from "../context/Usecontext";
 
+/* importar el spiner de la pagina https://bit.dev/bondz/react-epic-spinners/atom-spinner */
+
+import AtomSpinner from '@bit/bondz.react-epic-spinners.atom-spinner';
+
+
 import { Link } from "react-router-dom"; /* IMPORTAR PARA PODER ACCEDER AL PA PROPIEDAD LINK Y ACCEDER
 A LA PAGINA DONDE ESTA CREADO LA OPCION DE  CREAR USUARIOS EN EL RETUR DE CREACION DE PAGINAS */
 
@@ -22,12 +27,17 @@ import Swiper from "swiper/bundle";
 
 /* SE CREA EL COMPONENTE ListarLibro() */
 export default function VistaProductos() {
+
+
+
   const { actBoton } = useContext(TemaContext);
   const { setActBoton } = useContext(TemaContext);
 
   const { contCarritoGeneral } = useContext(TemaContext);
   const { setContCarritoGeneral } = useContext(TemaContext);
   const [fredy, setFredy] = useState([]);
+
+  const [loading, setloading] = useState(false)/* creamos el estado para evalar el loading    */
 
   const [titulo, setTitulo] = useState("");
   const [autor, setAutor] = useState("");
@@ -118,10 +128,14 @@ export default function VistaProductos() {
   /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
   /*FUNCION PARA LISTAR USUARIOS */
   const obtenerUsuarios = async () => {
-    /* se crea la validacion del tokend */
+    /* se inicializa el estado losding en false */
+    setloading(false)
+
 
     const respuesta = await Axios.get(
       "https://ganohealthy.herokuapp.com/obtener/"
+
+
     ); /* usando axios se descarga con una peticion get la lista de  usuarios del backend */
     /* SE PASA LA INFORMACION AL ESTADO SETDATOS Y DATOS */
     setDatos(
@@ -129,11 +143,11 @@ export default function VistaProductos() {
     ); /* se envia la informacion al estado setdatos para ser almacenado en datos finalmente E NLA HUBICACION .DATA DEL OBJETO JSON RECIBIDO DE LBACKEND*/
     sessionStorage.setItem("contProductos", respuesta.data.length);
     console.log(respuesta.data.length);
-    
+
     /* llevar al inicio del listado */
 
-    /* console.log(respuesta) */
-
+    /* se informa que la pagina recivio los datos y se activa a true el estado loading */
+    setloading(true);
   };
 
   /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
@@ -238,44 +252,44 @@ export default function VistaProductos() {
 
 
   const desactivarBotonCarrito = (librosBase2) => {
-    
-  
 
-    const id =librosBase2._id /* TOMAMOS EL VALOR DEL ID */
-    
-    const libros= librosBase2  /* TOMO EL VALOR DE LA TABLA */ 
-    const nuevoArreglo4 ={...libros,dbboton:true} /* AGREGO UNA PROPIEDAD MAS AL A TABLA QUE 
+
+
+    const id = librosBase2._id /* TOMAMOS EL VALOR DEL ID */
+
+    const libros = librosBase2  /* TOMO EL VALOR DE LA TABLA */
+    const nuevoArreglo4 = { ...libros, dbboton: true } /* AGREGO UNA PROPIEDAD MAS AL A TABLA QUE 
     IDENTIFICARA PARA SER DESACTIVADA */
 
     /* LEE EL .MAP Y BISCA CAL ES EL OBJETO CON ESE ID  Y REALIZA LOS SIGIENTES CAMBIOS*/
-    const nuevoArreglo5 = buscar.map(buscadorID =>buscadorID._id === id
+    const nuevoArreglo5 = buscar.map(buscadorID => buscadorID._id === id
       ?
       /* SI LO ENCUENTRA LE LLEVA LA NUEVA TABLA A LA TABLA ANTERIOR Y LA MODIFICA */
       nuevoArreglo4
       :
       /* SI NO ES LO DEJA COMO ESTABA ESA TABLA */
       buscadorID
-      )
+    )
 
-      /* ACTUALIZA EL NUEVO ARRAY AL .MAP PARA QUE LO ECTUALIZE */
+    /* ACTUALIZA EL NUEVO ARRAY AL .MAP PARA QUE LO ECTUALIZE */
     setBuscar(nuevoArreglo5)
 
-     
-       
-      };
+
+
+  };
 
 
   const ingresarProductoCarrito = async (libros) => {
 
     /* Opcion 1 creando un objeto suma aparte de libros */
-   /*  const libros= {...libros1,dbboton:'true'}
-    setBuscar([...buscar.libros,]) */
-/*    const id =libros._id
-    const nuvoArreglo =buscar.filter(buscadorID =>buscadorID._id !== id)
-
-    setBuscar (nuvoArreglo) */
-  
+    /*  const libros= {...libros1,dbboton:'true'}
+     setBuscar([...buscar.libros,]) */
+    /*    const id =libros._id
+        const nuvoArreglo =buscar.filter(buscadorID =>buscadorID._id !== id)
     
+        setBuscar (nuvoArreglo) */
+
+
     setContCarritoGeneral([...contCarritoGeneral, { libros, suma: 1 }]);
     console.log(contCarritoGeneral);
     console.log("fredyyyyyyyyyyyyyy");
@@ -307,180 +321,184 @@ export default function VistaProductos() {
     }
   };
   return (
-    <div className="container pt-5 mt-4">
-      <div className="container border border-success  mt-5">
-        {/* AGREGAR PARA ADMINISTRADOR OPCION AGREGAR NUEVO PRODUCTO*/}
 
-        <div className="container">
-          <div class="swiper-container mySwiper col-md-12 col-lg-7   text-center">
-            <div class="swiper-wrapper">
+    <>
+      {loading ?
 
-              {datos.map((libros) => (
-                <img
-                  key={libros._id}
-                  className="container-fluid swiper-slide"
-                  src={libros.imagen}
-                  alt=""
-                ></img>
-              ))}
+        <div className="container pt-5 mt-4">
+          <div className="container border border-success  mt-5">
+            {/* AGREGAR PARA ADMINISTRADOR OPCION AGREGAR NUEVO PRODUCTO*/}
+
+            <div className="container">
+              <div class="swiper-container mySwiper col-md-12 col-lg-7   text-center">
+                <div class="swiper-wrapper">
+
+                  {datos.map((libros) => (
+                    <img
+                      key={libros._id}
+                      className="container-fluid swiper-slide"
+                      src={libros.imagen}
+                      alt=""
+                    ></img>
+                  ))}
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+              </div>
             </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-pagination"></div>
-          </div>
-        </div>
 
-        <nav className="navbar ">
-          <div className="container">
-            <div className="col-md-6 ml-auto">
-              {/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */}
+            <nav className="navbar ">
+              <div className="container">
+                <div className="col-md-6 ml-auto">
+                  {/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */}
 
-              {/* ESTE CODIGO ES PARA RECOGER LA INFORMACION A ELEGIR DE QUE TIPO DE BUSQUEDA SE REALIZARA  
+                  {/* ESTE CODIGO ES PARA RECOGER LA INFORMACION A ELEGIR DE QUE TIPO DE BUSQUEDA SE REALIZARA  
                    AL SER ELEGISO LO GUARDARA CON EL PARAMETRO "VALUE" Y AL LLEVARA AL ESTADO:
                    setOpcion(e.target.value) PARA LUEGO ACTUALIZAR EL ESTADO OPCION*/}
-              {/*  {if (opcion ==='')checked} */}
+                  {/*  {if (opcion ==='')checked} */}
 
-              <div className="form-check form-check-inline">
-                <input
-                  className="form-check-input"
-                  type="radio"
-                  defaultChecked={true}
-                  /*  defaultChecked={true}  para seleccionar de inicio una de las opcionees */
-                  name="inlineRadioOptions"
-                  id="inlineRadio1"
-                  value="titulo"
-                  onChange={(e) => setOpcion(e.target.value)}
-                />
-                <label className="form-check-label" htmlFor="inlineRadio1">
-                  Buscar por Linea
-                </label>
-              </div>
+                  <div className="form-check form-check-inline">
+                    <input
+                      className="form-check-input"
+                      type="radio"
+                      defaultChecked={true}
+                      /*  defaultChecked={true}  para seleccionar de inicio una de las opcionees */
+                      name="inlineRadioOptions"
+                      id="inlineRadio1"
+                      value="titulo"
+                      onChange={(e) => setOpcion(e.target.value)}
+                    />
+                    <label className="form-check-label" htmlFor="inlineRadio1">
+                      Buscar por Linea
+                    </label>
+                  </div>
 
-              <div className="form-check form-check-inline">
-                <input
-                  className="form-check-input"
-                  type="radio"
-                  name="inlineRadioOptions"
-                  id="inlineRadio2"
-                  value="genero"
-                  onChange={(e) => setOpcion(e.target.value)}
-                />
-                <label className="form-check-label" htmlFor="inlineRadio2">
-                  Buscar por producto
-                </label>
-              </div>
+                  <div className="form-check form-check-inline">
+                    <input
+                      className="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="inlineRadio2"
+                      value="genero"
+                      onChange={(e) => setOpcion(e.target.value)}
+                    />
+                    <label className="form-check-label" htmlFor="inlineRadio2">
+                      Buscar por producto
+                    </label>
+                  </div>
 
-              {/*  <div className="form-check form-check-inline">
+                  {/*  <div className="form-check form-check-inline">
                             <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value='autor' onChange={e => setOpcion(e.target.value)} />
                             <label className="form-check-label" htmlFor="inlineRadio3">Buscar por valor </label>
                         </div> */}
 
-              {/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */}
+                  {/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */}
 
-              {/*ACA SE RENDERIZARA LA PALABRA EN TEXTO QUE SE ESTARA BUSCANDO */}
-            </div>
-            <div className="col-md-6 ml-auto">
-              <input
-                type="search"
-                className="form-control mr-sm-2"
-                placeholder="Buscar Producto por..."
-                onChange={(e) => setSearch(e.target.value.toLowerCase())}
-                required
-              />
-              {/* se le da valor al estado search  y  va a larer lo que  Y LOS ENVIARA AL ESTADO setSearch(e.target.value) QUE POSTERIOR MENTE LO ENVIARA AL ESTADO TEXTO "SEARCH"*/}
-              {/* NOTA: EL .toLowerCase() ES PARA QUE TODA LA LETRA SEA CONVERTIDA A MINUSCULA PARA EVITR INCOPATIBILIDAD ENA LA BUSQUEDA */}
-            </div>
-          </div>
-        </nav>
-
-        <div className="row ">
-          {" "}
-          {/* para colocarlos en horizontal */}
-          {buscar.map((libros) => (
-            <div
-              className="col-xs-6 col-sm-12 col-md-6 col-lg-4 pt-2 "
-              key={libros._id}
-            >
-              <div className="card text-center marco2">
-                <div className="card-header ">
-                  <stron className="text-center">
-                   {/*  Catalogo: */} <b>{libros.titulo}</b>
-                  </stron>
+                  {/*ACA SE RENDERIZARA LA PALABRA EN TEXTO QUE SE ESTARA BUSCANDO */}
                 </div>
-                <h3 className="satisfy_id mt-2">{/* Producto: */} {libros.genero}</h3>
-                <div className=" imagen3 ">
-                  <img
-                    className="  img-thumbnail img-fluid  text-center"
-                    src={libros.imagen}
-                    width="20"
-                    height="20"
-                    alt=""
-                  ></img>
-                  {/*  {console.log(libros.imagen)} */}
+                <div className="col-md-6 ml-auto">
+                  <input
+                    type="search"
+                    className="form-control mr-sm-2"
+                    placeholder="Buscar Producto por..."
+                    onChange={(e) => setSearch(e.target.value.toLowerCase())}
+                    required
+                  />
+                  {/* se le da valor al estado search  y  va a larer lo que  Y LOS ENVIARA AL ESTADO setSearch(e.target.value) QUE POSTERIOR MENTE LO ENVIARA AL ESTADO TEXTO "SEARCH"*/}
+                  {/* NOTA: EL .toLowerCase() ES PARA QUE TODA LA LETRA SEA CONVERTIDA A MINUSCULA PARA EVITR INCOPATIBILIDAD ENA LA BUSQUEDA */}
                 </div>
-                <div className="card-heart ">
+              </div>
+            </nav>
 
-                  <p></p>
-                  <strong>
-                    Valor: {"$"}
-                    {libros.ficha}
-                  </strong>
-                </div>
+            <div className="row ">
+              {" "}
+              {/* para colocarlos en horizontal */}
+              {buscar.map((libros) => (
+                <div
+                  className="col-xs-6 col-sm-12 col-md-6 col-lg-4 pt-2 "
+                  key={libros._id}
+                >
+                  <div className="card text-center marco2">
+                    <div className="card-header ">
+                      <stron className="text-center">
+                        {/*  Catalogo: */} <b>{libros.titulo}</b>
+                      </stron>
+                    </div>
+                    <h3 className="satisfy_id mt-2">{/* Producto: */} {libros.genero}</h3>
+                    <div className=" imagen3 ">
+                      <img
+                        className="  img-thumbnail img-fluid  text-center"
+                        src={libros.imagen}
+                        width="20"
+                        height="20"
+                        alt=""
+                      ></img>
+                      {/*  {console.log(libros.imagen)} */}
+                    </div>
+                    <div className="card-heart ">
 
-               
-                <td>
-                  <div className="mt-5 bt-5">
-                    <button
-                      onClick={(e) => consultarusuarioUnico(libros._id)}
-                      type="button"
-                      className="btn btn-outline-success mb-2"
-                      data-bs-toggle="modal"
-                      data-bs-target="#exampleModal"
-                    >
-                      <i className="far fa-address-book  m-1"></i>
-                      Leer mas
-                    </button>
- {/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */}
-               
-                    <div
-                      className="modal fade"
-                      id="exampleModal"
-                      tabindex="-1"
-                      aria-labelledby="exampleModalLabel"
-                      aria-hidden="true"
-                    >
+                      <p></p>
+                      <strong>
+                        Valor: {"$"}
+                        {libros.ficha}
+                      </strong>
+                    </div>
 
-                      {/* MODAL +++++++++++++++++++++++++++++++++++++++++++++++++++ */}
-                      <div className="modal-dialog d-none-modal-md modal-lg">
-                        <div className="modal-content modal0">
-                          <div className="modal-header ">
-                         
-                            <h5 className="modal-title " id="exampleModalLabel">
-                             
-                            
-                              Catalogo: {titulo}
-                            </h5>
-                            <button
-                              type="button"
-                              className="btn-close"
-                              data-bs-dismiss="modal"
-                              aria-label="Close"
-                            ></button>
-                          </div>
-                          <div className="modal-body ">
-                            
-                            <div className="col-12 modal1">
-                             <img  className=" d-block w-100" src="https://res.cloudinary.com/dhiasghho/image/upload/v1628963364/frutas_logo_catalogo_alargado_cowasl.png" alt="" />
-                              <div className="row  ">
-                              
-                                <div className="col-xs-12 col-lg-6 imagen33">
-                                  <img id="" src={imagen} alt="" />
 
-                                  <div >
-                                    <h2 className="text-center  mt-2">
-                                      Precio: ${ficha /* * unidades */}
-                                    </h2>
-                                    {/*    <div className="card-body">
+                    <td>
+                      <div className="mt-5 bt-5">
+                        <button
+                          onClick={(e) => consultarusuarioUnico(libros._id)}
+                          type="button"
+                          className="btn btn-outline-success mb-2"
+                          data-bs-toggle="modal"
+                          data-bs-target="#exampleModal"
+                        >
+                          <i className="far fa-address-book  m-1"></i>
+                          Leer mas
+                        </button>
+                        {/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */}
+
+                        <div
+                          className="modal fade"
+                          id="exampleModal"
+                          tabindex="-1"
+                          aria-labelledby="exampleModalLabel"
+                          aria-hidden="true"
+                        >
+
+                          {/* MODAL +++++++++++++++++++++++++++++++++++++++++++++++++++ */}
+                          <div className="modal-dialog d-none-modal-md modal-lg">
+                            <div className="modal-content modal0">
+                              <div className="modal-header ">
+
+                                <h5 className="modal-title " id="exampleModalLabel">
+
+
+                                  Catalogo: {titulo}
+                                </h5>
+                                <button
+                                  type="button"
+                                  className="btn-close"
+                                  data-bs-dismiss="modal"
+                                  aria-label="Close"
+                                ></button>
+                              </div>
+                              <div className="modal-body ">
+
+                                <div className="col-12 modal1">
+                                  <img className=" d-block w-100" src="https://res.cloudinary.com/dhiasghho/image/upload/v1628963364/frutas_logo_catalogo_alargado_cowasl.png" alt="" />
+                                  <div className="row  ">
+
+                                    <div className="col-xs-12 col-lg-6 imagen33">
+                                      <img id="" src={imagen} alt="" />
+
+                                      <div >
+                                        <h2 className="text-center  mt-2">
+                                          Precio: ${ficha /* * unidades */}
+                                        </h2>
+                                        {/*    <div className="card-body">
                                    
                                       <button
                                         className="btn btn-primary"
@@ -506,38 +524,38 @@ export default function VistaProductos() {
                                         -
                                       </button>
                                     </div> */}
-                                  </div>
-                                </div>
+                                      </div>
+                                    </div>
 
-                                <div className=" col-xs-12 col-lg-6 ">
-                                  <div className="satisfy_id">
-                                    <h1 className=" text-center display-3">
-                                      {/* Producto: */} {genero}
-                                    </h1>
-                                  </div>
-                                  <hr />
-                                  <div className="" >
-                                    <h5 className="text-start display-linebreak">
-                                      {/*  Descripcion:  */}{autor}
+                                    <div className=" col-xs-12 col-lg-6 ">
+                                      <div className="satisfy_id">
+                                        <h1 className=" text-center display-3">
+                                          {/* Producto: */} {genero}
+                                        </h1>
+                                      </div>
+                                      <hr />
+                                      <div className="" >
+                                        <h5 className="text-start display-linebreak">
+                                          {/*  Descripcion:  */}{autor}
 
-                                    </h5>
-                                  </div>
+                                        </h5>
+                                      </div>
 
+                                    </div>
+                                  </div>
                                 </div>
                               </div>
-                            </div>
-                          </div>
 
-                          <div class="modal-footer ">
-                            <div className="container text-center">
-                              <a
-                                type="button"
-                                className="btn btn-danger "
-                                data-bs-dismiss="modal"
-                              >
-                                Cerrar
-                              </a>
-                              {/*  <a
+                              <div class="modal-footer ">
+                                <div className="container text-center">
+                                  <a
+                                    type="button"
+                                    className="btn btn-danger "
+                                    data-bs-dismiss="modal"
+                                  >
+                                    Cerrar
+                                  </a>
+                                  {/*  <a
                                 className="btn btn-warning"
                                 type="button"
                                 href={
@@ -562,34 +580,73 @@ export default function VistaProductos() {
                                 Comprar
                               </a> */}
 
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </div>
-                    {/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */}
-                    {/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/}
-                    {/* FIN MODAL */}
-                    <button
+                        {/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */}
+                        {/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/}
+                        {/* FIN MODAL */}
+                        <button
 
-                      /*  id={contCarritoGeneral._id} */
-                      type="submit"
-                      className="btn btn-outline-warning mb-2"
-                      /*  disable={contCarritoGeneral.libros.suma>1} */
-                      onClick={() => ingresarProductoCarrito(libros)}
-                      disabled={libros.dbboton===true}
-                    /*  to={"/comprar/"  + libros._id} */
-                    >
-                      <i className="fas fa-shopping-cart"></i>
-                      +Agregar
-                    </button>
+                          /*  id={contCarritoGeneral._id} */
+                          type="submit"
+                          className="btn btn-outline-warning mb-2"
+                          /*  disable={contCarritoGeneral.libros.suma>1} */
+                          onClick={() => ingresarProductoCarrito(libros)}
+                          disabled={libros.dbboton === true}
+                        /*  to={"/comprar/"  + libros._id} */
+                        >
+                          <i className="fas fa-shopping-cart"></i>
+                          +Agregar
+                        </button>
+                      </div>
+                    </td>
                   </div>
-                </td>
-              </div>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
-      </div>
-    </div>
+        :
+        <div className="container pt-5 mt-4">
+          <div className="container border border-success  mt-5">
+
+
+            <div className="row text-center m-4 ">
+
+             
+
+              <div className="col-4">
+               
+              </div>
+              <div className="col-4"
+              color='#1ee678'>
+                <h1  className="satisfy_id2"
+              
+                >Cargando...</h1>
+                <AtomSpinner
+                  color= 'rgb(175, 236, 236)'
+                  size='250'
+                 
+                />
+              </div>
+              <div className="col-4 ninuto_id">
+           
+              </div>
+
+             
+
+
+
+            </div>
+          </div>
+        </div>
+      }
+
+    </>
+
+
   );
 }
