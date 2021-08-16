@@ -237,30 +237,29 @@ export default function VistaProductos() {
 
 
 
-  const restarProductoCarrito = (librosBase2) => {
+  const desactivarBotonCarrito = (librosBase2) => {
     
   
 
-    const id =librosBase2._id
+    const id =librosBase2._id /* TOMAMOS EL VALOR DEL ID */
     
-    const libros= librosBase2
-    const suma= librosBase2.suma-1
-    const nuevoArreglo4 ={...libros,dbboton:true}
+    const libros= librosBase2  /* TOMO EL VALOR DE LA TABLA */ 
+    const nuevoArreglo4 ={...libros,dbboton:true} /* AGREGO UNA PROPIEDAD MAS AL A TABLA QUE 
+    IDENTIFICARA PARA SER DESACTIVADA */
+
+    /* LEE EL .MAP Y BISCA CAL ES EL OBJETO CON ESE ID  Y REALIZA LOS SIGIENTES CAMBIOS*/
     const nuevoArreglo5 = buscar.map(buscadorID =>buscadorID._id === id
       ?
+      /* SI LO ENCUENTRA LE LLEVA LA NUEVA TABLA A LA TABLA ANTERIOR Y LA MODIFICA */
       nuevoArreglo4
       :
-    
+      /* SI NO ES LO DEJA COMO ESTABA ESA TABLA */
       buscadorID
       )
+
+      /* ACTUALIZA EL NUEVO ARRAY AL .MAP PARA QUE LO ECTUALIZE */
     setBuscar(nuevoArreglo5)
-/*     console.log( id);
-    console.log( libros);
-    console.log( nuevoArreglo4);
-    console.log(suma);
-    console.log(nuevoArreglo5); */
-    
-    
+
      
        
       };
@@ -281,7 +280,7 @@ export default function VistaProductos() {
     console.log(contCarritoGeneral);
     console.log("fredyyyyyyyyyyyyyy");
 
-    restarProductoCarrito(libros)
+    desactivarBotonCarrito(libros) /* DESACTIVAR BOTON CARRITO */
 
 
     /* Opcion 2 incluyendo suma un objeto   dentro de objetos libros */
